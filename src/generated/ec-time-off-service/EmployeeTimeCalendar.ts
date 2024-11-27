@@ -1,15 +1,26 @@
 /*
- * Copyright (c) 2022 SAP SE or an SAP affiliate company. All rights reserved.
+ * Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
-import { Entity, DefaultDeSerializers, DeSerializers, DeserializedType } from '@sap-cloud-sdk/odata-v2';
+import {
+  Entity,
+  DefaultDeSerializers,
+  DeSerializers,
+  DeserializedType
+} from '@sap-cloud-sdk/odata-v2';
+import type { EmployeeTimeCalendarApi } from './EmployeeTimeCalendarApi';
 import { TimeAccountDetail, TimeAccountDetailType } from './TimeAccountDetail';
 
 /**
  * This class represents the entity "EmployeeTimeCalendar" of service "ECTimeOff".
  */
-export class EmployeeTimeCalendar<T extends DeSerializers = DefaultDeSerializers> extends Entity implements EmployeeTimeCalendarType<T> {
+export class EmployeeTimeCalendar<
+    T extends DeSerializers = DefaultDeSerializers
+  >
+  extends Entity
+  implements EmployeeTimeCalendarType<T>
+{
   /**
    * Technical entity name for EmployeeTimeCalendar.
    */
@@ -59,6 +70,12 @@ export class EmployeeTimeCalendar<T extends DeSerializers = DefaultDeSerializers
    */
   endTime?: DeserializedType<T, 'Edm.Time'> | null;
   /**
+   * Entity UUID.
+   * Maximum length: 255.
+   * @nullable
+   */
+  entityUuid?: DeserializedType<T, 'Edm.String'> | null;
+  /**
    * External Code.
    * Maximum length: 128.
    */
@@ -95,31 +112,31 @@ export class EmployeeTimeCalendar<T extends DeSerializers = DefaultDeSerializers
    */
   mdfSystemEffectiveStartDate?: DeserializedType<T, 'Edm.DateTime'> | null;
   /**
-   * mdfSystemEntityId.
+   * Entity ID.
    * Maximum length: 255.
    * @nullable
    */
   mdfSystemEntityId?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * mdfSystemObjectType.
+   * Object Type.
    * Maximum length: 255.
    * @nullable
    */
   mdfSystemObjectType?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * mdfSystemRecordId.
+   * Record ID.
    * Maximum length: 255.
    * @nullable
    */
   mdfSystemRecordId?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * mdfSystemRecordStatus.
+   * Record Status.
    * Maximum length: 255.
    * @nullable
    */
   mdfSystemRecordStatus?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * mdfSystemStatus.
+   * Status.
    * Maximum length: 255.
    * @nullable
    */
@@ -130,10 +147,20 @@ export class EmployeeTimeCalendar<T extends DeSerializers = DefaultDeSerializers
    */
   mdfSystemTransactionSequence?: DeserializedType<T, 'Edm.Int64'> | null;
   /**
-   * mdfSystemVersionId.
+   * Version ID.
    * @nullable
    */
   mdfSystemVersionId?: DeserializedType<T, 'Edm.Int64'> | null;
+  /**
+   * Physical End Date.
+   * @nullable
+   */
+  physicalEndDate?: DeserializedType<T, 'Edm.DateTime'> | null;
+  /**
+   * Physical Start Date.
+   * @nullable
+   */
+  physicalStartDate?: DeserializedType<T, 'Edm.DateTime'> | null;
   /**
    * Number Of Days.
    * @nullable
@@ -158,9 +185,15 @@ export class EmployeeTimeCalendar<T extends DeSerializers = DefaultDeSerializers
    * One-to-many navigation property to the {@link TimeAccountDetail} entity.
    */
   timeAccountDetail!: TimeAccountDetail<T>[];
+
+  constructor(readonly _entityApi: EmployeeTimeCalendarApi<T>) {
+    super(_entityApi);
+  }
 }
 
-export interface EmployeeTimeCalendarType<T extends DeSerializers = DefaultDeSerializers> {
+export interface EmployeeTimeCalendarType<
+  T extends DeSerializers = DefaultDeSerializers
+> {
   employeeTimeExternalCode: DeserializedType<T, 'Edm.String'>;
   createdBy?: DeserializedType<T, 'Edm.String'> | null;
   createdDate?: DeserializedType<T, 'Edm.DateTime'> | null;
@@ -168,6 +201,7 @@ export interface EmployeeTimeCalendarType<T extends DeSerializers = DefaultDeSer
   date?: DeserializedType<T, 'Edm.DateTime'> | null;
   deductionQuantity?: DeserializedType<T, 'Edm.Decimal'> | null;
   endTime?: DeserializedType<T, 'Edm.Time'> | null;
+  entityUuid?: DeserializedType<T, 'Edm.String'> | null;
   externalCode: DeserializedType<T, 'Edm.String'>;
   lastModifiedBy?: DeserializedType<T, 'Edm.String'> | null;
   lastModifiedDate?: DeserializedType<T, 'Edm.DateTime'> | null;
@@ -182,6 +216,8 @@ export interface EmployeeTimeCalendarType<T extends DeSerializers = DefaultDeSer
   mdfSystemStatus?: DeserializedType<T, 'Edm.String'> | null;
   mdfSystemTransactionSequence?: DeserializedType<T, 'Edm.Int64'> | null;
   mdfSystemVersionId?: DeserializedType<T, 'Edm.Int64'> | null;
+  physicalEndDate?: DeserializedType<T, 'Edm.DateTime'> | null;
+  physicalStartDate?: DeserializedType<T, 'Edm.DateTime'> | null;
   quantityInDays?: DeserializedType<T, 'Edm.Decimal'> | null;
   quantityInHours?: DeserializedType<T, 'Edm.Decimal'> | null;
   startTime?: DeserializedType<T, 'Edm.Time'> | null;

@@ -1,15 +1,30 @@
 /*
- * Copyright (c) 2022 SAP SE or an SAP affiliate company. All rights reserved.
+ * Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
-import { Entity, DefaultDeSerializers, DeSerializers, DeserializedType } from '@sap-cloud-sdk/odata-v2';
+import {
+  Entity,
+  DefaultDeSerializers,
+  DeSerializers,
+  DeserializedType
+} from '@sap-cloud-sdk/odata-v2';
+import type { TemporaryTimeInformationApi } from './TemporaryTimeInformationApi';
+import {
+  WorkScheduleDayModel,
+  WorkScheduleDayModelType
+} from './WorkScheduleDayModel';
 import { WorkSchedule, WorkScheduleType } from './WorkSchedule';
 
 /**
  * This class represents the entity "TemporaryTimeInformation" of service "ECTimeOff".
  */
-export class TemporaryTimeInformation<T extends DeSerializers = DefaultDeSerializers> extends Entity implements TemporaryTimeInformationType<T> {
+export class TemporaryTimeInformation<
+    T extends DeSerializers = DefaultDeSerializers
+  >
+  extends Entity
+  implements TemporaryTimeInformationType<T>
+{
   /**
    * Technical entity name for TemporaryTimeInformation.
    */
@@ -45,10 +60,32 @@ export class TemporaryTimeInformation<T extends DeSerializers = DefaultDeSeriali
    */
   createdDateTime?: DeserializedType<T, 'Edm.DateTimeOffset'> | null;
   /**
+   * trghtry.
+   * @nullable
+   */
+  custTrghtry?: DeserializedType<T, 'Edm.Int64'> | null;
+  /**
+   * trhtrh.
+   * @nullable
+   */
+  custTrhtrh?: DeserializedType<T, 'Edm.DateTimeOffset'> | null;
+  /**
+   * Day Model.
+   * Maximum length: 128.
+   * @nullable
+   */
+  dayModel?: DeserializedType<T, 'Edm.String'> | null;
+  /**
    * End Date.
    * @nullable
    */
   endDate?: DeserializedType<T, 'Edm.DateTime'> | null;
+  /**
+   * Entity UUID.
+   * Maximum length: 255.
+   * @nullable
+   */
+  entityUuid?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * External Code.
    * Maximum length: 128.
@@ -86,31 +123,25 @@ export class TemporaryTimeInformation<T extends DeSerializers = DefaultDeSeriali
    */
   mdfSystemEffectiveStartDate?: DeserializedType<T, 'Edm.DateTime'> | null;
   /**
-   * mdfSystemEntityId.
+   * Entity ID.
    * Maximum length: 255.
    * @nullable
    */
   mdfSystemEntityId?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * mdfSystemObjectType.
+   * Object Type.
    * Maximum length: 255.
    * @nullable
    */
   mdfSystemObjectType?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * mdfSystemRecordId.
-   * Maximum length: 255.
-   * @nullable
-   */
-  mdfSystemRecordId?: DeserializedType<T, 'Edm.String'> | null;
-  /**
-   * mdfSystemRecordStatus.
+   * Record Status.
    * Maximum length: 255.
    * @nullable
    */
   mdfSystemRecordStatus?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * mdfSystemStatus.
+   * Status.
    * Maximum length: 255.
    * @nullable
    */
@@ -121,10 +152,16 @@ export class TemporaryTimeInformation<T extends DeSerializers = DefaultDeSeriali
    */
   mdfSystemTransactionSequence?: DeserializedType<T, 'Edm.Int64'> | null;
   /**
-   * mdfSystemVersionId.
+   * Version ID.
    * @nullable
    */
   mdfSystemVersionId?: DeserializedType<T, 'Edm.Int64'> | null;
+  /**
+   * mdfSystemRecordId.
+   * Maximum length: 255.
+   * @nullable
+   */
+  recordId?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * Start Date.
    * @nullable
@@ -143,17 +180,31 @@ export class TemporaryTimeInformation<T extends DeSerializers = DefaultDeSeriali
    */
   workSchedule?: DeserializedType<T, 'Edm.String'> | null;
   /**
+   * One-to-one navigation property to the {@link WorkScheduleDayModel} entity.
+   */
+  dayModelNav?: WorkScheduleDayModel<T> | null;
+  /**
    * One-to-one navigation property to the {@link WorkSchedule} entity.
    */
   workScheduleNav?: WorkSchedule<T> | null;
+
+  constructor(readonly _entityApi: TemporaryTimeInformationApi<T>) {
+    super(_entityApi);
+  }
 }
 
-export interface TemporaryTimeInformationType<T extends DeSerializers = DefaultDeSerializers> {
+export interface TemporaryTimeInformationType<
+  T extends DeSerializers = DefaultDeSerializers
+> {
   comment?: DeserializedType<T, 'Edm.String'> | null;
   createdBy?: DeserializedType<T, 'Edm.String'> | null;
   createdDate?: DeserializedType<T, 'Edm.DateTime'> | null;
   createdDateTime?: DeserializedType<T, 'Edm.DateTimeOffset'> | null;
+  custTrghtry?: DeserializedType<T, 'Edm.Int64'> | null;
+  custTrhtrh?: DeserializedType<T, 'Edm.DateTimeOffset'> | null;
+  dayModel?: DeserializedType<T, 'Edm.String'> | null;
   endDate?: DeserializedType<T, 'Edm.DateTime'> | null;
+  entityUuid?: DeserializedType<T, 'Edm.String'> | null;
   externalCode: DeserializedType<T, 'Edm.String'>;
   lastModifiedBy?: DeserializedType<T, 'Edm.String'> | null;
   lastModifiedDate?: DeserializedType<T, 'Edm.DateTime'> | null;
@@ -163,13 +214,14 @@ export interface TemporaryTimeInformationType<T extends DeSerializers = DefaultD
   mdfSystemEffectiveStartDate?: DeserializedType<T, 'Edm.DateTime'> | null;
   mdfSystemEntityId?: DeserializedType<T, 'Edm.String'> | null;
   mdfSystemObjectType?: DeserializedType<T, 'Edm.String'> | null;
-  mdfSystemRecordId?: DeserializedType<T, 'Edm.String'> | null;
   mdfSystemRecordStatus?: DeserializedType<T, 'Edm.String'> | null;
   mdfSystemStatus?: DeserializedType<T, 'Edm.String'> | null;
   mdfSystemTransactionSequence?: DeserializedType<T, 'Edm.Int64'> | null;
   mdfSystemVersionId?: DeserializedType<T, 'Edm.Int64'> | null;
+  recordId?: DeserializedType<T, 'Edm.String'> | null;
   startDate?: DeserializedType<T, 'Edm.DateTime'> | null;
   userId?: DeserializedType<T, 'Edm.String'> | null;
   workSchedule?: DeserializedType<T, 'Edm.String'> | null;
+  dayModelNav?: WorkScheduleDayModelType<T> | null;
   workScheduleNav?: WorkScheduleType<T> | null;
 }

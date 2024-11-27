@@ -20,13 +20,21 @@ entity Person: managed {
   key ID: String;
   name: String;
   role: String;
-  s4ID: String;
-  s4CompanyCode: String;
+//  s4ID: String;
+//  s4CompanyCode: String;
   sfsfID: String;
+  hlevel: Int16;
   appointments: Association to many Appointment on appointments.person = $self;
 }
 
 entity TeamCalendar {
   key year: Integer;
   appointments: Association to many Appointment on appointments.calendar = $self;
+}
+
+entity CustomUser {
+    ID    : String;
+    name  : String;
+    email : String;
+    role  : String;
 }

@@ -1,22 +1,38 @@
 /*
- * Copyright (c) 2022 SAP SE or an SAP affiliate company. All rights reserved.
+ * Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
-import { DefaultDeSerializers, DeSerializers, GetAllRequestBuilder, GetByKeyRequestBuilder, CreateRequestBuilder, UpdateRequestBuilder, DeleteRequestBuilder, DeserializedType, RequestBuilder } from '@sap-cloud-sdk/odata-v2';
+import {
+  DefaultDeSerializers,
+  DeSerializers,
+  GetAllRequestBuilder,
+  GetByKeyRequestBuilder,
+  CreateRequestBuilder,
+  UpdateRequestBuilder,
+  DeleteRequestBuilder,
+  DeserializedType,
+  RequestBuilder
+} from '@sap-cloud-sdk/odata-v2';
 import { TimeAccount } from './TimeAccount';
 
 /**
  * Request builder class for operations supported on the {@link TimeAccount} entity.
  */
-export class TimeAccountRequestBuilder<T extends DeSerializers = DefaultDeSerializers> extends RequestBuilder<TimeAccount<T>, T> {
+export class TimeAccountRequestBuilder<
+  T extends DeSerializers = DefaultDeSerializers
+> extends RequestBuilder<TimeAccount<T>, T> {
   /**
    * Returns a request builder for retrieving one `TimeAccount` entity based on its keys.
    * @param externalCode Key property. See {@link TimeAccount.externalCode}.
    * @returns A request builder for creating requests to retrieve one `TimeAccount` entity based on its keys.
    */
-  getByKey(externalCode: DeserializedType<T, 'Edm.String'>): GetByKeyRequestBuilder<TimeAccount<T>, T> {
-    return new GetByKeyRequestBuilder<TimeAccount<T>, T>(this.entityApi, { externalCode: externalCode });
+  getByKey(
+    externalCode: DeserializedType<T, 'Edm.String'>
+  ): GetByKeyRequestBuilder<TimeAccount<T>, T> {
+    return new GetByKeyRequestBuilder<TimeAccount<T>, T>(this.entityApi, {
+      externalCode: externalCode
+    });
   }
 
   /**
@@ -58,6 +74,11 @@ export class TimeAccountRequestBuilder<T extends DeSerializers = DefaultDeSerial
    */
   delete(entity: TimeAccount<T>): DeleteRequestBuilder<TimeAccount<T>, T>;
   delete(externalCodeOrEntity: any): DeleteRequestBuilder<TimeAccount<T>, T> {
-    return new DeleteRequestBuilder<TimeAccount<T>, T>(this.entityApi, externalCodeOrEntity instanceof TimeAccount ? externalCodeOrEntity : { externalCode: externalCodeOrEntity! });
+    return new DeleteRequestBuilder<TimeAccount<T>, T>(
+      this.entityApi,
+      externalCodeOrEntity instanceof TimeAccount
+        ? externalCodeOrEntity
+        : { externalCode: externalCodeOrEntity! }
+    );
   }
 }

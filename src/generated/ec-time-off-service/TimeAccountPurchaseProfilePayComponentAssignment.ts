@@ -1,14 +1,25 @@
 /*
- * Copyright (c) 2022 SAP SE or an SAP affiliate company. All rights reserved.
+ * Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
-import { Entity, DefaultDeSerializers, DeSerializers, DeserializedType } from '@sap-cloud-sdk/odata-v2';
+import {
+  Entity,
+  DefaultDeSerializers,
+  DeSerializers,
+  DeserializedType
+} from '@sap-cloud-sdk/odata-v2';
+import type { TimeAccountPurchaseProfilePayComponentAssignmentApi } from './TimeAccountPurchaseProfilePayComponentAssignmentApi';
 
 /**
  * This class represents the entity "TimeAccountPurchaseProfilePayComponentAssignment" of service "ECTimeOff".
  */
-export class TimeAccountPurchaseProfilePayComponentAssignment<T extends DeSerializers = DefaultDeSerializers> extends Entity implements TimeAccountPurchaseProfilePayComponentAssignmentType<T> {
+export class TimeAccountPurchaseProfilePayComponentAssignment<
+    T extends DeSerializers = DefaultDeSerializers
+  >
+  extends Entity
+  implements TimeAccountPurchaseProfilePayComponentAssignmentType<T>
+{
   /**
    * Technical entity name for TimeAccountPurchaseProfilePayComponentAssignment.
    */
@@ -59,9 +70,17 @@ export class TimeAccountPurchaseProfilePayComponentAssignment<T extends DeSerial
    * Maximum length: 32.
    */
   payComponent!: DeserializedType<T, 'Edm.String'>;
+
+  constructor(
+    readonly _entityApi: TimeAccountPurchaseProfilePayComponentAssignmentApi<T>
+  ) {
+    super(_entityApi);
+  }
 }
 
-export interface TimeAccountPurchaseProfilePayComponentAssignmentType<T extends DeSerializers = DefaultDeSerializers> {
+export interface TimeAccountPurchaseProfilePayComponentAssignmentType<
+  T extends DeSerializers = DefaultDeSerializers
+> {
   timeAccountPurchaseProfileExternalCode: DeserializedType<T, 'Edm.String'>;
   createdBy?: DeserializedType<T, 'Edm.String'> | null;
   createdDateTime?: DeserializedType<T, 'Edm.DateTimeOffset'> | null;

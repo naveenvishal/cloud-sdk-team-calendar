@@ -1,9 +1,15 @@
 /*
- * Copyright (c) 2022 SAP SE or an SAP affiliate company. All rights reserved.
+ * Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
-import { Entity, DefaultDeSerializers, DeSerializers, DeserializedType } from '@sap-cloud-sdk/odata-v2';
+import {
+  Entity,
+  DefaultDeSerializers,
+  DeSerializers,
+  DeserializedType
+} from '@sap-cloud-sdk/odata-v2';
+import type { TimeTypeProfileApi } from './TimeTypeProfileApi';
 import { AvailableTimeType, AvailableTimeTypeType } from './AvailableTimeType';
 import { TimeType, TimeTypeType } from './TimeType';
 import { TimeAccountType_1, TimeAccountType_1Type } from './TimeAccountType_1';
@@ -11,7 +17,10 @@ import { TimeAccountType_1, TimeAccountType_1Type } from './TimeAccountType_1';
 /**
  * This class represents the entity "TimeTypeProfile" of service "ECTimeOff".
  */
-export class TimeTypeProfile<T extends DeSerializers = DefaultDeSerializers> extends Entity implements TimeTypeProfileType<T> {
+export class TimeTypeProfile<T extends DeSerializers = DefaultDeSerializers>
+  extends Entity
+  implements TimeTypeProfileType<T>
+{
   /**
    * Technical entity name for TimeTypeProfile.
    */
@@ -23,19 +32,25 @@ export class TimeTypeProfile<T extends DeSerializers = DefaultDeSerializers> ext
   /**
    * All key fields of the TimeTypeProfile entity
    */
-  static _keys = ['externalCode'];
+  static _keys = ['externalCode', 'mdfSystemEffectiveStartDate'];
   /**
    * Update TOiL Account Only When Changes Approved.
    * @nullable
    */
-  bookTimeOffInLieuOnTimeSheetApproval?: DeserializedType<T, 'Edm.Boolean'> | null;
+  bookTimeOffInLieuOnTimeSheetApproval?: DeserializedType<
+    T,
+    'Edm.Boolean'
+  > | null;
   /**
    * Update Working Time Account Only When Changes Approved.
    * @nullable
    */
-  bookWorkingTimeOnTimeSheetApproval?: DeserializedType<T, 'Edm.Boolean'> | null;
+  bookWorkingTimeOnTimeSheetApproval?: DeserializedType<
+    T,
+    'Edm.Boolean'
+  > | null;
   /**
-   * Country.
+   * Country/Region.
    * Maximum length: 128.
    * @nullable
    */
@@ -63,10 +78,28 @@ export class TimeTypeProfile<T extends DeSerializers = DefaultDeSerializers> ext
    */
   defaultImportAttendanceTimeType?: DeserializedType<T, 'Edm.String'> | null;
   /**
+   * Entity UUID.
+   * Maximum length: 255.
+   * @nullable
+   */
+  entityUuid?: DeserializedType<T, 'Edm.String'> | null;
+  /**
    * External Code.
    * Maximum length: 128.
    */
   externalCode!: DeserializedType<T, 'Edm.String'>;
+  /**
+   * External Name.
+   * Maximum length: 255.
+   * @nullable
+   */
+  externalNameArSa?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * External Name.
+   * Maximum length: 255.
+   * @nullable
+   */
+  externalNameCyGb?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * External Name.
    * Maximum length: 255.
@@ -84,7 +117,31 @@ export class TimeTypeProfile<T extends DeSerializers = DefaultDeSerializers> ext
    * Maximum length: 255.
    * @nullable
    */
+  externalNameEnDebug?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * External Name.
+   * Maximum length: 255.
+   * @nullable
+   */
+  externalNameEnDebugApos?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * External Name.
+   * Maximum length: 255.
+   * @nullable
+   */
+  externalNameEnDebugAposRtl?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * External Name.
+   * Maximum length: 255.
+   * @nullable
+   */
   externalNameEnGb?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * External Name.
+   * Maximum length: 255.
+   * @nullable
+   */
+  externalNameEnRtl?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * External Name.
    * Maximum length: 255.
@@ -102,7 +159,31 @@ export class TimeTypeProfile<T extends DeSerializers = DefaultDeSerializers> ext
    * Maximum length: 255.
    * @nullable
    */
+  externalNameEsMx?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * External Name.
+   * Maximum length: 255.
+   * @nullable
+   */
+  externalNameFrCa?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * External Name.
+   * Maximum length: 255.
+   * @nullable
+   */
   externalNameFrFr?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * External Name.
+   * Maximum length: 255.
+   * @nullable
+   */
+  externalNameHiIn?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * External Name.
+   * Maximum length: 255.
+   * @nullable
+   */
+  externalNameIwIl?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * External Name.
    * Maximum length: 255.
@@ -138,25 +219,13 @@ export class TimeTypeProfile<T extends DeSerializers = DefaultDeSerializers> ext
    * Maximum length: 255.
    * @nullable
    */
-  externalNamePtPt?: DeserializedType<T, 'Edm.String'> | null;
-  /**
-   * External Name.
-   * Maximum length: 255.
-   * @nullable
-   */
-  externalNameRuRu?: DeserializedType<T, 'Edm.String'> | null;
+  externalNameThTh?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * External Name.
    * Maximum length: 255.
    * @nullable
    */
   externalNameZhCn?: DeserializedType<T, 'Edm.String'> | null;
-  /**
-   * External Name.
-   * Maximum length: 255.
-   * @nullable
-   */
-  externalNameZhTw?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * Last Modified By.
    * Maximum length: 255.
@@ -197,52 +266,51 @@ export class TimeTypeProfile<T extends DeSerializers = DefaultDeSerializers> ext
    */
   mainEssTimeType?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * mdfSystemEffectiveEndDate.
+   * Effective End Date.
    * @nullable
    */
   mdfSystemEffectiveEndDate?: DeserializedType<T, 'Edm.DateTime'> | null;
   /**
-   * mdfSystemEffectiveStartDate.
-   * @nullable
+   * Effective Start Date.
    */
-  mdfSystemEffectiveStartDate?: DeserializedType<T, 'Edm.DateTime'> | null;
+  mdfSystemEffectiveStartDate!: DeserializedType<T, 'Edm.DateTime'>;
   /**
-   * mdfSystemEntityId.
+   * Entity ID.
    * Maximum length: 255.
    * @nullable
    */
   mdfSystemEntityId?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * mdfSystemObjectType.
+   * Object Type.
    * Maximum length: 255.
    * @nullable
    */
   mdfSystemObjectType?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * mdfSystemRecordId.
+   * Record ID.
    * Maximum length: 255.
    * @nullable
    */
   mdfSystemRecordId?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * mdfSystemRecordStatus.
+   * Record Status.
    * Maximum length: 255.
    * @nullable
    */
   mdfSystemRecordStatus?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * mdfSystemStatus.
+   * Status.
    * Maximum length: 255.
    * @nullable
    */
   mdfSystemStatus?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * mdfSystemTransactionSequence.
+   * Transaction Sequence Number.
    * @nullable
    */
   mdfSystemTransactionSequence?: DeserializedType<T, 'Edm.Int64'> | null;
   /**
-   * mdfSystemVersionId.
+   * Version ID.
    * @nullable
    */
   mdfSystemVersionId?: DeserializedType<T, 'Edm.Int64'> | null;
@@ -257,7 +325,160 @@ export class TimeTypeProfile<T extends DeSerializers = DefaultDeSerializers> ext
    * Maximum length: 128.
    * @nullable
    */
-  timeAccountTypeForWorkingTimeAccount?: DeserializedType<T, 'Edm.String'> | null;
+  timeAccountTypeForWorkingTimeAccount?: DeserializedType<
+    T,
+    'Edm.String'
+  > | null;
+  /**
+   * Instructional Text For Time Off Employee Self-Service.
+   * Maximum length: 4000.
+   * @nullable
+   */
+  timeOffEssInstructionalTextArSa?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * Instructional Text For Time Off Employee Self-Service.
+   * Maximum length: 4000.
+   * @nullable
+   */
+  timeOffEssInstructionalTextCyGb?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * Instructional Text For Time Off Employee Self-Service.
+   * Maximum length: 4000.
+   * @nullable
+   */
+  timeOffEssInstructionalTextDeDe?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * Instructional Text For Time Off Employee Self-Service.
+   * Maximum length: 4000.
+   * @nullable
+   */
+  timeOffEssInstructionalTextDefaultValue?: DeserializedType<
+    T,
+    'Edm.String'
+  > | null;
+  /**
+   * Instructional Text For Time Off Employee Self-Service.
+   * Maximum length: 4000.
+   * @nullable
+   */
+  timeOffEssInstructionalTextEnDebug?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * Instructional Text For Time Off Employee Self-Service.
+   * Maximum length: 4000.
+   * @nullable
+   */
+  timeOffEssInstructionalTextEnDebugApos?: DeserializedType<
+    T,
+    'Edm.String'
+  > | null;
+  /**
+   * Instructional Text For Time Off Employee Self-Service.
+   * Maximum length: 4000.
+   * @nullable
+   */
+  timeOffEssInstructionalTextEnDebugAposRtl?: DeserializedType<
+    T,
+    'Edm.String'
+  > | null;
+  /**
+   * Instructional Text For Time Off Employee Self-Service.
+   * Maximum length: 4000.
+   * @nullable
+   */
+  timeOffEssInstructionalTextEnGb?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * Instructional Text For Time Off Employee Self-Service.
+   * Maximum length: 4000.
+   * @nullable
+   */
+  timeOffEssInstructionalTextEnRtl?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * Instructional Text For Time Off Employee Self-Service.
+   * Maximum length: 4000.
+   * @nullable
+   */
+  timeOffEssInstructionalTextEnUs?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * Instructional Text For Time Off Employee Self-Service.
+   * Maximum length: 4000.
+   * @nullable
+   */
+  timeOffEssInstructionalTextEsEs?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * Instructional Text For Time Off Employee Self-Service.
+   * Maximum length: 4000.
+   * @nullable
+   */
+  timeOffEssInstructionalTextEsMx?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * Instructional Text For Time Off Employee Self-Service.
+   * Maximum length: 4000.
+   * @nullable
+   */
+  timeOffEssInstructionalTextFrCa?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * Instructional Text For Time Off Employee Self-Service.
+   * Maximum length: 4000.
+   * @nullable
+   */
+  timeOffEssInstructionalTextFrFr?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * Instructional Text For Time Off Employee Self-Service.
+   * Maximum length: 4000.
+   * @nullable
+   */
+  timeOffEssInstructionalTextHiIn?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * Instructional Text For Time Off Employee Self-Service.
+   * Maximum length: 4000.
+   * @nullable
+   */
+  timeOffEssInstructionalTextIwIl?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * Instructional Text For Time Off Employee Self-Service.
+   * Maximum length: 4000.
+   * @nullable
+   */
+  timeOffEssInstructionalTextJaJp?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * Instructional Text For Time Off Employee Self-Service.
+   * Maximum length: 4000.
+   * @nullable
+   */
+  timeOffEssInstructionalTextKoKr?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * Instructional Text For Time Off Employee Self-Service.
+   * Maximum length: 4000.
+   * @nullable
+   */
+  timeOffEssInstructionalTextLocalized?: DeserializedType<
+    T,
+    'Edm.String'
+  > | null;
+  /**
+   * Instructional Text For Time Off Employee Self-Service.
+   * Maximum length: 4000.
+   * @nullable
+   */
+  timeOffEssInstructionalTextNlNl?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * Instructional Text For Time Off Employee Self-Service.
+   * Maximum length: 4000.
+   * @nullable
+   */
+  timeOffEssInstructionalTextPtBr?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * Instructional Text For Time Off Employee Self-Service.
+   * Maximum length: 4000.
+   * @nullable
+   */
+  timeOffEssInstructionalTextThTh?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * Instructional Text For Time Off Employee Self-Service.
+   * Maximum length: 4000.
+   * @nullable
+   */
+  timeOffEssInstructionalTextZhCn?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * Time Recording Variant.
    * Maximum length: 255.
@@ -292,32 +513,53 @@ export class TimeTypeProfile<T extends DeSerializers = DefaultDeSerializers> ext
    * One-to-one navigation property to the {@link TimeAccountType_1} entity.
    */
   timeAccountTypeForWorkingTimeAccountNav?: TimeAccountType_1<T> | null;
+
+  constructor(readonly _entityApi: TimeTypeProfileApi<T>) {
+    super(_entityApi);
+  }
 }
 
-export interface TimeTypeProfileType<T extends DeSerializers = DefaultDeSerializers> {
-  bookTimeOffInLieuOnTimeSheetApproval?: DeserializedType<T, 'Edm.Boolean'> | null;
-  bookWorkingTimeOnTimeSheetApproval?: DeserializedType<T, 'Edm.Boolean'> | null;
+export interface TimeTypeProfileType<
+  T extends DeSerializers = DefaultDeSerializers
+> {
+  bookTimeOffInLieuOnTimeSheetApproval?: DeserializedType<
+    T,
+    'Edm.Boolean'
+  > | null;
+  bookWorkingTimeOnTimeSheetApproval?: DeserializedType<
+    T,
+    'Edm.Boolean'
+  > | null;
   country?: DeserializedType<T, 'Edm.String'> | null;
   createdBy?: DeserializedType<T, 'Edm.String'> | null;
   createdDate?: DeserializedType<T, 'Edm.DateTime'> | null;
   createdDateTime?: DeserializedType<T, 'Edm.DateTimeOffset'> | null;
   defaultImportAttendanceTimeType?: DeserializedType<T, 'Edm.String'> | null;
+  entityUuid?: DeserializedType<T, 'Edm.String'> | null;
   externalCode: DeserializedType<T, 'Edm.String'>;
+  externalNameArSa?: DeserializedType<T, 'Edm.String'> | null;
+  externalNameCyGb?: DeserializedType<T, 'Edm.String'> | null;
   externalNameDeDe?: DeserializedType<T, 'Edm.String'> | null;
   externalNameDefaultValue?: DeserializedType<T, 'Edm.String'> | null;
+  externalNameEnDebug?: DeserializedType<T, 'Edm.String'> | null;
+  externalNameEnDebugApos?: DeserializedType<T, 'Edm.String'> | null;
+  externalNameEnDebugAposRtl?: DeserializedType<T, 'Edm.String'> | null;
   externalNameEnGb?: DeserializedType<T, 'Edm.String'> | null;
+  externalNameEnRtl?: DeserializedType<T, 'Edm.String'> | null;
   externalNameEnUs?: DeserializedType<T, 'Edm.String'> | null;
   externalNameEsEs?: DeserializedType<T, 'Edm.String'> | null;
+  externalNameEsMx?: DeserializedType<T, 'Edm.String'> | null;
+  externalNameFrCa?: DeserializedType<T, 'Edm.String'> | null;
   externalNameFrFr?: DeserializedType<T, 'Edm.String'> | null;
+  externalNameHiIn?: DeserializedType<T, 'Edm.String'> | null;
+  externalNameIwIl?: DeserializedType<T, 'Edm.String'> | null;
   externalNameJaJp?: DeserializedType<T, 'Edm.String'> | null;
   externalNameKoKr?: DeserializedType<T, 'Edm.String'> | null;
   externalNameLocalized?: DeserializedType<T, 'Edm.String'> | null;
   externalNameNlNl?: DeserializedType<T, 'Edm.String'> | null;
   externalNamePtBr?: DeserializedType<T, 'Edm.String'> | null;
-  externalNamePtPt?: DeserializedType<T, 'Edm.String'> | null;
-  externalNameRuRu?: DeserializedType<T, 'Edm.String'> | null;
+  externalNameThTh?: DeserializedType<T, 'Edm.String'> | null;
   externalNameZhCn?: DeserializedType<T, 'Edm.String'> | null;
-  externalNameZhTw?: DeserializedType<T, 'Edm.String'> | null;
   lastModifiedBy?: DeserializedType<T, 'Edm.String'> | null;
   lastModifiedDate?: DeserializedType<T, 'Edm.DateTime'> | null;
   lastModifiedDateTime?: DeserializedType<T, 'Edm.DateTimeOffset'> | null;
@@ -326,7 +568,7 @@ export interface TimeTypeProfileType<T extends DeSerializers = DefaultDeSerializ
   mainBreakTimeType?: DeserializedType<T, 'Edm.String'> | null;
   mainEssTimeType?: DeserializedType<T, 'Edm.String'> | null;
   mdfSystemEffectiveEndDate?: DeserializedType<T, 'Edm.DateTime'> | null;
-  mdfSystemEffectiveStartDate?: DeserializedType<T, 'Edm.DateTime'> | null;
+  mdfSystemEffectiveStartDate: DeserializedType<T, 'Edm.DateTime'>;
   mdfSystemEntityId?: DeserializedType<T, 'Edm.String'> | null;
   mdfSystemObjectType?: DeserializedType<T, 'Edm.String'> | null;
   mdfSystemRecordId?: DeserializedType<T, 'Edm.String'> | null;
@@ -335,7 +577,45 @@ export interface TimeTypeProfileType<T extends DeSerializers = DefaultDeSerializ
   mdfSystemTransactionSequence?: DeserializedType<T, 'Edm.Int64'> | null;
   mdfSystemVersionId?: DeserializedType<T, 'Edm.Int64'> | null;
   timeAccountTypeForTimeOffInLieu?: DeserializedType<T, 'Edm.String'> | null;
-  timeAccountTypeForWorkingTimeAccount?: DeserializedType<T, 'Edm.String'> | null;
+  timeAccountTypeForWorkingTimeAccount?: DeserializedType<
+    T,
+    'Edm.String'
+  > | null;
+  timeOffEssInstructionalTextArSa?: DeserializedType<T, 'Edm.String'> | null;
+  timeOffEssInstructionalTextCyGb?: DeserializedType<T, 'Edm.String'> | null;
+  timeOffEssInstructionalTextDeDe?: DeserializedType<T, 'Edm.String'> | null;
+  timeOffEssInstructionalTextDefaultValue?: DeserializedType<
+    T,
+    'Edm.String'
+  > | null;
+  timeOffEssInstructionalTextEnDebug?: DeserializedType<T, 'Edm.String'> | null;
+  timeOffEssInstructionalTextEnDebugApos?: DeserializedType<
+    T,
+    'Edm.String'
+  > | null;
+  timeOffEssInstructionalTextEnDebugAposRtl?: DeserializedType<
+    T,
+    'Edm.String'
+  > | null;
+  timeOffEssInstructionalTextEnGb?: DeserializedType<T, 'Edm.String'> | null;
+  timeOffEssInstructionalTextEnRtl?: DeserializedType<T, 'Edm.String'> | null;
+  timeOffEssInstructionalTextEnUs?: DeserializedType<T, 'Edm.String'> | null;
+  timeOffEssInstructionalTextEsEs?: DeserializedType<T, 'Edm.String'> | null;
+  timeOffEssInstructionalTextEsMx?: DeserializedType<T, 'Edm.String'> | null;
+  timeOffEssInstructionalTextFrCa?: DeserializedType<T, 'Edm.String'> | null;
+  timeOffEssInstructionalTextFrFr?: DeserializedType<T, 'Edm.String'> | null;
+  timeOffEssInstructionalTextHiIn?: DeserializedType<T, 'Edm.String'> | null;
+  timeOffEssInstructionalTextIwIl?: DeserializedType<T, 'Edm.String'> | null;
+  timeOffEssInstructionalTextJaJp?: DeserializedType<T, 'Edm.String'> | null;
+  timeOffEssInstructionalTextKoKr?: DeserializedType<T, 'Edm.String'> | null;
+  timeOffEssInstructionalTextLocalized?: DeserializedType<
+    T,
+    'Edm.String'
+  > | null;
+  timeOffEssInstructionalTextNlNl?: DeserializedType<T, 'Edm.String'> | null;
+  timeOffEssInstructionalTextPtBr?: DeserializedType<T, 'Edm.String'> | null;
+  timeOffEssInstructionalTextThTh?: DeserializedType<T, 'Edm.String'> | null;
+  timeOffEssInstructionalTextZhCn?: DeserializedType<T, 'Edm.String'> | null;
   timeRecordingVariant?: DeserializedType<T, 'Edm.String'> | null;
   availableTimeTypes: AvailableTimeTypeType<T>[];
   defaultImportAttendanceTimeTypeNav?: TimeTypeType<T> | null;

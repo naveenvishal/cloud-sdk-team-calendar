@@ -1,15 +1,24 @@
 /*
- * Copyright (c) 2022 SAP SE or an SAP affiliate company. All rights reserved.
+ * Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
-import { Entity, DefaultDeSerializers, DeSerializers, DeserializedType } from '@sap-cloud-sdk/odata-v2';
+import {
+  Entity,
+  DefaultDeSerializers,
+  DeSerializers,
+  DeserializedType
+} from '@sap-cloud-sdk/odata-v2';
+import type { AvailableTimeTypeApi } from './AvailableTimeTypeApi';
 import { TimeType, TimeTypeType } from './TimeType';
 
 /**
  * This class represents the entity "AvailableTimeType" of service "ECTimeOff".
  */
-export class AvailableTimeType<T extends DeSerializers = DefaultDeSerializers> extends Entity implements AvailableTimeTypeType<T> {
+export class AvailableTimeType<T extends DeSerializers = DefaultDeSerializers>
+  extends Entity
+  implements AvailableTimeTypeType<T>
+{
   /**
    * Technical entity name for AvailableTimeType.
    */
@@ -21,12 +30,28 @@ export class AvailableTimeType<T extends DeSerializers = DefaultDeSerializers> e
   /**
    * All key fields of the AvailableTimeType entity
    */
-  static _keys = ['TimeTypeProfile_externalCode', 'externalCode'];
+  static _keys = [
+    'TimeTypeProfile_externalCode',
+    'TimeTypeProfile_mdfSystemEffectiveStartDate',
+    'externalCode'
+  ];
   /**
    * Time Profile_External Code.
    * Maximum length: 128.
    */
   timeTypeProfileExternalCode!: DeserializedType<T, 'Edm.String'>;
+  /**
+   * Time Profile_Effective Start Date.
+   */
+  timeTypeProfileMdfSystemEffectiveStartDate!: DeserializedType<
+    T,
+    'Edm.DateTime'
+  >;
+  /**
+   * Is Copyable in Time Sheet UI.
+   * @nullable
+   */
+  copyableInTimesheet?: DeserializedType<T, 'Edm.Boolean'> | null;
   /**
    * Created By.
    * Maximum length: 255.
@@ -48,6 +73,12 @@ export class AvailableTimeType<T extends DeSerializers = DefaultDeSerializers> e
    * @nullable
    */
   enabledInEssScenario?: DeserializedType<T, 'Edm.Boolean'> | null;
+  /**
+   * Entity UUID.
+   * Maximum length: 255.
+   * @nullable
+   */
+  entityUuid?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * External Code.
    * Maximum length: 128.
@@ -85,52 +116,52 @@ export class AvailableTimeType<T extends DeSerializers = DefaultDeSerializers> e
    */
   lastModifiedDateWithTz?: DeserializedType<T, 'Edm.DateTimeOffset'> | null;
   /**
-   * mdfSystemEffectiveEndDate.
+   * Effective End Date.
    * @nullable
    */
   mdfSystemEffectiveEndDate?: DeserializedType<T, 'Edm.DateTime'> | null;
   /**
-   * mdfSystemEffectiveStartDate.
+   * Effective Start Date.
    * @nullable
    */
   mdfSystemEffectiveStartDate?: DeserializedType<T, 'Edm.DateTime'> | null;
   /**
-   * mdfSystemEntityId.
+   * Entity ID.
    * Maximum length: 255.
    * @nullable
    */
   mdfSystemEntityId?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * mdfSystemObjectType.
+   * Object Type.
    * Maximum length: 255.
    * @nullable
    */
   mdfSystemObjectType?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * mdfSystemRecordId.
+   * Record ID.
    * Maximum length: 255.
    * @nullable
    */
   mdfSystemRecordId?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * mdfSystemRecordStatus.
+   * Record Status.
    * Maximum length: 255.
    * @nullable
    */
   mdfSystemRecordStatus?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * mdfSystemStatus.
+   * Status.
    * Maximum length: 255.
    * @nullable
    */
   mdfSystemStatus?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * mdfSystemTransactionSequence.
+   * Transaction Sequence Number.
    * @nullable
    */
   mdfSystemTransactionSequence?: DeserializedType<T, 'Edm.Int64'> | null;
   /**
-   * mdfSystemVersionId.
+   * Version ID.
    * @nullable
    */
   mdfSystemVersionId?: DeserializedType<T, 'Edm.Int64'> | null;
@@ -141,17 +172,35 @@ export class AvailableTimeType<T extends DeSerializers = DefaultDeSerializers> e
    */
   timeType?: DeserializedType<T, 'Edm.String'> | null;
   /**
+   * Time Type Filter Rule.
+   * Maximum length: 128.
+   * @nullable
+   */
+  timeTypeFilterRule?: DeserializedType<T, 'Edm.String'> | null;
+  /**
    * One-to-one navigation property to the {@link TimeType} entity.
    */
   timeTypeNav?: TimeType<T> | null;
+
+  constructor(readonly _entityApi: AvailableTimeTypeApi<T>) {
+    super(_entityApi);
+  }
 }
 
-export interface AvailableTimeTypeType<T extends DeSerializers = DefaultDeSerializers> {
+export interface AvailableTimeTypeType<
+  T extends DeSerializers = DefaultDeSerializers
+> {
   timeTypeProfileExternalCode: DeserializedType<T, 'Edm.String'>;
+  timeTypeProfileMdfSystemEffectiveStartDate: DeserializedType<
+    T,
+    'Edm.DateTime'
+  >;
+  copyableInTimesheet?: DeserializedType<T, 'Edm.Boolean'> | null;
   createdBy?: DeserializedType<T, 'Edm.String'> | null;
   createdDate?: DeserializedType<T, 'Edm.DateTime'> | null;
   createdDateTime?: DeserializedType<T, 'Edm.DateTimeOffset'> | null;
   enabledInEssScenario?: DeserializedType<T, 'Edm.Boolean'> | null;
+  entityUuid?: DeserializedType<T, 'Edm.String'> | null;
   externalCode: DeserializedType<T, 'Edm.String'>;
   favoriteTimeType?: DeserializedType<T, 'Edm.Boolean'> | null;
   hideAccountBalance?: DeserializedType<T, 'Edm.Boolean'> | null;
@@ -169,5 +218,6 @@ export interface AvailableTimeTypeType<T extends DeSerializers = DefaultDeSerial
   mdfSystemTransactionSequence?: DeserializedType<T, 'Edm.Int64'> | null;
   mdfSystemVersionId?: DeserializedType<T, 'Edm.Int64'> | null;
   timeType?: DeserializedType<T, 'Edm.String'> | null;
+  timeTypeFilterRule?: DeserializedType<T, 'Edm.String'> | null;
   timeTypeNav?: TimeTypeType<T> | null;
 }

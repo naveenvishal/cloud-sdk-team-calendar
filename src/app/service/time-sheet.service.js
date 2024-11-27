@@ -6,18 +6,28 @@ sap.ui.define([
 
   var host = "";
   var servicePath = "/odata/v2/TimesheetService";
+  var servicePath2 = "/odata/v2";
   var baseUrl = host + servicePath;
+  var baseUrl2 = host + servicePath2;
 
   // http.setCSRFPrefilter(baseUrl);
 
   return {
-    getPersons: function () {
+    getPersons: function () { //?$filter=hlevel gt 1
       return http.get(baseUrl + "/Person").then(function (response) {
         return response.hasOwnProperty("d")
           ? converter.getResults(converter.getD(response))
           : converter.getValue(response);
       });
     },
+
+    getImages: function () {
+      return http.get(baseUrl + "/Photo").then(function (response) {
+        return response.hasOwnProperty("d")
+          ? converter.getResults(converter.getD(response))
+          : response.images;
+        });
+      },
 
     getAppointments: function () {
       return http
@@ -30,6 +40,15 @@ sap.ui.define([
             ? converter.getResults(converter.getD(response).appointments)
             : response.appointments;
         });
+    },
+
+    getLoggedUser: function () {
+      return http.get(baseUrl + "/LoggedUser").then(function (response) {
+          // Process the response and return the user data
+          return response.hasOwnProperty("d")
+              ? converter.getResults(converter.getD(response))
+              : response;
+      });
     },
 
     createAppointment: function (appointment, personid) {

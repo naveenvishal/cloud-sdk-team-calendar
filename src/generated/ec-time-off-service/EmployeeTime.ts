@@ -1,20 +1,38 @@
 /*
- * Copyright (c) 2022 SAP SE or an SAP affiliate company. All rights reserved.
+ * Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
-import { Entity, DefaultDeSerializers, DeSerializers, DeserializedType } from '@sap-cloud-sdk/odata-v2';
+import {
+  Entity,
+  DefaultDeSerializers,
+  DeSerializers,
+  DeserializedType
+} from '@sap-cloud-sdk/odata-v2';
+import type { EmployeeTimeApi } from './EmployeeTimeApi';
+import { EmployeeTimeAus, EmployeeTimeAusType } from './EmployeeTimeAus';
+import { EmployeeTimeCan, EmployeeTimeCanType } from './EmployeeTimeCan';
+import { EmployeeTimeCol, EmployeeTimeColType } from './EmployeeTimeCol';
 import { EmployeeTimeDeu, EmployeeTimeDeuType } from './EmployeeTimeDeu';
 import { EmployeeTimeEsp, EmployeeTimeEspType } from './EmployeeTimeEsp';
 import { EmployeeTimeMex, EmployeeTimeMexType } from './EmployeeTimeMex';
+import { EmployeeTimeNld, EmployeeTimeNldType } from './EmployeeTimeNld';
+import { EmployeeTimePol, EmployeeTimePolType } from './EmployeeTimePol';
+import { EmployeeTimeUsa, EmployeeTimeUsaType } from './EmployeeTimeUsa';
 import { EmployeeTimeGroup, EmployeeTimeGroupType } from './EmployeeTimeGroup';
-import { EmployeeTimeCalendar, EmployeeTimeCalendarType } from './EmployeeTimeCalendar';
+import {
+  EmployeeTimeCalendar,
+  EmployeeTimeCalendarType
+} from './EmployeeTimeCalendar';
 import { TimeType, TimeTypeType } from './TimeType';
 
 /**
  * This class represents the entity "EmployeeTime" of service "ECTimeOff".
  */
-export class EmployeeTime<T extends DeSerializers = DefaultDeSerializers> extends Entity implements EmployeeTimeType<T> {
+export class EmployeeTime<T extends DeSerializers = DefaultDeSerializers>
+  extends Entity
+  implements EmployeeTimeType<T>
+{
   /**
    * Technical entity name for EmployeeTime.
    */
@@ -28,6 +46,12 @@ export class EmployeeTime<T extends DeSerializers = DefaultDeSerializers> extend
    */
   static _keys = ['externalCode'];
   /**
+   * Absence Duration Category.
+   * Maximum length: 128.
+   * @nullable
+   */
+  absenceDurationCategory?: DeserializedType<T, 'Edm.String'> | null;
+  /**
    * Approval Status.
    * Maximum length: 255.
    * @nullable
@@ -40,7 +64,7 @@ export class EmployeeTime<T extends DeSerializers = DefaultDeSerializers> extend
   cancellationWorkflowRequestId?: DeserializedType<T, 'Edm.Int64'> | null;
   /**
    * Comment.
-   * Maximum length: 4000.
+   * Maximum length: 255.
    * @nullable
    */
   comment?: DeserializedType<T, 'Edm.String'> | null;
@@ -61,26 +85,15 @@ export class EmployeeTime<T extends DeSerializers = DefaultDeSerializers> extend
    */
   createdDateTime?: DeserializedType<T, 'Edm.DateTimeOffset'> | null;
   /**
-   * Delivery Type.
-   * Maximum length: 128.
-   * @nullable
-   */
-  custDeliverytype?: DeserializedType<T, 'Edm.String'> | null;
-  /**
-   * Expected Week Of Child Birth.
-   * @nullable
-   */
-  custExpectedweek?: DeserializedType<T, 'Edm.DateTime'> | null;
-  /**
-   * Notification Date.
-   * @nullable
-   */
-  custNotificationdate?: DeserializedType<T, 'Edm.DateTime'> | null;
-  /**
    * Deduction Quantity.
    * @nullable
    */
   deductionQuantity?: DeserializedType<T, 'Edm.Decimal'> | null;
+  /**
+   * displayQuantity.
+   * @nullable
+   */
+  displayQuantity?: DeserializedType<T, 'Edm.Decimal'> | null;
   /**
    * Editable.
    * @nullable
@@ -96,6 +109,12 @@ export class EmployeeTime<T extends DeSerializers = DefaultDeSerializers> extend
    * @nullable
    */
   endTime?: DeserializedType<T, 'Edm.Time'> | null;
+  /**
+   * Entity UUID.
+   * Maximum length: 255.
+   * @nullable
+   */
+  entityUuid?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * External Code.
    * Maximum length: 128.
@@ -163,31 +182,31 @@ export class EmployeeTime<T extends DeSerializers = DefaultDeSerializers> extend
    */
   mdfSystemEffectiveStartDate?: DeserializedType<T, 'Edm.DateTime'> | null;
   /**
-   * mdfSystemEntityId.
+   * Entity ID.
    * Maximum length: 255.
    * @nullable
    */
   mdfSystemEntityId?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * mdfSystemObjectType.
+   * Object Type.
    * Maximum length: 255.
    * @nullable
    */
   mdfSystemObjectType?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * mdfSystemRecordId.
+   * Record ID.
    * Maximum length: 255.
    * @nullable
    */
   mdfSystemRecordId?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * mdfSystemRecordStatus.
+   * Record Status.
    * Maximum length: 255.
    * @nullable
    */
   mdfSystemRecordStatus?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * mdfSystemStatus.
+   * Status.
    * Maximum length: 255.
    * @nullable
    */
@@ -198,7 +217,7 @@ export class EmployeeTime<T extends DeSerializers = DefaultDeSerializers> extend
    */
   mdfSystemTransactionSequence?: DeserializedType<T, 'Edm.Int64'> | null;
   /**
-   * mdfSystemVersionId.
+   * versionId.
    * @nullable
    */
   mdfSystemVersionId?: DeserializedType<T, 'Edm.Int64'> | null;
@@ -207,6 +226,16 @@ export class EmployeeTime<T extends DeSerializers = DefaultDeSerializers> extend
    * @nullable
    */
   originalQuantityInDays?: DeserializedType<T, 'Edm.Decimal'> | null;
+  /**
+   * Physical End Date.
+   * @nullable
+   */
+  physicalEndDate?: DeserializedType<T, 'Edm.DateTime'> | null;
+  /**
+   * Physical Start Date.
+   * @nullable
+   */
+  physicalStartDate?: DeserializedType<T, 'Edm.DateTime'> | null;
   /**
    * Number Of Days.
    * @nullable
@@ -267,6 +296,18 @@ export class EmployeeTime<T extends DeSerializers = DefaultDeSerializers> extend
    */
   workflowRequestId?: DeserializedType<T, 'Edm.Int64'> | null;
   /**
+   * One-to-one navigation property to the {@link EmployeeTimeAus} entity.
+   */
+  countryExtensionAus?: EmployeeTimeAus<T> | null;
+  /**
+   * One-to-one navigation property to the {@link EmployeeTimeCan} entity.
+   */
+  countryExtensionCan?: EmployeeTimeCan<T> | null;
+  /**
+   * One-to-one navigation property to the {@link EmployeeTimeCol} entity.
+   */
+  countryExtensionCol?: EmployeeTimeCol<T> | null;
+  /**
    * One-to-one navigation property to the {@link EmployeeTimeDeu} entity.
    */
   countryExtensionDeu?: EmployeeTimeDeu<T> | null;
@@ -279,6 +320,18 @@ export class EmployeeTime<T extends DeSerializers = DefaultDeSerializers> extend
    */
   countryExtensionMex?: EmployeeTimeMex<T> | null;
   /**
+   * One-to-one navigation property to the {@link EmployeeTimeNld} entity.
+   */
+  countryExtensionNld?: EmployeeTimeNld<T> | null;
+  /**
+   * One-to-one navigation property to the {@link EmployeeTimePol} entity.
+   */
+  countryExtensionPol?: EmployeeTimePol<T> | null;
+  /**
+   * One-to-one navigation property to the {@link EmployeeTimeUsa} entity.
+   */
+  countryExtensionUsa?: EmployeeTimeUsa<T> | null;
+  /**
    * One-to-one navigation property to the {@link EmployeeTimeGroup} entity.
    */
   recurrenceGroupNav?: EmployeeTimeGroup<T> | null;
@@ -290,22 +343,28 @@ export class EmployeeTime<T extends DeSerializers = DefaultDeSerializers> extend
    * One-to-one navigation property to the {@link TimeType} entity.
    */
   timeTypeNav?: TimeType<T> | null;
+
+  constructor(readonly _entityApi: EmployeeTimeApi<T>) {
+    super(_entityApi);
+  }
 }
 
-export interface EmployeeTimeType<T extends DeSerializers = DefaultDeSerializers> {
+export interface EmployeeTimeType<
+  T extends DeSerializers = DefaultDeSerializers
+> {
+  absenceDurationCategory?: DeserializedType<T, 'Edm.String'> | null;
   approvalStatus?: DeserializedType<T, 'Edm.String'> | null;
   cancellationWorkflowRequestId?: DeserializedType<T, 'Edm.Int64'> | null;
   comment?: DeserializedType<T, 'Edm.String'> | null;
   createdBy?: DeserializedType<T, 'Edm.String'> | null;
   createdDate?: DeserializedType<T, 'Edm.DateTime'> | null;
   createdDateTime?: DeserializedType<T, 'Edm.DateTimeOffset'> | null;
-  custDeliverytype?: DeserializedType<T, 'Edm.String'> | null;
-  custExpectedweek?: DeserializedType<T, 'Edm.DateTime'> | null;
-  custNotificationdate?: DeserializedType<T, 'Edm.DateTime'> | null;
   deductionQuantity?: DeserializedType<T, 'Edm.Decimal'> | null;
+  displayQuantity?: DeserializedType<T, 'Edm.Decimal'> | null;
   editable?: DeserializedType<T, 'Edm.Boolean'> | null;
   endDate?: DeserializedType<T, 'Edm.DateTime'> | null;
   endTime?: DeserializedType<T, 'Edm.Time'> | null;
+  entityUuid?: DeserializedType<T, 'Edm.String'> | null;
   externalCode: DeserializedType<T, 'Edm.String'>;
   flexibleRequesting?: DeserializedType<T, 'Edm.Boolean'> | null;
   fractionQuantity?: DeserializedType<T, 'Edm.Decimal'> | null;
@@ -327,6 +386,8 @@ export interface EmployeeTimeType<T extends DeSerializers = DefaultDeSerializers
   mdfSystemTransactionSequence?: DeserializedType<T, 'Edm.Int64'> | null;
   mdfSystemVersionId?: DeserializedType<T, 'Edm.Int64'> | null;
   originalQuantityInDays?: DeserializedType<T, 'Edm.Decimal'> | null;
+  physicalEndDate?: DeserializedType<T, 'Edm.DateTime'> | null;
+  physicalStartDate?: DeserializedType<T, 'Edm.DateTime'> | null;
   quantityInDays?: DeserializedType<T, 'Edm.Decimal'> | null;
   quantityInHours?: DeserializedType<T, 'Edm.Decimal'> | null;
   recurrenceGroup?: DeserializedType<T, 'Edm.String'> | null;
@@ -338,9 +399,15 @@ export interface EmployeeTimeType<T extends DeSerializers = DefaultDeSerializers
   userId?: DeserializedType<T, 'Edm.String'> | null;
   workflowInitiatedByAdmin?: DeserializedType<T, 'Edm.Boolean'> | null;
   workflowRequestId?: DeserializedType<T, 'Edm.Int64'> | null;
+  countryExtensionAus?: EmployeeTimeAusType<T> | null;
+  countryExtensionCan?: EmployeeTimeCanType<T> | null;
+  countryExtensionCol?: EmployeeTimeColType<T> | null;
   countryExtensionDeu?: EmployeeTimeDeuType<T> | null;
   countryExtensionEsp?: EmployeeTimeEspType<T> | null;
   countryExtensionMex?: EmployeeTimeMexType<T> | null;
+  countryExtensionNld?: EmployeeTimeNldType<T> | null;
+  countryExtensionPol?: EmployeeTimePolType<T> | null;
+  countryExtensionUsa?: EmployeeTimeUsaType<T> | null;
   recurrenceGroupNav?: EmployeeTimeGroupType<T> | null;
   timeCalendar: EmployeeTimeCalendarType<T>[];
   timeTypeNav?: TimeTypeType<T> | null;

@@ -1,14 +1,25 @@
 /*
- * Copyright (c) 2022 SAP SE or an SAP affiliate company. All rights reserved.
+ * Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
-import { Entity, DefaultDeSerializers, DeSerializers, DeserializedType } from '@sap-cloud-sdk/odata-v2';
+import {
+  Entity,
+  DefaultDeSerializers,
+  DeSerializers,
+  DeserializedType
+} from '@sap-cloud-sdk/odata-v2';
+import type { EmpTimeAccountBalanceApi } from './EmpTimeAccountBalanceApi';
 
 /**
  * This class represents the entity "EmpTimeAccountBalance" of service "ECTimeOff".
  */
-export class EmpTimeAccountBalance<T extends DeSerializers = DefaultDeSerializers> extends Entity implements EmpTimeAccountBalanceType<T> {
+export class EmpTimeAccountBalance<
+    T extends DeSerializers = DefaultDeSerializers
+  >
+  extends Entity
+  implements EmpTimeAccountBalanceType<T>
+{
   /**
    * Technical entity name for EmpTimeAccountBalance.
    */
@@ -50,9 +61,15 @@ export class EmpTimeAccountBalance<T extends DeSerializers = DefaultDeSerializer
    * @nullable
    */
   userId?: DeserializedType<T, 'Edm.String'> | null;
+
+  constructor(readonly _entityApi: EmpTimeAccountBalanceApi<T>) {
+    super(_entityApi);
+  }
 }
 
-export interface EmpTimeAccountBalanceType<T extends DeSerializers = DefaultDeSerializers> {
+export interface EmpTimeAccountBalanceType<
+  T extends DeSerializers = DefaultDeSerializers
+> {
   accountClosed?: DeserializedType<T, 'Edm.Boolean'> | null;
   balance?: DeserializedType<T, 'Edm.Decimal'> | null;
   timeAccount: DeserializedType<T, 'Edm.String'>;

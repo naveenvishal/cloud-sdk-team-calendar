@@ -1,17 +1,32 @@
 /*
- * Copyright (c) 2022 SAP SE or an SAP affiliate company. All rights reserved.
+ * Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
-import { Entity, DefaultDeSerializers, DeSerializers, DeserializedType } from '@sap-cloud-sdk/odata-v2';
-import { ShiftClassification, ShiftClassificationType } from './ShiftClassification';
-import { WorkScheduleDayModelAssignment, WorkScheduleDayModelAssignmentType } from './WorkScheduleDayModelAssignment';
+import {
+  Entity,
+  DefaultDeSerializers,
+  DeSerializers,
+  DeserializedType
+} from '@sap-cloud-sdk/odata-v2';
+import type { WorkScheduleApi } from './WorkScheduleApi';
+import {
+  ShiftClassification,
+  ShiftClassificationType
+} from './ShiftClassification';
+import {
+  WorkScheduleDayModelAssignment,
+  WorkScheduleDayModelAssignmentType
+} from './WorkScheduleDayModelAssignment';
 import { WorkScheduleDay, WorkScheduleDayType } from './WorkScheduleDay';
 
 /**
  * This class represents the entity "WorkSchedule" of service "ECTimeOff".
  */
-export class WorkSchedule<T extends DeSerializers = DefaultDeSerializers> extends Entity implements WorkScheduleType<T> {
+export class WorkSchedule<T extends DeSerializers = DefaultDeSerializers>
+  extends Entity
+  implements WorkScheduleType<T>
+{
   /**
    * Technical entity name for WorkSchedule.
    */
@@ -50,7 +65,7 @@ export class WorkSchedule<T extends DeSerializers = DefaultDeSerializers> extend
    */
   averageWorkingDaysPerWeek?: DeserializedType<T, 'Edm.Decimal'> | null;
   /**
-   * Country.
+   * Country/Region.
    * Maximum length: 128.
    * @nullable
    */
@@ -72,10 +87,33 @@ export class WorkSchedule<T extends DeSerializers = DefaultDeSerializers> extend
    */
   createdDateTime?: DeserializedType<T, 'Edm.DateTimeOffset'> | null;
   /**
+   * Cross Midnight Allowed.
+   * @nullable
+   */
+  crossMidnightAllowed?: DeserializedType<T, 'Edm.Boolean'> | null;
+  /**
+   * Entity UUID.
+   * Maximum length: 255.
+   * @nullable
+   */
+  entityUuid?: DeserializedType<T, 'Edm.String'> | null;
+  /**
    * External Code.
    * Maximum length: 128.
    */
   externalCode!: DeserializedType<T, 'Edm.String'>;
+  /**
+   * External Name.
+   * Maximum length: 255.
+   * @nullable
+   */
+  externalNameArSa?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * External Name.
+   * Maximum length: 255.
+   * @nullable
+   */
+  externalNameCyGb?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * External Name.
    * Maximum length: 255.
@@ -93,7 +131,31 @@ export class WorkSchedule<T extends DeSerializers = DefaultDeSerializers> extend
    * Maximum length: 255.
    * @nullable
    */
+  externalNameEnDebug?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * External Name.
+   * Maximum length: 255.
+   * @nullable
+   */
+  externalNameEnDebugApos?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * External Name.
+   * Maximum length: 255.
+   * @nullable
+   */
+  externalNameEnDebugAposRtl?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * External Name.
+   * Maximum length: 255.
+   * @nullable
+   */
   externalNameEnGb?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * External Name.
+   * Maximum length: 255.
+   * @nullable
+   */
+  externalNameEnRtl?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * External Name.
    * Maximum length: 255.
@@ -111,7 +173,31 @@ export class WorkSchedule<T extends DeSerializers = DefaultDeSerializers> extend
    * Maximum length: 255.
    * @nullable
    */
+  externalNameEsMx?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * External Name.
+   * Maximum length: 255.
+   * @nullable
+   */
+  externalNameFrCa?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * External Name.
+   * Maximum length: 255.
+   * @nullable
+   */
   externalNameFrFr?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * External Name.
+   * Maximum length: 255.
+   * @nullable
+   */
+  externalNameHiIn?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * External Name.
+   * Maximum length: 255.
+   * @nullable
+   */
+  externalNameIwIl?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * External Name.
    * Maximum length: 255.
@@ -147,25 +233,13 @@ export class WorkSchedule<T extends DeSerializers = DefaultDeSerializers> extend
    * Maximum length: 255.
    * @nullable
    */
-  externalNamePtPt?: DeserializedType<T, 'Edm.String'> | null;
-  /**
-   * External Name.
-   * Maximum length: 255.
-   * @nullable
-   */
-  externalNameRuRu?: DeserializedType<T, 'Edm.String'> | null;
+  externalNameThTh?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * External Name.
    * Maximum length: 255.
    * @nullable
    */
   externalNameZhCn?: DeserializedType<T, 'Edm.String'> | null;
-  /**
-   * External Name.
-   * Maximum length: 255.
-   * @nullable
-   */
-  externalNameZhTw?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * Flexible Requesting Allowed.
    * @nullable
@@ -198,52 +272,52 @@ export class WorkSchedule<T extends DeSerializers = DefaultDeSerializers> extend
    */
   lastModifiedDateWithTz?: DeserializedType<T, 'Edm.DateTimeOffset'> | null;
   /**
-   * mdfSystemEffectiveEndDate.
+   * Effective End Date.
    * @nullable
    */
   mdfSystemEffectiveEndDate?: DeserializedType<T, 'Edm.DateTime'> | null;
   /**
-   * mdfSystemEffectiveStartDate.
+   * Effective Start Date.
    * @nullable
    */
   mdfSystemEffectiveStartDate?: DeserializedType<T, 'Edm.DateTime'> | null;
   /**
-   * mdfSystemEntityId.
+   * Entity ID.
    * Maximum length: 255.
    * @nullable
    */
   mdfSystemEntityId?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * mdfSystemObjectType.
+   * Object Type.
    * Maximum length: 255.
    * @nullable
    */
   mdfSystemObjectType?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * mdfSystemRecordId.
+   * Record ID.
    * Maximum length: 255.
    * @nullable
    */
   mdfSystemRecordId?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * mdfSystemRecordStatus.
+   * Record Status.
    * Maximum length: 255.
    * @nullable
    */
   mdfSystemRecordStatus?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * mdfSystemStatus.
+   * Status.
    * Maximum length: 255.
    * @nullable
    */
   mdfSystemStatus?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * mdfSystemTransactionSequence.
+   * Transaction Sequence Number.
    * @nullable
    */
   mdfSystemTransactionSequence?: DeserializedType<T, 'Edm.Int64'> | null;
   /**
-   * mdfSystemVersionId.
+   * Version ID.
    * @nullable
    */
   mdfSystemVersionId?: DeserializedType<T, 'Edm.Int64'> | null;
@@ -260,6 +334,12 @@ export class WorkSchedule<T extends DeSerializers = DefaultDeSerializers> extend
    */
   periodModel?: DeserializedType<T, 'Edm.String'> | null;
   /**
+   * Record ID.
+   * Maximum length: 255.
+   * @nullable
+   */
+  recordId?: DeserializedType<T, 'Edm.String'> | null;
+  /**
    * Search Field.
    * Maximum length: 255.
    * @nullable
@@ -271,6 +351,11 @@ export class WorkSchedule<T extends DeSerializers = DefaultDeSerializers> extend
    * @nullable
    */
   shiftClassification?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * simulatedWorkSchedule.
+   * @nullable
+   */
+  simulatedWorkSchedule?: DeserializedType<T, 'Edm.Boolean'> | null;
   /**
    * Starting Date.
    * @nullable
@@ -304,9 +389,15 @@ export class WorkSchedule<T extends DeSerializers = DefaultDeSerializers> extend
    * One-to-many navigation property to the {@link WorkScheduleDay} entity.
    */
   workScheduleDays!: WorkScheduleDay<T>[];
+
+  constructor(readonly _entityApi: WorkScheduleApi<T>) {
+    super(_entityApi);
+  }
 }
 
-export interface WorkScheduleType<T extends DeSerializers = DefaultDeSerializers> {
+export interface WorkScheduleType<
+  T extends DeSerializers = DefaultDeSerializers
+> {
   averageHoursPerDay?: DeserializedType<T, 'Edm.Decimal'> | null;
   averageHoursPerMonth?: DeserializedType<T, 'Edm.Decimal'> | null;
   averageHoursPerWeek?: DeserializedType<T, 'Edm.Decimal'> | null;
@@ -316,22 +407,32 @@ export interface WorkScheduleType<T extends DeSerializers = DefaultDeSerializers
   createdBy?: DeserializedType<T, 'Edm.String'> | null;
   createdDate?: DeserializedType<T, 'Edm.DateTime'> | null;
   createdDateTime?: DeserializedType<T, 'Edm.DateTimeOffset'> | null;
+  crossMidnightAllowed?: DeserializedType<T, 'Edm.Boolean'> | null;
+  entityUuid?: DeserializedType<T, 'Edm.String'> | null;
   externalCode: DeserializedType<T, 'Edm.String'>;
+  externalNameArSa?: DeserializedType<T, 'Edm.String'> | null;
+  externalNameCyGb?: DeserializedType<T, 'Edm.String'> | null;
   externalNameDeDe?: DeserializedType<T, 'Edm.String'> | null;
   externalNameDefaultValue?: DeserializedType<T, 'Edm.String'> | null;
+  externalNameEnDebug?: DeserializedType<T, 'Edm.String'> | null;
+  externalNameEnDebugApos?: DeserializedType<T, 'Edm.String'> | null;
+  externalNameEnDebugAposRtl?: DeserializedType<T, 'Edm.String'> | null;
   externalNameEnGb?: DeserializedType<T, 'Edm.String'> | null;
+  externalNameEnRtl?: DeserializedType<T, 'Edm.String'> | null;
   externalNameEnUs?: DeserializedType<T, 'Edm.String'> | null;
   externalNameEsEs?: DeserializedType<T, 'Edm.String'> | null;
+  externalNameEsMx?: DeserializedType<T, 'Edm.String'> | null;
+  externalNameFrCa?: DeserializedType<T, 'Edm.String'> | null;
   externalNameFrFr?: DeserializedType<T, 'Edm.String'> | null;
+  externalNameHiIn?: DeserializedType<T, 'Edm.String'> | null;
+  externalNameIwIl?: DeserializedType<T, 'Edm.String'> | null;
   externalNameJaJp?: DeserializedType<T, 'Edm.String'> | null;
   externalNameKoKr?: DeserializedType<T, 'Edm.String'> | null;
   externalNameLocalized?: DeserializedType<T, 'Edm.String'> | null;
   externalNameNlNl?: DeserializedType<T, 'Edm.String'> | null;
   externalNamePtBr?: DeserializedType<T, 'Edm.String'> | null;
-  externalNamePtPt?: DeserializedType<T, 'Edm.String'> | null;
-  externalNameRuRu?: DeserializedType<T, 'Edm.String'> | null;
+  externalNameThTh?: DeserializedType<T, 'Edm.String'> | null;
   externalNameZhCn?: DeserializedType<T, 'Edm.String'> | null;
-  externalNameZhTw?: DeserializedType<T, 'Edm.String'> | null;
   flexibleRequestingAllowed?: DeserializedType<T, 'Edm.Boolean'> | null;
   individualWorkSchedule?: DeserializedType<T, 'Edm.Boolean'> | null;
   lastModifiedBy?: DeserializedType<T, 'Edm.String'> | null;
@@ -349,8 +450,10 @@ export interface WorkScheduleType<T extends DeSerializers = DefaultDeSerializers
   mdfSystemVersionId?: DeserializedType<T, 'Edm.Int64'> | null;
   modelCategory?: DeserializedType<T, 'Edm.String'> | null;
   periodModel?: DeserializedType<T, 'Edm.String'> | null;
+  recordId?: DeserializedType<T, 'Edm.String'> | null;
   searchString?: DeserializedType<T, 'Edm.String'> | null;
   shiftClassification?: DeserializedType<T, 'Edm.String'> | null;
+  simulatedWorkSchedule?: DeserializedType<T, 'Edm.Boolean'> | null;
   startingDate?: DeserializedType<T, 'Edm.DateTime'> | null;
   timeRecordingVariant?: DeserializedType<T, 'Edm.String'> | null;
   userId?: DeserializedType<T, 'Edm.String'> | null;

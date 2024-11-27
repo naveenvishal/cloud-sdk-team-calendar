@@ -1,16 +1,33 @@
 /*
- * Copyright (c) 2022 SAP SE or an SAP affiliate company. All rights reserved.
+ * Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
-import { Entity, DefaultDeSerializers, DeSerializers, DeserializedType } from '@sap-cloud-sdk/odata-v2';
-import { WorkScheduleDayModel, WorkScheduleDayModelType } from './WorkScheduleDayModel';
-import { WorkScheduleDayModelAssignmentSegment, WorkScheduleDayModelAssignmentSegmentType } from './WorkScheduleDayModelAssignmentSegment';
+import {
+  Entity,
+  DefaultDeSerializers,
+  DeSerializers,
+  DeserializedType
+} from '@sap-cloud-sdk/odata-v2';
+import type { WorkScheduleDayModelAssignmentApi } from './WorkScheduleDayModelAssignmentApi';
+import {
+  WorkScheduleDayModel,
+  WorkScheduleDayModelType
+} from './WorkScheduleDayModel';
+import {
+  WorkScheduleDayModelAssignmentSegment,
+  WorkScheduleDayModelAssignmentSegmentType
+} from './WorkScheduleDayModelAssignmentSegment';
 
 /**
  * This class represents the entity "WorkScheduleDayModelAssignment" of service "ECTimeOff".
  */
-export class WorkScheduleDayModelAssignment<T extends DeSerializers = DefaultDeSerializers> extends Entity implements WorkScheduleDayModelAssignmentType<T> {
+export class WorkScheduleDayModelAssignment<
+    T extends DeSerializers = DefaultDeSerializers
+  >
+  extends Entity
+  implements WorkScheduleDayModelAssignmentType<T>
+{
   /**
    * Technical entity name for WorkScheduleDayModelAssignment.
    */
@@ -66,6 +83,12 @@ export class WorkScheduleDayModelAssignment<T extends DeSerializers = DefaultDeS
    */
   dayWorkingHours?: DeserializedType<T, 'Edm.Decimal'> | null;
   /**
+   * Entity UUID.
+   * Maximum length: 255.
+   * @nullable
+   */
+  entityUuid?: DeserializedType<T, 'Edm.String'> | null;
+  /**
    * Planned Hours And Minutes (hh:mm).
    * Maximum length: 255.
    * @nullable
@@ -93,55 +116,64 @@ export class WorkScheduleDayModelAssignment<T extends DeSerializers = DefaultDeS
    */
   lastModifiedDateWithTz?: DeserializedType<T, 'Edm.DateTimeOffset'> | null;
   /**
-   * mdfSystemEffectiveEndDate.
+   * Effective End Date.
    * @nullable
    */
   mdfSystemEffectiveEndDate?: DeserializedType<T, 'Edm.DateTime'> | null;
   /**
-   * mdfSystemEffectiveStartDate.
+   * Effective Start Date.
    * @nullable
    */
   mdfSystemEffectiveStartDate?: DeserializedType<T, 'Edm.DateTime'> | null;
   /**
-   * mdfSystemEntityId.
+   * Entity ID.
    * Maximum length: 255.
    * @nullable
    */
   mdfSystemEntityId?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * mdfSystemObjectType.
+   * Object Type.
    * Maximum length: 255.
    * @nullable
    */
   mdfSystemObjectType?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * mdfSystemRecordId.
+   * Record ID.
    * Maximum length: 255.
    * @nullable
    */
   mdfSystemRecordId?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * mdfSystemRecordStatus.
+   * Record Status.
    * Maximum length: 255.
    * @nullable
    */
   mdfSystemRecordStatus?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * mdfSystemStatus.
+   * Status.
    * Maximum length: 255.
    * @nullable
    */
   mdfSystemStatus?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * mdfSystemTransactionSequence.
+   * Transaction Sequence Number.
    * @nullable
    */
   mdfSystemTransactionSequence?: DeserializedType<T, 'Edm.Int64'> | null;
   /**
-   * mdfSystemVersionId.
+   * Version ID.
    * @nullable
    */
   mdfSystemVersionId?: DeserializedType<T, 'Edm.Int64'> | null;
+  /**
+   * Rounding.
+   * Maximum length: 128.
+   * @nullable
+   */
+  roundingBasedOnWorkScheduleInformation?: DeserializedType<
+    T,
+    'Edm.String'
+  > | null;
   /**
    * One-to-one navigation property to the {@link WorkScheduleDayModel} entity.
    */
@@ -150,9 +182,15 @@ export class WorkScheduleDayModelAssignment<T extends DeSerializers = DefaultDeS
    * One-to-many navigation property to the {@link WorkScheduleDayModelAssignmentSegment} entity.
    */
   segments!: WorkScheduleDayModelAssignmentSegment<T>[];
+
+  constructor(readonly _entityApi: WorkScheduleDayModelAssignmentApi<T>) {
+    super(_entityApi);
+  }
 }
 
-export interface WorkScheduleDayModelAssignmentType<T extends DeSerializers = DefaultDeSerializers> {
+export interface WorkScheduleDayModelAssignmentType<
+  T extends DeSerializers = DefaultDeSerializers
+> {
   workScheduleExternalCode: DeserializedType<T, 'Edm.String'>;
   category?: DeserializedType<T, 'Edm.String'> | null;
   createdBy?: DeserializedType<T, 'Edm.String'> | null;
@@ -161,6 +199,7 @@ export interface WorkScheduleDayModelAssignmentType<T extends DeSerializers = De
   day: DeserializedType<T, 'Edm.Int64'>;
   dayModel?: DeserializedType<T, 'Edm.String'> | null;
   dayWorkingHours?: DeserializedType<T, 'Edm.Decimal'> | null;
+  entityUuid?: DeserializedType<T, 'Edm.String'> | null;
   hoursAndMinutes?: DeserializedType<T, 'Edm.String'> | null;
   lastModifiedBy?: DeserializedType<T, 'Edm.String'> | null;
   lastModifiedDate?: DeserializedType<T, 'Edm.DateTime'> | null;
@@ -175,6 +214,10 @@ export interface WorkScheduleDayModelAssignmentType<T extends DeSerializers = De
   mdfSystemStatus?: DeserializedType<T, 'Edm.String'> | null;
   mdfSystemTransactionSequence?: DeserializedType<T, 'Edm.Int64'> | null;
   mdfSystemVersionId?: DeserializedType<T, 'Edm.Int64'> | null;
+  roundingBasedOnWorkScheduleInformation?: DeserializedType<
+    T,
+    'Edm.String'
+  > | null;
   dayModelNav?: WorkScheduleDayModelType<T> | null;
   segments: WorkScheduleDayModelAssignmentSegmentType<T>[];
 }

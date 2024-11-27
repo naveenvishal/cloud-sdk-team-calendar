@@ -7,4 +7,5 @@ service TimesheetService {
   entity Sanity {
     key ID: String;
   }
+  entity LoggedUser as projection on timesheet.CustomUser;
 }

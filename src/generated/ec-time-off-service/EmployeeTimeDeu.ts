@@ -1,15 +1,28 @@
 /*
- * Copyright (c) 2022 SAP SE or an SAP affiliate company. All rights reserved.
+ * Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
-import { Entity, DefaultDeSerializers, DeSerializers, DeserializedType } from '@sap-cloud-sdk/odata-v2';
+import {
+  Entity,
+  DefaultDeSerializers,
+  DeSerializers,
+  DeserializedType
+} from '@sap-cloud-sdk/odata-v2';
+import type { EmployeeTimeDeuApi } from './EmployeeTimeDeuApi';
+import {
+  ElectronicSicknessCertificateExclusionReasonDeu,
+  ElectronicSicknessCertificateExclusionReasonDeuType
+} from './ElectronicSicknessCertificateExclusionReasonDeu';
 import { EmployeeTimeGroup, EmployeeTimeGroupType } from './EmployeeTimeGroup';
 
 /**
  * This class represents the entity "EmployeeTimeDEU" of service "ECTimeOff".
  */
-export class EmployeeTimeDeu<T extends DeSerializers = DefaultDeSerializers> extends Entity implements EmployeeTimeDeuType<T> {
+export class EmployeeTimeDeu<T extends DeSerializers = DefaultDeSerializers>
+  extends Entity
+  implements EmployeeTimeDeuType<T>
+{
   /**
    * Technical entity name for EmployeeTimeDeu.
    */
@@ -54,6 +67,33 @@ export class EmployeeTimeDeu<T extends DeSerializers = DefaultDeSerializers> ext
    */
   createdDateTime?: DeserializedType<T, 'Edm.DateTimeOffset'> | null;
   /**
+   * mandat_test_string.
+   * Maximum length: 255.
+   * @nullable
+   */
+  custMandatTestString?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * Deviation from Reference Sick Pay Periods.
+   * Maximum length: 128.
+   * @nullable
+   */
+  deviationFromSickPayPeriods?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * eAU Exclusion Reason.
+   * Maximum length: 128.
+   * @nullable
+   */
+  electronicSicknessCertificateExclusionReason?: DeserializedType<
+    T,
+    'Edm.String'
+  > | null;
+  /**
+   * Entity UUID.
+   * Maximum length: 255.
+   * @nullable
+   */
+  entityUuid?: DeserializedType<T, 'Edm.String'> | null;
+  /**
    * externalCode.
    */
   externalCode!: DeserializedType<T, 'Edm.Int64'>;
@@ -95,31 +135,25 @@ export class EmployeeTimeDeu<T extends DeSerializers = DefaultDeSerializers> ext
    */
   mdfSystemEffectiveStartDate?: DeserializedType<T, 'Edm.DateTime'> | null;
   /**
-   * mdfSystemEntityId.
-   * Maximum length: 255.
-   * @nullable
-   */
-  mdfSystemEntityId?: DeserializedType<T, 'Edm.String'> | null;
-  /**
-   * mdfSystemObjectType.
+   * Object Type.
    * Maximum length: 255.
    * @nullable
    */
   mdfSystemObjectType?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * mdfSystemRecordId.
+   * Record ID.
    * Maximum length: 255.
    * @nullable
    */
   mdfSystemRecordId?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * mdfSystemRecordStatus.
+   * Record Status.
    * Maximum length: 255.
    * @nullable
    */
   mdfSystemRecordStatus?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * mdfSystemStatus.
+   * Status.
    * Maximum length: 255.
    * @nullable
    */
@@ -130,7 +164,7 @@ export class EmployeeTimeDeu<T extends DeSerializers = DefaultDeSerializers> ext
    */
   mdfSystemTransactionSequence?: DeserializedType<T, 'Edm.Int64'> | null;
   /**
-   * mdfSystemVersionId.
+   * Version ID.
    * @nullable
    */
   mdfSystemVersionId?: DeserializedType<T, 'Edm.Int64'> | null;
@@ -151,10 +185,29 @@ export class EmployeeTimeDeu<T extends DeSerializers = DefaultDeSerializers> ext
    */
   paySupplementStartDate?: DeserializedType<T, 'Edm.DateTime'> | null;
   /**
+   * Reference Date for End of Continued Pay.
+   * @nullable
+   */
+  refContinuedPayEndDate?: DeserializedType<T, 'Edm.DateTime'> | null;
+  /**
+   * Reference Date for End Date of Sick Pay Supplement.
+   * @nullable
+   */
+  refPaySupplementEndDate?: DeserializedType<T, 'Edm.DateTime'> | null;
+  /**
+   * Reference Date for Start Date of Sick Pay Supplement.
+   * @nullable
+   */
+  refPaySupplementStartDate?: DeserializedType<T, 'Edm.DateTime'> | null;
+  /**
    * Certified Start Date of Sickness.
    * @nullable
    */
   sicknessCertificateStartDate?: DeserializedType<T, 'Edm.DateTime'> | null;
+  /**
+   * One-to-one navigation property to the {@link ElectronicSicknessCertificateExclusionReasonDeu} entity.
+   */
+  electronicSicknessCertificateExclusionReasonNav?: ElectronicSicknessCertificateExclusionReasonDeu<T> | null;
   /**
    * One-to-one navigation property to the {@link EmployeeTimeGroup} entity.
    */
@@ -163,15 +216,28 @@ export class EmployeeTimeDeu<T extends DeSerializers = DefaultDeSerializers> ext
    * One-to-one navigation property to the {@link EmployeeTimeGroup} entity.
    */
   overlappingSicknessGroupNav?: EmployeeTimeGroup<T> | null;
+
+  constructor(readonly _entityApi: EmployeeTimeDeuApi<T>) {
+    super(_entityApi);
+  }
 }
 
-export interface EmployeeTimeDeuType<T extends DeSerializers = DefaultDeSerializers> {
+export interface EmployeeTimeDeuType<
+  T extends DeSerializers = DefaultDeSerializers
+> {
   employeeTimeExternalCode: DeserializedType<T, 'Edm.String'>;
   continuedPayCreditedDays?: DeserializedType<T, 'Edm.Decimal'> | null;
   continuedPayEndDate?: DeserializedType<T, 'Edm.DateTime'> | null;
   createdBy?: DeserializedType<T, 'Edm.String'> | null;
   createdDate?: DeserializedType<T, 'Edm.DateTime'> | null;
   createdDateTime?: DeserializedType<T, 'Edm.DateTimeOffset'> | null;
+  custMandatTestString?: DeserializedType<T, 'Edm.String'> | null;
+  deviationFromSickPayPeriods?: DeserializedType<T, 'Edm.String'> | null;
+  electronicSicknessCertificateExclusionReason?: DeserializedType<
+    T,
+    'Edm.String'
+  > | null;
+  entityUuid?: DeserializedType<T, 'Edm.String'> | null;
   externalCode: DeserializedType<T, 'Edm.Int64'>;
   identicalSicknessGroup?: DeserializedType<T, 'Edm.String'> | null;
   lastModifiedBy?: DeserializedType<T, 'Edm.String'> | null;
@@ -180,7 +246,6 @@ export interface EmployeeTimeDeuType<T extends DeSerializers = DefaultDeSerializ
   lastModifiedDateWithTz?: DeserializedType<T, 'Edm.DateTimeOffset'> | null;
   mdfSystemEffectiveEndDate?: DeserializedType<T, 'Edm.DateTime'> | null;
   mdfSystemEffectiveStartDate?: DeserializedType<T, 'Edm.DateTime'> | null;
-  mdfSystemEntityId?: DeserializedType<T, 'Edm.String'> | null;
   mdfSystemObjectType?: DeserializedType<T, 'Edm.String'> | null;
   mdfSystemRecordId?: DeserializedType<T, 'Edm.String'> | null;
   mdfSystemRecordStatus?: DeserializedType<T, 'Edm.String'> | null;
@@ -190,7 +255,11 @@ export interface EmployeeTimeDeuType<T extends DeSerializers = DefaultDeSerializ
   overlappingSicknessGroup?: DeserializedType<T, 'Edm.String'> | null;
   paySupplementEndDate?: DeserializedType<T, 'Edm.DateTime'> | null;
   paySupplementStartDate?: DeserializedType<T, 'Edm.DateTime'> | null;
+  refContinuedPayEndDate?: DeserializedType<T, 'Edm.DateTime'> | null;
+  refPaySupplementEndDate?: DeserializedType<T, 'Edm.DateTime'> | null;
+  refPaySupplementStartDate?: DeserializedType<T, 'Edm.DateTime'> | null;
   sicknessCertificateStartDate?: DeserializedType<T, 'Edm.DateTime'> | null;
+  electronicSicknessCertificateExclusionReasonNav?: ElectronicSicknessCertificateExclusionReasonDeuType<T> | null;
   identicalSicknessGroupNav?: EmployeeTimeGroupType<T> | null;
   overlappingSicknessGroupNav?: EmployeeTimeGroupType<T> | null;
 }

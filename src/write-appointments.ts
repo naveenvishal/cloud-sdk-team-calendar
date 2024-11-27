@@ -4,8 +4,8 @@ import { BigNumber } from 'bignumber.js';
 import moment from 'moment';
 import {
   TimeSheetEntry,
-  workforceTimesheetService
-} from './generated/workforce-timesheet-service';
+  manageWorkforceTimesheetService
+} from './generated/manage-workforce-timesheet-service';
 import { Appointment } from './model/appointment';
 import { Person } from './model/person';
 import { S4AppointmentStatus } from './model/s4-appointment-status';
@@ -29,8 +29,8 @@ export function buildTimeSheetEntry(
     recordedHours: new BigNumber(8),
     timeSheetNote: appointment.title
   };
-  const externalId = person.s4ID;
-  const companyCode = person.s4CompanyCode;
+//  const externalId = person.s4ID;
+//  const companyCode = person.s4CompanyCode;
   const status = S4AppointmentStatus.APPROVED;
   const isReleasedOnSave = true;
   const isExecutedInTestRun = false;

@@ -1,14 +1,23 @@
 /*
- * Copyright (c) 2022 SAP SE or an SAP affiliate company. All rights reserved.
+ * Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
-import { Entity, DefaultDeSerializers, DeSerializers, DeserializedType } from '@sap-cloud-sdk/odata-v2';
+import {
+  Entity,
+  DefaultDeSerializers,
+  DeSerializers,
+  DeserializedType
+} from '@sap-cloud-sdk/odata-v2';
+import type { EmployeeTimePolApi } from './EmployeeTimePolApi';
 
 /**
  * This class represents the entity "EmployeeTimePOL" of service "ECTimeOff".
  */
-export class EmployeeTimePol<T extends DeSerializers = DefaultDeSerializers> extends Entity implements EmployeeTimePolType<T> {
+export class EmployeeTimePol<T extends DeSerializers = DefaultDeSerializers>
+  extends Entity
+  implements EmployeeTimePolType<T>
+{
   /**
    * Technical entity name for EmployeeTimePol.
    */
@@ -43,6 +52,18 @@ export class EmployeeTimePol<T extends DeSerializers = DefaultDeSerializers> ext
    * @nullable
    */
   createdDateTime?: DeserializedType<T, 'Edm.DateTimeOffset'> | null;
+  /**
+   * Custom Field POL.
+   * Maximum length: 20.
+   * @nullable
+   */
+  custPol?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * Entity UUID.
+   * Maximum length: 255.
+   * @nullable
+   */
+  entityUuid?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * externalCode.
    */
@@ -80,13 +101,21 @@ export class EmployeeTimePol<T extends DeSerializers = DefaultDeSerializers> ext
    * @nullable
    */
   zlaIssueDate?: DeserializedType<T, 'Edm.DateTime'> | null;
+
+  constructor(readonly _entityApi: EmployeeTimePolApi<T>) {
+    super(_entityApi);
+  }
 }
 
-export interface EmployeeTimePolType<T extends DeSerializers = DefaultDeSerializers> {
+export interface EmployeeTimePolType<
+  T extends DeSerializers = DefaultDeSerializers
+> {
   employeeTimeExternalCode: DeserializedType<T, 'Edm.String'>;
   absenceCode?: DeserializedType<T, 'Edm.String'> | null;
   createdBy?: DeserializedType<T, 'Edm.String'> | null;
   createdDateTime?: DeserializedType<T, 'Edm.DateTimeOffset'> | null;
+  custPol?: DeserializedType<T, 'Edm.String'> | null;
+  entityUuid?: DeserializedType<T, 'Edm.String'> | null;
   externalCode: DeserializedType<T, 'Edm.Int64'>;
   lastModifiedBy?: DeserializedType<T, 'Edm.String'> | null;
   lastModifiedDateTime?: DeserializedType<T, 'Edm.DateTimeOffset'> | null;

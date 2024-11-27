@@ -1,14 +1,23 @@
 /*
- * Copyright (c) 2022 SAP SE or an SAP affiliate company. All rights reserved.
+ * Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
-import { Entity, DefaultDeSerializers, DeSerializers, DeserializedType } from '@sap-cloud-sdk/odata-v2';
+import {
+  Entity,
+  DefaultDeSerializers,
+  DeSerializers,
+  DeserializedType
+} from '@sap-cloud-sdk/odata-v2';
+import type { TimeAccountTypeAusApi } from './TimeAccountTypeAusApi';
 
 /**
  * This class represents the entity "TimeAccountTypeAUS" of service "ECTimeOff".
  */
-export class TimeAccountTypeAus<T extends DeSerializers = DefaultDeSerializers> extends Entity implements TimeAccountTypeAusType<T> {
+export class TimeAccountTypeAus<T extends DeSerializers = DefaultDeSerializers>
+  extends Entity
+  implements TimeAccountTypeAusType<T>
+{
   /**
    * Technical entity name for TimeAccountTypeAus.
    */
@@ -38,9 +47,16 @@ export class TimeAccountTypeAus<T extends DeSerializers = DefaultDeSerializers> 
    */
   createdDateTime?: DeserializedType<T, 'Edm.DateTimeOffset'> | null;
   /**
-   * externalCode.
+   * Entity UUID.
+   * Maximum length: 255.
+   * @nullable
    */
-  externalCode!: DeserializedType<T, 'Edm.Int64'>;
+  entityUuid?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * externalCode.
+   * Maximum length: 38.
+   */
+  externalCode!: DeserializedType<T, 'Edm.String'>;
   /**
    * Include In Leave Loading Calculations.
    * @nullable
@@ -63,15 +79,36 @@ export class TimeAccountTypeAus<T extends DeSerializers = DefaultDeSerializers> 
    * @nullable
    */
   mdfSystemRecordStatus?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * Prior Service Account Distinction.
+   * Maximum length: 128.
+   * @nullable
+   */
+  priorServiceAccountDistinction?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * Prior Service Use Case.
+   * Maximum length: 128.
+   * @nullable
+   */
+  priorServiceUseCase?: DeserializedType<T, 'Edm.String'> | null;
+
+  constructor(readonly _entityApi: TimeAccountTypeAusApi<T>) {
+    super(_entityApi);
+  }
 }
 
-export interface TimeAccountTypeAusType<T extends DeSerializers = DefaultDeSerializers> {
+export interface TimeAccountTypeAusType<
+  T extends DeSerializers = DefaultDeSerializers
+> {
   timeAccountTypeExternalCode: DeserializedType<T, 'Edm.String'>;
   createdBy?: DeserializedType<T, 'Edm.String'> | null;
   createdDateTime?: DeserializedType<T, 'Edm.DateTimeOffset'> | null;
-  externalCode: DeserializedType<T, 'Edm.Int64'>;
+  entityUuid?: DeserializedType<T, 'Edm.String'> | null;
+  externalCode: DeserializedType<T, 'Edm.String'>;
   includeInLeaveLoadingCalculations?: DeserializedType<T, 'Edm.Boolean'> | null;
   lastModifiedBy?: DeserializedType<T, 'Edm.String'> | null;
   lastModifiedDateTime?: DeserializedType<T, 'Edm.DateTimeOffset'> | null;
   mdfSystemRecordStatus?: DeserializedType<T, 'Edm.String'> | null;
+  priorServiceAccountDistinction?: DeserializedType<T, 'Edm.String'> | null;
+  priorServiceUseCase?: DeserializedType<T, 'Edm.String'> | null;
 }

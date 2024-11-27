@@ -9,3 +9,4 @@ applications:
     services:
       - my-xsuaa
       - my-destination
+      - jobschedulerinstance

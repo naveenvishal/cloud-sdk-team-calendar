@@ -1,15 +1,24 @@
 /*
- * Copyright (c) 2022 SAP SE or an SAP affiliate company. All rights reserved.
+ * Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
-import { Entity, DefaultDeSerializers, DeSerializers, DeserializedType } from '@sap-cloud-sdk/odata-v2';
+import {
+  Entity,
+  DefaultDeSerializers,
+  DeSerializers,
+  DeserializedType
+} from '@sap-cloud-sdk/odata-v2';
+import type { TimeAccountSnapshotApi } from './TimeAccountSnapshotApi';
 import { TimeAccountType_1, TimeAccountType_1Type } from './TimeAccountType_1';
 
 /**
  * This class represents the entity "TimeAccountSnapshot" of service "ECTimeOff".
  */
-export class TimeAccountSnapshot<T extends DeSerializers = DefaultDeSerializers> extends Entity implements TimeAccountSnapshotType<T> {
+export class TimeAccountSnapshot<T extends DeSerializers = DefaultDeSerializers>
+  extends Entity
+  implements TimeAccountSnapshotType<T>
+{
   /**
    * Technical entity name for TimeAccountSnapshot.
    */
@@ -37,7 +46,10 @@ export class TimeAccountSnapshot<T extends DeSerializers = DefaultDeSerializers>
    * Balance Accrual Separated Not Considering Pending Requests.
    * @nullable
    */
-  approvedAbsenceBalanceAccrualSeparated?: DeserializedType<T, 'Edm.Decimal'> | null;
+  approvedAbsenceBalanceAccrualSeparated?: DeserializedType<
+    T,
+    'Edm.Decimal'
+  > | null;
   /**
    * As of Accounting Period End.
    * @nullable
@@ -75,11 +87,17 @@ export class TimeAccountSnapshot<T extends DeSerializers = DefaultDeSerializers>
    */
   createdDateTime?: DeserializedType<T, 'Edm.DateTimeOffset'> | null;
   /**
-   * Entity Id.
+   * Entity ID.
    * Maximum length: 255.
    * @nullable
    */
   entityId?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * Entity UUID.
+   * Maximum length: 255.
+   * @nullable
+   */
+  entityUuid?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * External Code.
    * Maximum length: 128.
@@ -123,12 +141,21 @@ export class TimeAccountSnapshot<T extends DeSerializers = DefaultDeSerializers>
    * One-to-one navigation property to the {@link TimeAccountType_1} entity.
    */
   accountTypeNav?: TimeAccountType_1<T> | null;
+
+  constructor(readonly _entityApi: TimeAccountSnapshotApi<T>) {
+    super(_entityApi);
+  }
 }
 
-export interface TimeAccountSnapshotType<T extends DeSerializers = DefaultDeSerializers> {
+export interface TimeAccountSnapshotType<
+  T extends DeSerializers = DefaultDeSerializers
+> {
   accountType?: DeserializedType<T, 'Edm.String'> | null;
   approvedAbsenceBalance?: DeserializedType<T, 'Edm.Decimal'> | null;
-  approvedAbsenceBalanceAccrualSeparated?: DeserializedType<T, 'Edm.Decimal'> | null;
+  approvedAbsenceBalanceAccrualSeparated?: DeserializedType<
+    T,
+    'Edm.Decimal'
+  > | null;
   asOfAccountingPeriodEnd?: DeserializedType<T, 'Edm.Boolean'> | null;
   asOfPayPeriodEnd?: DeserializedType<T, 'Edm.Boolean'> | null;
   balance?: DeserializedType<T, 'Edm.Decimal'> | null;
@@ -137,6 +164,7 @@ export interface TimeAccountSnapshotType<T extends DeSerializers = DefaultDeSeri
   createdBy?: DeserializedType<T, 'Edm.String'> | null;
   createdDateTime?: DeserializedType<T, 'Edm.DateTimeOffset'> | null;
   entityId?: DeserializedType<T, 'Edm.String'> | null;
+  entityUuid?: DeserializedType<T, 'Edm.String'> | null;
   externalCode: DeserializedType<T, 'Edm.String'>;
   lastModifiedBy?: DeserializedType<T, 'Edm.String'> | null;
   lastModifiedDateTime?: DeserializedType<T, 'Edm.DateTimeOffset'> | null;

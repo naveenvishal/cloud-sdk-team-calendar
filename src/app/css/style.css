@@ -5,3 +5,38 @@
 .sapMPlanCal .sapMPlanCalRowHead .sapMSLIImg {
   margin-right: 0.75rem;
 }
+
+/* Default style */
+.customRowHeaderDefault .sapMPlanCalRowHdr {
+  background-color: #f0f0f0;
+}
+
+/* Custom style for a "warning" condition */
+.customRowHeaderWarning .sapMPlanCalRowHdr {
+  background-color: #FFCC00; /* Yellow */
+}
+
+/* Custom style for an "error" condition */
+.customRowHeaderError .sapMPlanCalRowHdr {
+  background-color: #FF6666; /* Red */
+}
+
+/* Custom style for an "info" condition */
+.customRowHeaderInfo .sapMPlanCalRowHdr {
+  background-color: #66CCFF; /* Light blue */
+}
+
+/* Custom row header colors */
+.rowHeaderColorRed .sapMPCHead > .sapMPCHeadContent {
+  background-color: #FFCDD2; /* Light Red */
+}
+
+.rowHeaderColorGreen .sapMPCHead > .sapMPCHeadContent {
+  background-color: #C8E6C9; /* Light Green */
+}
+
+.rowHeaderColorBlue .sapMPCHead > .sapMPCHeadContent {
+  background-color: #BBDEFB; /* Light Blue */
+}
+
+/* Add more color classes as needed */

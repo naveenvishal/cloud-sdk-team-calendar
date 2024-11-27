@@ -1,14 +1,23 @@
 /*
- * Copyright (c) 2022 SAP SE or an SAP affiliate company. All rights reserved.
+ * Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
-import { Entity, DefaultDeSerializers, DeSerializers, DeserializedType } from '@sap-cloud-sdk/odata-v2';
+import {
+  Entity,
+  DefaultDeSerializers,
+  DeSerializers,
+  DeserializedType
+} from '@sap-cloud-sdk/odata-v2';
+import type { HolidayApi } from './HolidayApi';
 
 /**
  * This class represents the entity "Holiday" of service "ECTimeOff".
  */
-export class Holiday<T extends DeSerializers = DefaultDeSerializers> extends Entity implements HolidayType<T> {
+export class Holiday<T extends DeSerializers = DefaultDeSerializers>
+  extends Entity
+  implements HolidayType<T>
+{
   /**
    * Technical entity name for Holiday.
    */
@@ -22,7 +31,7 @@ export class Holiday<T extends DeSerializers = DefaultDeSerializers> extends Ent
    */
   static _keys = ['holidayCode'];
   /**
-   * Country.
+   * Country/Region.
    * Maximum length: 128.
    * @nullable
    */
@@ -43,6 +52,12 @@ export class Holiday<T extends DeSerializers = DefaultDeSerializers> extends Ent
    * @nullable
    */
   createdDateTime?: DeserializedType<T, 'Edm.DateTimeOffset'> | null;
+  /**
+   * Entity UUID.
+   * Maximum length: 255.
+   * @nullable
+   */
+  entityUuid?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * Holiday Code.
    * Maximum length: 128.
@@ -70,151 +85,203 @@ export class Holiday<T extends DeSerializers = DefaultDeSerializers> extends Ent
    */
   lastModifiedDateWithTz?: DeserializedType<T, 'Edm.DateTimeOffset'> | null;
   /**
-   * mdfSystemEffectiveEndDate.
+   * Effective End Date.
    * @nullable
    */
   mdfSystemEffectiveEndDate?: DeserializedType<T, 'Edm.DateTime'> | null;
   /**
-   * mdfSystemEffectiveStartDate.
+   * Effective Start Date.
    * @nullable
    */
   mdfSystemEffectiveStartDate?: DeserializedType<T, 'Edm.DateTime'> | null;
   /**
-   * mdfSystemEntityId.
+   * Entity ID.
    * Maximum length: 255.
    * @nullable
    */
   mdfSystemEntityId?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * mdfSystemObjectType.
+   * Object Type.
    * Maximum length: 255.
    * @nullable
    */
   mdfSystemObjectType?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * mdfSystemRecordId.
+   * Record ID.
    * Maximum length: 255.
    * @nullable
    */
   mdfSystemRecordId?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * mdfSystemRecordStatus.
+   * Record Status.
    * Maximum length: 255.
    * @nullable
    */
   mdfSystemRecordStatus?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * mdfSystemStatus.
+   * Status.
    * Maximum length: 255.
    * @nullable
    */
   mdfSystemStatus?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * mdfSystemTransactionSequence.
+   * Transaction Sequence Number.
    * @nullable
    */
   mdfSystemTransactionSequence?: DeserializedType<T, 'Edm.Int64'> | null;
   /**
-   * mdfSystemVersionId.
+   * Version ID.
    * @nullable
    */
   mdfSystemVersionId?: DeserializedType<T, 'Edm.Int64'> | null;
   /**
    * Name.
-   * Maximum length: 255.
+   * Maximum length: 128.
+   * @nullable
+   */
+  nameArSa?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * Name.
+   * Maximum length: 128.
+   * @nullable
+   */
+  nameCyGb?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * Name.
+   * Maximum length: 128.
    * @nullable
    */
   nameDeDe?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * Name.
-   * Maximum length: 255.
+   * Maximum length: 128.
    * @nullable
    */
   nameDefaultValue?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * Name.
-   * Maximum length: 255.
+   * Maximum length: 128.
+   * @nullable
+   */
+  nameEnDebug?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * Name.
+   * Maximum length: 128.
+   * @nullable
+   */
+  nameEnDebugApos?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * Name.
+   * Maximum length: 128.
+   * @nullable
+   */
+  nameEnDebugAposRtl?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * Name.
+   * Maximum length: 128.
    * @nullable
    */
   nameEnGb?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * Name.
-   * Maximum length: 255.
+   * Maximum length: 128.
+   * @nullable
+   */
+  nameEnRtl?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * Name.
+   * Maximum length: 128.
    * @nullable
    */
   nameEnUs?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * Name.
-   * Maximum length: 255.
+   * Maximum length: 128.
    * @nullable
    */
   nameEsEs?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * Name.
-   * Maximum length: 255.
+   * Maximum length: 128.
+   * @nullable
+   */
+  nameEsMx?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * Name.
+   * Maximum length: 128.
+   * @nullable
+   */
+  nameFrCa?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * Name.
+   * Maximum length: 128.
    * @nullable
    */
   nameFrFr?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * Name.
-   * Maximum length: 255.
+   * Maximum length: 128.
+   * @nullable
+   */
+  nameHiIn?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * Name.
+   * Maximum length: 128.
+   * @nullable
+   */
+  nameIwIl?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * Name.
+   * Maximum length: 128.
    * @nullable
    */
   nameJaJp?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * Name.
-   * Maximum length: 255.
+   * Maximum length: 128.
    * @nullable
    */
   nameKoKr?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * Name.
-   * Maximum length: 255.
+   * Maximum length: 128.
    * @nullable
    */
   nameLocalized?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * Name.
-   * Maximum length: 255.
+   * Maximum length: 128.
    * @nullable
    */
   nameNlNl?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * Name.
-   * Maximum length: 255.
+   * Maximum length: 128.
    * @nullable
    */
   namePtBr?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * Name.
-   * Maximum length: 255.
+   * Maximum length: 128.
    * @nullable
    */
-  namePtPt?: DeserializedType<T, 'Edm.String'> | null;
+  nameThTh?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * Name.
-   * Maximum length: 255.
-   * @nullable
-   */
-  nameRuRu?: DeserializedType<T, 'Edm.String'> | null;
-  /**
-   * Name.
-   * Maximum length: 255.
+   * Maximum length: 128.
    * @nullable
    */
   nameZhCn?: DeserializedType<T, 'Edm.String'> | null;
-  /**
-   * Name.
-   * Maximum length: 255.
-   * @nullable
-   */
-  nameZhTw?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * oldName.
    * Maximum length: 255.
    * @nullable
    */
   oldName?: DeserializedType<T, 'Edm.String'> | null;
+
+  constructor(readonly _entityApi: HolidayApi<T>) {
+    super(_entityApi);
+  }
 }
 
 export interface HolidayType<T extends DeSerializers = DefaultDeSerializers> {
@@ -222,6 +289,7 @@ export interface HolidayType<T extends DeSerializers = DefaultDeSerializers> {
   createdBy?: DeserializedType<T, 'Edm.String'> | null;
   createdDate?: DeserializedType<T, 'Edm.DateTime'> | null;
   createdDateTime?: DeserializedType<T, 'Edm.DateTimeOffset'> | null;
+  entityUuid?: DeserializedType<T, 'Edm.String'> | null;
   holidayCode: DeserializedType<T, 'Edm.String'>;
   lastModifiedBy?: DeserializedType<T, 'Edm.String'> | null;
   lastModifiedDate?: DeserializedType<T, 'Edm.DateTime'> | null;
@@ -236,20 +304,28 @@ export interface HolidayType<T extends DeSerializers = DefaultDeSerializers> {
   mdfSystemStatus?: DeserializedType<T, 'Edm.String'> | null;
   mdfSystemTransactionSequence?: DeserializedType<T, 'Edm.Int64'> | null;
   mdfSystemVersionId?: DeserializedType<T, 'Edm.Int64'> | null;
+  nameArSa?: DeserializedType<T, 'Edm.String'> | null;
+  nameCyGb?: DeserializedType<T, 'Edm.String'> | null;
   nameDeDe?: DeserializedType<T, 'Edm.String'> | null;
   nameDefaultValue?: DeserializedType<T, 'Edm.String'> | null;
+  nameEnDebug?: DeserializedType<T, 'Edm.String'> | null;
+  nameEnDebugApos?: DeserializedType<T, 'Edm.String'> | null;
+  nameEnDebugAposRtl?: DeserializedType<T, 'Edm.String'> | null;
   nameEnGb?: DeserializedType<T, 'Edm.String'> | null;
+  nameEnRtl?: DeserializedType<T, 'Edm.String'> | null;
   nameEnUs?: DeserializedType<T, 'Edm.String'> | null;
   nameEsEs?: DeserializedType<T, 'Edm.String'> | null;
+  nameEsMx?: DeserializedType<T, 'Edm.String'> | null;
+  nameFrCa?: DeserializedType<T, 'Edm.String'> | null;
   nameFrFr?: DeserializedType<T, 'Edm.String'> | null;
+  nameHiIn?: DeserializedType<T, 'Edm.String'> | null;
+  nameIwIl?: DeserializedType<T, 'Edm.String'> | null;
   nameJaJp?: DeserializedType<T, 'Edm.String'> | null;
   nameKoKr?: DeserializedType<T, 'Edm.String'> | null;
   nameLocalized?: DeserializedType<T, 'Edm.String'> | null;
   nameNlNl?: DeserializedType<T, 'Edm.String'> | null;
   namePtBr?: DeserializedType<T, 'Edm.String'> | null;
-  namePtPt?: DeserializedType<T, 'Edm.String'> | null;
-  nameRuRu?: DeserializedType<T, 'Edm.String'> | null;
+  nameThTh?: DeserializedType<T, 'Edm.String'> | null;
   nameZhCn?: DeserializedType<T, 'Edm.String'> | null;
-  nameZhTw?: DeserializedType<T, 'Edm.String'> | null;
   oldName?: DeserializedType<T, 'Edm.String'> | null;
 }

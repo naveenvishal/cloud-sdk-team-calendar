@@ -1,14 +1,43 @@
 /*
- * Copyright (c) 2022 SAP SE or an SAP affiliate company. All rights reserved.
+ * Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
-import { Entity, DefaultDeSerializers, DeSerializers, DeserializedType } from '@sap-cloud-sdk/odata-v2';
+import {
+  Entity,
+  DefaultDeSerializers,
+  DeSerializers,
+  DeserializedType
+} from '@sap-cloud-sdk/odata-v2';
+import type { TimeAccountType_1Api } from './TimeAccountType_1Api';
+import {
+  TimeAccountTypeAus,
+  TimeAccountTypeAusType
+} from './TimeAccountTypeAus';
+import {
+  PeriodicTimeAccountUpdateProfile,
+  PeriodicTimeAccountUpdateProfileType
+} from './PeriodicTimeAccountUpdateProfile';
+import {
+  RecalculationBasedField,
+  RecalculationBasedFieldType
+} from './RecalculationBasedField';
+import {
+  TimeAccountPayoutProfile,
+  TimeAccountPayoutProfileType
+} from './TimeAccountPayoutProfile';
+import {
+  TimeAccountPurchaseProfile,
+  TimeAccountPurchaseProfileType
+} from './TimeAccountPurchaseProfile';
 
 /**
  * This class represents the entity "TimeAccountType" of service "ECTimeOff".
  */
-export class TimeAccountType_1<T extends DeSerializers = DefaultDeSerializers> extends Entity implements TimeAccountType_1Type<T> {
+export class TimeAccountType_1<T extends DeSerializers = DefaultDeSerializers>
+  extends Entity
+  implements TimeAccountType_1Type<T>
+{
   /**
    * Technical entity name for TimeAccountType_1.
    */
@@ -150,12 +179,15 @@ export class TimeAccountType_1<T extends DeSerializers = DefaultDeSerializers> e
    */
   allowPayoutWithSimulation?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * Do Not Consider Pending Requests When Calculating Balances.
+   * Exclude Pending Requests When Calculating Balances.
    * @nullable
    */
-  calculateSnapshotApprovedAbsenceBalance?: DeserializedType<T, 'Edm.Boolean'> | null;
+  calculateSnapshotApprovedAbsenceBalance?: DeserializedType<
+    T,
+    'Edm.Boolean'
+  > | null;
   /**
-   * Country.
+   * Country/Region.
    * Maximum length: 128.
    * @nullable
    */
@@ -183,16 +215,40 @@ export class TimeAccountType_1<T extends DeSerializers = DefaultDeSerializers> e
    */
   creation?: DeserializedType<T, 'Edm.String'> | null;
   /**
+   * Effect on Transfer Date Rule.
+   * Maximum length: 128.
+   * @nullable
+   */
+  effectOnTransferDateRule?: DeserializedType<T, 'Edm.String'> | null;
+  /**
    * Entitlement Method.
    * Maximum length: 255.
    * @nullable
    */
   entitlementMethod?: DeserializedType<T, 'Edm.String'> | null;
   /**
+   * Entity UUID.
+   * Maximum length: 255.
+   * @nullable
+   */
+  entityUuid?: DeserializedType<T, 'Edm.String'> | null;
+  /**
    * External Code.
    * Maximum length: 128.
    */
   externalCode!: DeserializedType<T, 'Edm.String'>;
+  /**
+   * External Name.
+   * Maximum length: 255.
+   * @nullable
+   */
+  externalNameArSa?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * External Name.
+   * Maximum length: 255.
+   * @nullable
+   */
+  externalNameCyGb?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * External Name.
    * Maximum length: 255.
@@ -210,7 +266,31 @@ export class TimeAccountType_1<T extends DeSerializers = DefaultDeSerializers> e
    * Maximum length: 255.
    * @nullable
    */
+  externalNameEnDebug?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * External Name.
+   * Maximum length: 255.
+   * @nullable
+   */
+  externalNameEnDebugApos?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * External Name.
+   * Maximum length: 255.
+   * @nullable
+   */
+  externalNameEnDebugAposRtl?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * External Name.
+   * Maximum length: 255.
+   * @nullable
+   */
   externalNameEnGb?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * External Name.
+   * Maximum length: 255.
+   * @nullable
+   */
+  externalNameEnRtl?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * External Name.
    * Maximum length: 255.
@@ -228,7 +308,31 @@ export class TimeAccountType_1<T extends DeSerializers = DefaultDeSerializers> e
    * Maximum length: 255.
    * @nullable
    */
+  externalNameEsMx?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * External Name.
+   * Maximum length: 255.
+   * @nullable
+   */
+  externalNameFrCa?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * External Name.
+   * Maximum length: 255.
+   * @nullable
+   */
   externalNameFrFr?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * External Name.
+   * Maximum length: 255.
+   * @nullable
+   */
+  externalNameHiIn?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * External Name.
+   * Maximum length: 255.
+   * @nullable
+   */
+  externalNameIwIl?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * External Name.
    * Maximum length: 255.
@@ -264,25 +368,13 @@ export class TimeAccountType_1<T extends DeSerializers = DefaultDeSerializers> e
    * Maximum length: 255.
    * @nullable
    */
-  externalNamePtPt?: DeserializedType<T, 'Edm.String'> | null;
-  /**
-   * External Name.
-   * Maximum length: 255.
-   * @nullable
-   */
-  externalNameRuRu?: DeserializedType<T, 'Edm.String'> | null;
+  externalNameThTh?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * External Name.
    * Maximum length: 255.
    * @nullable
    */
   externalNameZhCn?: DeserializedType<T, 'Edm.String'> | null;
-  /**
-   * External Name.
-   * Maximum length: 255.
-   * @nullable
-   */
-  externalNameZhTw?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * Hire Rule.
    * Maximum length: 128.
@@ -300,7 +392,10 @@ export class TimeAccountType_1<T extends DeSerializers = DefaultDeSerializers> e
    * Maximum length: 128.
    * @nullable
    */
-  initialFlexibleAccountStartDateRule?: DeserializedType<T, 'Edm.String'> | null;
+  initialFlexibleAccountStartDateRule?: DeserializedType<
+    T,
+    'Edm.String'
+  > | null;
   /**
    * Interim Account Update Rule.
    * Maximum length: 128.
@@ -340,52 +435,52 @@ export class TimeAccountType_1<T extends DeSerializers = DefaultDeSerializers> e
    */
   maximumSimulationHorizonInMonths?: DeserializedType<T, 'Edm.Int64'> | null;
   /**
-   * mdfSystemEffectiveEndDate.
+   * Effective End Date.
    * @nullable
    */
   mdfSystemEffectiveEndDate?: DeserializedType<T, 'Edm.DateTime'> | null;
   /**
-   * mdfSystemEffectiveStartDate.
+   * Effective Start Date.
    * @nullable
    */
   mdfSystemEffectiveStartDate?: DeserializedType<T, 'Edm.DateTime'> | null;
   /**
-   * mdfSystemEntityId.
+   * Entity ID.
    * Maximum length: 255.
    * @nullable
    */
   mdfSystemEntityId?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * mdfSystemObjectType.
+   * Object Type.
    * Maximum length: 255.
    * @nullable
    */
   mdfSystemObjectType?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * mdfSystemRecordId.
+   * Record ID.
    * Maximum length: 255.
    * @nullable
    */
   mdfSystemRecordId?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * mdfSystemRecordStatus.
+   * Record Status.
    * Maximum length: 255.
    * @nullable
    */
   mdfSystemRecordStatus?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * mdfSystemStatus.
+   * Status.
    * Maximum length: 255.
    * @nullable
    */
   mdfSystemStatus?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * mdfSystemTransactionSequence.
+   * Transaction Sequence Number.
    * @nullable
    */
   mdfSystemTransactionSequence?: DeserializedType<T, 'Edm.Int64'> | null;
   /**
-   * mdfSystemVersionId.
+   * Version ID.
    * @nullable
    */
   mdfSystemVersionId?: DeserializedType<T, 'Edm.Int64'> | null;
@@ -401,7 +496,7 @@ export class TimeAccountType_1<T extends DeSerializers = DefaultDeSerializers> e
    */
   payComponent?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * Separate Pay Component for Accrual.
+   * Do not use - Separate Pay Component for Accrual.
    * Maximum length: 32.
    * @nullable
    */
@@ -423,7 +518,10 @@ export class TimeAccountType_1<T extends DeSerializers = DefaultDeSerializers> e
    * Maximum length: 32.
    * @nullable
    */
-  payComponentTerminationAccrualSeparated?: DeserializedType<T, 'Edm.String'> | null;
+  payComponentTerminationAccrualSeparated?: DeserializedType<
+    T,
+    'Edm.String'
+  > | null;
   /**
    * Payout Eligibility.
    * Maximum length: 255.
@@ -443,11 +541,23 @@ export class TimeAccountType_1<T extends DeSerializers = DefaultDeSerializers> e
    */
   periodEndProcessingRule?: DeserializedType<T, 'Edm.String'> | null;
   /**
+   * Periodic Time Account Update Profile.
+   * Maximum length: 128.
+   * @nullable
+   */
+  periodicTimeAccountUpdateProfile?: DeserializedType<T, 'Edm.String'> | null;
+  /**
    * Posting Order.
    * Maximum length: 255.
    * @nullable
    */
   postingOrder?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * Purchase Eligibility.
+   * Maximum length: 128.
+   * @nullable
+   */
+  purchaseEligibility?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * Second Accrual Booking Offset [Days].
    * @nullable
@@ -476,26 +586,64 @@ export class TimeAccountType_1<T extends DeSerializers = DefaultDeSerializers> e
    */
   terminationRule?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * Termination Rule Data Effective Date.
+   * Accrual Rule Data Effective Date.
    * Maximum length: 255.
    * @nullable
    */
   terminationRuleDataEffectiveDate?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * Time Collector Type.
+   * Time Account Configuration Rule.
    * Maximum length: 128.
    * @nullable
    */
-  timeCollectorType?: DeserializedType<T, 'Edm.String'> | null;
+  timeAccountConfigurationRule?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * Payout Profile.
+   * Maximum length: 128.
+   * @nullable
+   */
+  timeAccountPayoutProfile?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * Purchase Profile.
+   * Maximum length: 128.
+   * @nullable
+   */
+  timeAccountPurchaseProfile?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * Unit.
    * Maximum length: 255.
    * @nullable
    */
   unit?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * One-to-one navigation property to the {@link TimeAccountTypeAus} entity.
+   */
+  countryExtensionAus?: TimeAccountTypeAus<T> | null;
+  /**
+   * One-to-one navigation property to the {@link PeriodicTimeAccountUpdateProfile} entity.
+   */
+  periodicTimeAccountUpdateProfileNav?: PeriodicTimeAccountUpdateProfile<T> | null;
+  /**
+   * One-to-many navigation property to the {@link RecalculationBasedField} entity.
+   */
+  recalculationBasedFieldList!: RecalculationBasedField<T>[];
+  /**
+   * One-to-one navigation property to the {@link TimeAccountPayoutProfile} entity.
+   */
+  timeAccountPayoutProfileNav?: TimeAccountPayoutProfile<T> | null;
+  /**
+   * One-to-one navigation property to the {@link TimeAccountPurchaseProfile} entity.
+   */
+  timeAccountPurchaseProfileNav?: TimeAccountPurchaseProfile<T> | null;
+
+  constructor(readonly _entityApi: TimeAccountType_1Api<T>) {
+    super(_entityApi);
+  }
 }
 
-export interface TimeAccountType_1Type<T extends DeSerializers = DefaultDeSerializers> {
+export interface TimeAccountType_1Type<
+  T extends DeSerializers = DefaultDeSerializers
+> {
   accountBookingOffsetInMonths?: DeserializedType<T, 'Edm.Int64'> | null;
   accountCreationAutomationLevel?: DeserializedType<T, 'Edm.String'> | null;
   accountCreationDay?: DeserializedType<T, 'Edm.Int64'> | null;
@@ -519,32 +667,48 @@ export interface TimeAccountType_1Type<T extends DeSerializers = DefaultDeSerial
   accrualWaitingPeriodUnit?: DeserializedType<T, 'Edm.String'> | null;
   advancesAllowed?: DeserializedType<T, 'Edm.Boolean'> | null;
   allowPayoutWithSimulation?: DeserializedType<T, 'Edm.String'> | null;
-  calculateSnapshotApprovedAbsenceBalance?: DeserializedType<T, 'Edm.Boolean'> | null;
+  calculateSnapshotApprovedAbsenceBalance?: DeserializedType<
+    T,
+    'Edm.Boolean'
+  > | null;
   country?: DeserializedType<T, 'Edm.String'> | null;
   createdBy?: DeserializedType<T, 'Edm.String'> | null;
   createdDate?: DeserializedType<T, 'Edm.DateTime'> | null;
   createdDateTime?: DeserializedType<T, 'Edm.DateTimeOffset'> | null;
   creation?: DeserializedType<T, 'Edm.String'> | null;
+  effectOnTransferDateRule?: DeserializedType<T, 'Edm.String'> | null;
   entitlementMethod?: DeserializedType<T, 'Edm.String'> | null;
+  entityUuid?: DeserializedType<T, 'Edm.String'> | null;
   externalCode: DeserializedType<T, 'Edm.String'>;
+  externalNameArSa?: DeserializedType<T, 'Edm.String'> | null;
+  externalNameCyGb?: DeserializedType<T, 'Edm.String'> | null;
   externalNameDeDe?: DeserializedType<T, 'Edm.String'> | null;
   externalNameDefaultValue?: DeserializedType<T, 'Edm.String'> | null;
+  externalNameEnDebug?: DeserializedType<T, 'Edm.String'> | null;
+  externalNameEnDebugApos?: DeserializedType<T, 'Edm.String'> | null;
+  externalNameEnDebugAposRtl?: DeserializedType<T, 'Edm.String'> | null;
   externalNameEnGb?: DeserializedType<T, 'Edm.String'> | null;
+  externalNameEnRtl?: DeserializedType<T, 'Edm.String'> | null;
   externalNameEnUs?: DeserializedType<T, 'Edm.String'> | null;
   externalNameEsEs?: DeserializedType<T, 'Edm.String'> | null;
+  externalNameEsMx?: DeserializedType<T, 'Edm.String'> | null;
+  externalNameFrCa?: DeserializedType<T, 'Edm.String'> | null;
   externalNameFrFr?: DeserializedType<T, 'Edm.String'> | null;
+  externalNameHiIn?: DeserializedType<T, 'Edm.String'> | null;
+  externalNameIwIl?: DeserializedType<T, 'Edm.String'> | null;
   externalNameJaJp?: DeserializedType<T, 'Edm.String'> | null;
   externalNameKoKr?: DeserializedType<T, 'Edm.String'> | null;
   externalNameLocalized?: DeserializedType<T, 'Edm.String'> | null;
   externalNameNlNl?: DeserializedType<T, 'Edm.String'> | null;
   externalNamePtBr?: DeserializedType<T, 'Edm.String'> | null;
-  externalNamePtPt?: DeserializedType<T, 'Edm.String'> | null;
-  externalNameRuRu?: DeserializedType<T, 'Edm.String'> | null;
+  externalNameThTh?: DeserializedType<T, 'Edm.String'> | null;
   externalNameZhCn?: DeserializedType<T, 'Edm.String'> | null;
-  externalNameZhTw?: DeserializedType<T, 'Edm.String'> | null;
   hireRule?: DeserializedType<T, 'Edm.String'> | null;
   initialAccrualTransferDateRule?: DeserializedType<T, 'Edm.String'> | null;
-  initialFlexibleAccountStartDateRule?: DeserializedType<T, 'Edm.String'> | null;
+  initialFlexibleAccountStartDateRule?: DeserializedType<
+    T,
+    'Edm.String'
+  > | null;
   interimRule?: DeserializedType<T, 'Edm.String'> | null;
   lastModifiedBy?: DeserializedType<T, 'Edm.String'> | null;
   lastModifiedDate?: DeserializedType<T, 'Edm.DateTime'> | null;
@@ -566,17 +730,29 @@ export interface TimeAccountType_1Type<T extends DeSerializers = DefaultDeSerial
   payComponentAccrualSeparated?: DeserializedType<T, 'Edm.String'> | null;
   payComponentGroup?: DeserializedType<T, 'Edm.String'> | null;
   payComponentTermination?: DeserializedType<T, 'Edm.String'> | null;
-  payComponentTerminationAccrualSeparated?: DeserializedType<T, 'Edm.String'> | null;
+  payComponentTerminationAccrualSeparated?: DeserializedType<
+    T,
+    'Edm.String'
+  > | null;
   payoutEligibility?: DeserializedType<T, 'Edm.String'> | null;
   pepCalendarAutomationLevel?: DeserializedType<T, 'Edm.String'> | null;
   periodEndProcessingRule?: DeserializedType<T, 'Edm.String'> | null;
+  periodicTimeAccountUpdateProfile?: DeserializedType<T, 'Edm.String'> | null;
   postingOrder?: DeserializedType<T, 'Edm.String'> | null;
+  purchaseEligibility?: DeserializedType<T, 'Edm.String'> | null;
   secondAccrualCreationOffset?: DeserializedType<T, 'Edm.Int64'> | null;
   simulateAccruals?: DeserializedType<T, 'Edm.Boolean'> | null;
   simulationRule?: DeserializedType<T, 'Edm.String'> | null;
   snapshotsAllowed?: DeserializedType<T, 'Edm.Boolean'> | null;
   terminationRule?: DeserializedType<T, 'Edm.String'> | null;
   terminationRuleDataEffectiveDate?: DeserializedType<T, 'Edm.String'> | null;
-  timeCollectorType?: DeserializedType<T, 'Edm.String'> | null;
+  timeAccountConfigurationRule?: DeserializedType<T, 'Edm.String'> | null;
+  timeAccountPayoutProfile?: DeserializedType<T, 'Edm.String'> | null;
+  timeAccountPurchaseProfile?: DeserializedType<T, 'Edm.String'> | null;
   unit?: DeserializedType<T, 'Edm.String'> | null;
+  countryExtensionAus?: TimeAccountTypeAusType<T> | null;
+  periodicTimeAccountUpdateProfileNav?: PeriodicTimeAccountUpdateProfileType<T> | null;
+  recalculationBasedFieldList: RecalculationBasedFieldType<T>[];
+  timeAccountPayoutProfileNav?: TimeAccountPayoutProfileType<T> | null;
+  timeAccountPurchaseProfileNav?: TimeAccountPurchaseProfileType<T> | null;
 }

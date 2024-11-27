@@ -1,10 +1,4 @@
-/* eslint-disable unused-imports/no-unused-imports-ts */
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import moment from 'moment';
-import {
-  TimeSheetEntry,
-  workforceTimesheetService
-} from './generated/workforce-timesheet-service';
 import {
   EmployeeTime,
   ecTimeOffService
@@ -12,53 +6,32 @@ import {
 import { Appointment } from './model/appointment';
 import { Person } from './model/person';
 import { readPersons } from './read-persons';
-import {
-  transformS4Appointment,
-  transformSfsfAppointment
-} from './util/appointment-transformation';
+import { transformSfsfAppointment } from './util/appointment-transformation';
 
 export async function readAppointments(
   year: number,
   srv: any,
-  readS4AppointmentsByPersonFn = readS4AppointmentsByPerson,
-  readSfsfAppointmentsByPersonFn = readSfsfAppointmentsByPerson
-): Promise<[{ year: number; appointments: Appointment[] }]> {
+  readSfsfAppointmentsByPersonFn = readSfsfAppointmentsByPerson,
+): Promise<[{ year: number; appointments: Appointment[]}]> {
   return readPersons(srv)
     .then(persons =>
       Promise.all([
         readLocalAppointments(srv),
-        readRemoteAppointments(
-          readS4AppointmentsByPersonFn,
-          transformS4Appointment
-        )(persons, year),
         readRemoteAppointments(
           readSfsfAppointmentsByPersonFn,
           transformSfsfAppointment
         )(persons, year)
       ])
     )
-    .then(([localAppointments, s4Appointments, sfsfAppointments]) => [
+    .then(([ localAppointments, sfsfAppointments]) => [ 
       {
         year,
         appointments: [
           ...localAppointments,
-          ...s4Appointments,
-          ...sfsfAppointments
+          ...sfsfAppointments,
         ]
       }
     ]);
-}
-
-export async function readS4AppointmentsByPerson(
-  person: Person,
-  year: number
-): Promise<TimeSheetEntry[]> {
-  const personId = person.s4ID;
-  const from = moment.utc(`${year}-01-01`);
-  const to = moment.utc(`${year}-12-31`);
-
-  // TODO: Retrieve TimeSheetEntries from SAP S/4HANA here. Use the above variables for filtering.
-  return [];
 }
 
 export async function readSfsfAppointmentsByPerson(
@@ -66,12 +39,36 @@ export async function readSfsfAppointmentsByPerson(
   year: number
 ): Promise<EmployeeTime[]> {
   const timeType = 'VACATION';
+  const approval = 'APPROVED';
   const personId = person.sfsfID;
   const from = moment.utc(`${year}-01-01`);
   const to = moment.utc(`${year}-12-31`);
 
   // TODO: Retrieve EmployeeTime from SAP SuccessFactors here. Use the above variables for filtering.
-  return [];
+  // return [];
+  const { employeeTimeApi } = ecTimeOffService();
+  return employeeTimeApi
+    .requestBuilder()
+    .getAll()
+    .select(
+      employeeTimeApi.schema.EXTERNAL_CODE,
+      employeeTimeApi.schema.START_TIME,
+      employeeTimeApi.schema.START_DATE,
+      employeeTimeApi.schema.END_TIME,
+      employeeTimeApi.schema.END_DATE,
+      employeeTimeApi.schema.APPROVAL_STATUS,
+      employeeTimeApi.schema.USER_ID,
+      employeeTimeApi.schema.TIME_TYPE
+    )
+    .filter(
+      //employeeTimeApi.schema.TIME_TYPE.equals(timeType),
+      employeeTimeApi.schema.APPROVAL_STATUS.equals(approval),
+      employeeTimeApi.schema.USER_ID.equals(personId),
+      employeeTimeApi.schema.START_DATE.greaterOrEqual(from),
+      employeeTimeApi.schema.END_DATE.lessOrEqual(to)
+    )
+    .execute({ destinationName: 'SFSF' });
+
 }
 
 export async function readLocalAppointments(srv: any): Promise<Appointment[]> {

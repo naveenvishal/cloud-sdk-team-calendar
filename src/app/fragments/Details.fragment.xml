@@ -30,8 +30,14 @@
 				<f:content>
 					<Label text="Start date"/>
 					<DatePicker id="startDate" editable="false" change="handleDetailsChange"/>
+					<Label text="Start time"/>
+					<!-- <TimePicker id="startTime" editable="false" change="handleDetailsChange"/> -->
+					<Text id="startTime"/>
 					<Label text="End date"/>
 					<DatePicker id="endDate" editable="false" change="handleDetailsChange"/>
+					<Label text="End time"/>
+					<!-- <TimePicker id="endTime" editable="false" change="handleDetailsChange"/> -->
+					<Text id="endTime"/>
 					<Label text="More information"/>
 					<Text id="moreInfo"/>
 				</f:content>

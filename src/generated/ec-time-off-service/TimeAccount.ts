@@ -1,16 +1,25 @@
 /*
- * Copyright (c) 2022 SAP SE or an SAP affiliate company. All rights reserved.
+ * Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
-import { Entity, DefaultDeSerializers, DeSerializers, DeserializedType } from '@sap-cloud-sdk/odata-v2';
+import {
+  Entity,
+  DefaultDeSerializers,
+  DeSerializers,
+  DeserializedType
+} from '@sap-cloud-sdk/odata-v2';
+import type { TimeAccountApi } from './TimeAccountApi';
 import { TimeAccountType_1, TimeAccountType_1Type } from './TimeAccountType_1';
 import { TimeAccountDetail, TimeAccountDetailType } from './TimeAccountDetail';
 
 /**
  * This class represents the entity "TimeAccount" of service "ECTimeOff".
  */
-export class TimeAccount<T extends DeSerializers = DefaultDeSerializers> extends Entity implements TimeAccountType<T> {
+export class TimeAccount<T extends DeSerializers = DefaultDeSerializers>
+  extends Entity
+  implements TimeAccountType<T>
+{
   /**
    * Technical entity name for TimeAccount.
    */
@@ -24,70 +33,86 @@ export class TimeAccount<T extends DeSerializers = DefaultDeSerializers> extends
    */
   static _keys = ['externalCode'];
   /**
-   * Closed.
+   * accountClosed.
    * @nullable
    */
   accountClosed?: DeserializedType<T, 'Edm.Boolean'> | null;
   /**
-   * Time Account Type.
+   * accountType.
    * Maximum length: 128.
    * @nullable
    */
   accountType?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * Booking Possible Until.
+   * bookingEndDate.
    * @nullable
    */
   bookingEndDate?: DeserializedType<T, 'Edm.DateTime'> | null;
   /**
-   * Booking Possible From.
+   * bookingStartDate.
    * @nullable
    */
   bookingStartDate?: DeserializedType<T, 'Edm.DateTime'> | null;
   /**
-   * Created By.
+   * createdBy.
    * Maximum length: 255.
    * @nullable
    */
   createdBy?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * Created On.
+   * createdDate.
    * @nullable
    */
   createdDate?: DeserializedType<T, 'Edm.DateTime'> | null;
   /**
-   * Created On.
+   * createdDate.
    * @nullable
    */
   createdDateTime?: DeserializedType<T, 'Edm.DateTimeOffset'> | null;
   /**
-   * Account Valid Until.
+   * Cust_Denmark_value.
+   * @nullable
+   */
+  custCustDenmarkValue?: DeserializedType<T, 'Edm.Decimal'> | null;
+  /**
+   * test.
+   * @nullable
+   */
+  custTest?: DeserializedType<T, 'Edm.Decimal'> | null;
+  /**
+   * endDate.
    * @nullable
    */
   endDate?: DeserializedType<T, 'Edm.DateTime'> | null;
   /**
-   * External Code.
+   * Entity UUID.
+   * Maximum length: 255.
+   * @nullable
+   */
+  entityUuid?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * externalCode.
    * Maximum length: 128.
    */
   externalCode!: DeserializedType<T, 'Edm.String'>;
   /**
-   * Last Modified By.
+   * lastModifiedBy.
    * Maximum length: 255.
    * @nullable
    */
   lastModifiedBy?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * Last Modified On.
+   * lastModifiedDate.
    * @nullable
    */
   lastModifiedDate?: DeserializedType<T, 'Edm.DateTime'> | null;
   /**
-   * Last Modified On.
+   * lastModifiedDate.
    * @nullable
    */
   lastModifiedDateTime?: DeserializedType<T, 'Edm.DateTimeOffset'> | null;
   /**
-   * Last Modified On.
+   * lastModifiedDate.
    * @nullable
    */
   lastModifiedDateWithTz?: DeserializedType<T, 'Edm.DateTimeOffset'> | null;
@@ -102,31 +127,31 @@ export class TimeAccount<T extends DeSerializers = DefaultDeSerializers> extends
    */
   mdfSystemEffectiveStartDate?: DeserializedType<T, 'Edm.DateTime'> | null;
   /**
-   * mdfSystemEntityId.
+   * Entity ID.
    * Maximum length: 255.
    * @nullable
    */
   mdfSystemEntityId?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * mdfSystemObjectType.
+   * Object Type.
    * Maximum length: 255.
    * @nullable
    */
   mdfSystemObjectType?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * mdfSystemRecordId.
+   * Record ID.
    * Maximum length: 255.
    * @nullable
    */
   mdfSystemRecordId?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * mdfSystemRecordStatus.
+   * Record Status.
    * Maximum length: 255.
    * @nullable
    */
   mdfSystemRecordStatus?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * mdfSystemStatus.
+   * Status.
    * Maximum length: 255.
    * @nullable
    */
@@ -137,17 +162,17 @@ export class TimeAccount<T extends DeSerializers = DefaultDeSerializers> extends
    */
   mdfSystemTransactionSequence?: DeserializedType<T, 'Edm.Int64'> | null;
   /**
-   * mdfSystemVersionId.
+   * Version ID.
    * @nullable
    */
   mdfSystemVersionId?: DeserializedType<T, 'Edm.Int64'> | null;
   /**
-   * Account Valid From.
+   * startDate.
    * @nullable
    */
   startDate?: DeserializedType<T, 'Edm.DateTime'> | null;
   /**
-   * User.
+   * userId.
    * Maximum length: 100.
    * @nullable
    */
@@ -160,9 +185,15 @@ export class TimeAccount<T extends DeSerializers = DefaultDeSerializers> extends
    * One-to-many navigation property to the {@link TimeAccountDetail} entity.
    */
   timeAccountDetails!: TimeAccountDetail<T>[];
+
+  constructor(readonly _entityApi: TimeAccountApi<T>) {
+    super(_entityApi);
+  }
 }
 
-export interface TimeAccountType<T extends DeSerializers = DefaultDeSerializers> {
+export interface TimeAccountType<
+  T extends DeSerializers = DefaultDeSerializers
+> {
   accountClosed?: DeserializedType<T, 'Edm.Boolean'> | null;
   accountType?: DeserializedType<T, 'Edm.String'> | null;
   bookingEndDate?: DeserializedType<T, 'Edm.DateTime'> | null;
@@ -170,7 +201,10 @@ export interface TimeAccountType<T extends DeSerializers = DefaultDeSerializers>
   createdBy?: DeserializedType<T, 'Edm.String'> | null;
   createdDate?: DeserializedType<T, 'Edm.DateTime'> | null;
   createdDateTime?: DeserializedType<T, 'Edm.DateTimeOffset'> | null;
+  custCustDenmarkValue?: DeserializedType<T, 'Edm.Decimal'> | null;
+  custTest?: DeserializedType<T, 'Edm.Decimal'> | null;
   endDate?: DeserializedType<T, 'Edm.DateTime'> | null;
+  entityUuid?: DeserializedType<T, 'Edm.String'> | null;
   externalCode: DeserializedType<T, 'Edm.String'>;
   lastModifiedBy?: DeserializedType<T, 'Edm.String'> | null;
   lastModifiedDate?: DeserializedType<T, 'Edm.DateTime'> | null;

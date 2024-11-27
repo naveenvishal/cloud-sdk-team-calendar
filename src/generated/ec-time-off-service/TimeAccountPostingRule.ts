@@ -1,15 +1,26 @@
 /*
- * Copyright (c) 2022 SAP SE or an SAP affiliate company. All rights reserved.
+ * Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
-import { Entity, DefaultDeSerializers, DeSerializers, DeserializedType } from '@sap-cloud-sdk/odata-v2';
+import {
+  Entity,
+  DefaultDeSerializers,
+  DeSerializers,
+  DeserializedType
+} from '@sap-cloud-sdk/odata-v2';
+import type { TimeAccountPostingRuleApi } from './TimeAccountPostingRuleApi';
 import { TimeAccountType_1, TimeAccountType_1Type } from './TimeAccountType_1';
 
 /**
  * This class represents the entity "TimeAccountPostingRule" of service "ECTimeOff".
  */
-export class TimeAccountPostingRule<T extends DeSerializers = DefaultDeSerializers> extends Entity implements TimeAccountPostingRuleType<T> {
+export class TimeAccountPostingRule<
+    T extends DeSerializers = DefaultDeSerializers
+  >
+  extends Entity
+  implements TimeAccountPostingRuleType<T>
+{
   /**
    * Technical entity name for TimeAccountPostingRule.
    */
@@ -44,6 +55,12 @@ export class TimeAccountPostingRule<T extends DeSerializers = DefaultDeSerialize
    */
   createdDateTime?: DeserializedType<T, 'Edm.DateTimeOffset'> | null;
   /**
+   * Entity UUID.
+   * Maximum length: 255.
+   * @nullable
+   */
+  entityUuid?: DeserializedType<T, 'Edm.String'> | null;
+  /**
    * External Code.
    * Maximum length: 128.
    */
@@ -70,52 +87,52 @@ export class TimeAccountPostingRule<T extends DeSerializers = DefaultDeSerialize
    */
   lastModifiedDateWithTz?: DeserializedType<T, 'Edm.DateTimeOffset'> | null;
   /**
-   * mdfSystemEffectiveEndDate.
+   * Effective End Date.
    * @nullable
    */
   mdfSystemEffectiveEndDate?: DeserializedType<T, 'Edm.DateTime'> | null;
   /**
-   * mdfSystemEffectiveStartDate.
+   * Effective Start Date.
    * @nullable
    */
   mdfSystemEffectiveStartDate?: DeserializedType<T, 'Edm.DateTime'> | null;
   /**
-   * mdfSystemEntityId.
+   * Entity ID.
    * Maximum length: 255.
    * @nullable
    */
   mdfSystemEntityId?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * mdfSystemObjectType.
+   * Object Type.
    * Maximum length: 255.
    * @nullable
    */
   mdfSystemObjectType?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * mdfSystemRecordId.
+   * Record ID.
    * Maximum length: 255.
    * @nullable
    */
   mdfSystemRecordId?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * mdfSystemRecordStatus.
+   * Record Status.
    * Maximum length: 255.
    * @nullable
    */
   mdfSystemRecordStatus?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * mdfSystemStatus.
+   * Status.
    * Maximum length: 255.
    * @nullable
    */
   mdfSystemStatus?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * mdfSystemTransactionSequence.
+   * Transaction Sequence Number.
    * @nullable
    */
   mdfSystemTransactionSequence?: DeserializedType<T, 'Edm.Int64'> | null;
   /**
-   * mdfSystemVersionId.
+   * Version ID.
    * @nullable
    */
   mdfSystemVersionId?: DeserializedType<T, 'Edm.Int64'> | null;
@@ -129,13 +146,20 @@ export class TimeAccountPostingRule<T extends DeSerializers = DefaultDeSerialize
    * One-to-one navigation property to the {@link TimeAccountType_1} entity.
    */
   timeAccountTypeNav?: TimeAccountType_1<T> | null;
+
+  constructor(readonly _entityApi: TimeAccountPostingRuleApi<T>) {
+    super(_entityApi);
+  }
 }
 
-export interface TimeAccountPostingRuleType<T extends DeSerializers = DefaultDeSerializers> {
+export interface TimeAccountPostingRuleType<
+  T extends DeSerializers = DefaultDeSerializers
+> {
   timeTypeExternalCode: DeserializedType<T, 'Edm.String'>;
   createdBy?: DeserializedType<T, 'Edm.String'> | null;
   createdDate?: DeserializedType<T, 'Edm.DateTime'> | null;
   createdDateTime?: DeserializedType<T, 'Edm.DateTimeOffset'> | null;
+  entityUuid?: DeserializedType<T, 'Edm.String'> | null;
   externalCode: DeserializedType<T, 'Edm.String'>;
   lastModifiedBy?: DeserializedType<T, 'Edm.String'> | null;
   lastModifiedDate?: DeserializedType<T, 'Edm.DateTime'> | null;

@@ -1,16 +1,36 @@
 /*
- * Copyright (c) 2022 SAP SE or an SAP affiliate company. All rights reserved.
+ * Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
-import { Entity, DefaultDeSerializers, DeSerializers, DeserializedType } from '@sap-cloud-sdk/odata-v2';
-import { AbsenceCountingMethod, AbsenceCountingMethodType } from './AbsenceCountingMethod';
-import { TimeAccountPostingRule, TimeAccountPostingRuleType } from './TimeAccountPostingRule';
+import {
+  Entity,
+  DefaultDeSerializers,
+  DeSerializers,
+  DeserializedType
+} from '@sap-cloud-sdk/odata-v2';
+import type { TimeTypeApi } from './TimeTypeApi';
+import {
+  AbsenceCountingMethod,
+  AbsenceCountingMethodType
+} from './AbsenceCountingMethod';
+import { TimeTypeAus, TimeTypeAusType } from './TimeTypeAus';
+import { TimeTypeCan, TimeTypeCanType } from './TimeTypeCan';
+import { TimeTypeDeu, TimeTypeDeuType } from './TimeTypeDeu';
+import { TimeTypeNld, TimeTypeNldType } from './TimeTypeNld';
+import { TimeTypeUsa, TimeTypeUsaType } from './TimeTypeUsa';
+import {
+  TimeAccountPostingRule,
+  TimeAccountPostingRuleType
+} from './TimeAccountPostingRule';
 
 /**
  * This class represents the entity "TimeType" of service "ECTimeOff".
  */
-export class TimeType<T extends DeSerializers = DefaultDeSerializers> extends Entity implements TimeTypeType<T> {
+export class TimeType<T extends DeSerializers = DefaultDeSerializers>
+  extends Entity
+  implements TimeTypeType<T>
+{
   /**
    * Technical entity name for TimeType.
    */
@@ -29,6 +49,20 @@ export class TimeType<T extends DeSerializers = DefaultDeSerializers> extends En
    * @nullable
    */
   absenceClass?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * Absence Counting Configuration.
+   * Maximum length: 128.
+   * @nullable
+   */
+  absenceCountingConfiguration?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * Allow Absence Requesting Within Flextime Bandwidth.
+   * @nullable
+   */
+  absenceRequestingWithinFlextimeBandwidthAllowed?: DeserializedType<
+    T,
+    'Edm.Boolean'
+  > | null;
   /**
    * Absence Retention Group.
    * Maximum length: 128.
@@ -106,7 +140,7 @@ export class TimeType<T extends DeSerializers = DefaultDeSerializers> extends En
    */
   countingMethod?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * Country.
+   * Country/Region.
    * Maximum length: 128.
    * @nullable
    */
@@ -128,10 +162,36 @@ export class TimeType<T extends DeSerializers = DefaultDeSerializers> extends En
    */
   createdDateTime?: DeserializedType<T, 'Edm.DateTimeOffset'> | null;
   /**
+   * Enable Employee Time Calendar Creation.
+   * @nullable
+   */
+  enableEmployeeTimeCalendarCreation?: DeserializedType<
+    T,
+    'Edm.Boolean'
+  > | null;
+  /**
+   * Entity UUID.
+   * Maximum length: 255.
+   * @nullable
+   */
+  entityUuid?: DeserializedType<T, 'Edm.String'> | null;
+  /**
    * External Code.
    * Maximum length: 128.
    */
   externalCode!: DeserializedType<T, 'Edm.String'>;
+  /**
+   * External Name.
+   * Maximum length: 255.
+   * @nullable
+   */
+  externalNameArSa?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * External Name.
+   * Maximum length: 255.
+   * @nullable
+   */
+  externalNameCyGb?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * External Name.
    * Maximum length: 255.
@@ -149,7 +209,31 @@ export class TimeType<T extends DeSerializers = DefaultDeSerializers> extends En
    * Maximum length: 255.
    * @nullable
    */
+  externalNameEnDebug?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * External Name.
+   * Maximum length: 255.
+   * @nullable
+   */
+  externalNameEnDebugApos?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * External Name.
+   * Maximum length: 255.
+   * @nullable
+   */
+  externalNameEnDebugAposRtl?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * External Name.
+   * Maximum length: 255.
+   * @nullable
+   */
   externalNameEnGb?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * External Name.
+   * Maximum length: 255.
+   * @nullable
+   */
+  externalNameEnRtl?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * External Name.
    * Maximum length: 255.
@@ -167,7 +251,31 @@ export class TimeType<T extends DeSerializers = DefaultDeSerializers> extends En
    * Maximum length: 255.
    * @nullable
    */
+  externalNameEsMx?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * External Name.
+   * Maximum length: 255.
+   * @nullable
+   */
+  externalNameFrCa?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * External Name.
+   * Maximum length: 255.
+   * @nullable
+   */
   externalNameFrFr?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * External Name.
+   * Maximum length: 255.
+   * @nullable
+   */
+  externalNameHiIn?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * External Name.
+   * Maximum length: 255.
+   * @nullable
+   */
+  externalNameIwIl?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * External Name.
    * Maximum length: 255.
@@ -203,25 +311,13 @@ export class TimeType<T extends DeSerializers = DefaultDeSerializers> extends En
    * Maximum length: 255.
    * @nullable
    */
-  externalNamePtPt?: DeserializedType<T, 'Edm.String'> | null;
-  /**
-   * External Name.
-   * Maximum length: 255.
-   * @nullable
-   */
-  externalNameRuRu?: DeserializedType<T, 'Edm.String'> | null;
+  externalNameThTh?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * External Name.
    * Maximum length: 255.
    * @nullable
    */
   externalNameZhCn?: DeserializedType<T, 'Edm.String'> | null;
-  /**
-   * External Name.
-   * Maximum length: 255.
-   * @nullable
-   */
-  externalNameZhTw?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * Flexible Requesting Allowed.
    * @nullable
@@ -266,55 +362,72 @@ export class TimeType<T extends DeSerializers = DefaultDeSerializers> extends En
    */
   maximumDurationInMonths?: DeserializedType<T, 'Edm.Int64'> | null;
   /**
-   * mdfSystemEffectiveEndDate.
+   * Effective End Date.
    * @nullable
    */
   mdfSystemEffectiveEndDate?: DeserializedType<T, 'Edm.DateTime'> | null;
   /**
-   * mdfSystemEffectiveStartDate.
+   * Effective Start Date.
    * @nullable
    */
   mdfSystemEffectiveStartDate?: DeserializedType<T, 'Edm.DateTime'> | null;
   /**
-   * mdfSystemEntityId.
+   * Entity ID.
    * Maximum length: 255.
    * @nullable
    */
   mdfSystemEntityId?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * mdfSystemObjectType.
+   * Object Type.
    * Maximum length: 255.
    * @nullable
    */
   mdfSystemObjectType?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * mdfSystemRecordId.
+   * Record ID.
    * Maximum length: 255.
    * @nullable
    */
   mdfSystemRecordId?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * mdfSystemRecordStatus.
+   * Record Status.
    * Maximum length: 255.
    * @nullable
    */
   mdfSystemRecordStatus?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * mdfSystemStatus.
+   * Status.
    * Maximum length: 255.
    * @nullable
    */
   mdfSystemStatus?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * mdfSystemTransactionSequence.
+   * Transaction Sequence Number.
    * @nullable
    */
   mdfSystemTransactionSequence?: DeserializedType<T, 'Edm.Int64'> | null;
   /**
-   * mdfSystemVersionId.
+   * versionId.
    * @nullable
    */
   mdfSystemVersionId?: DeserializedType<T, 'Edm.Int64'> | null;
+  /**
+   * Not to Count as Time in Service.
+   * @nullable
+   */
+  notToCountAsTimeInService?: DeserializedType<T, 'Edm.Boolean'> | null;
+  /**
+   * Posting Order.
+   * Maximum length: 128.
+   * @nullable
+   */
+  postingOrder?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * Posting Priority.
+   * Maximum length: 128.
+   * @nullable
+   */
+  postingPriority?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * Requesting on Non-Working Days Allowed.
    * @nullable
@@ -342,13 +455,42 @@ export class TimeType<T extends DeSerializers = DefaultDeSerializers> extends En
    */
   countingMethodNav?: AbsenceCountingMethod<T> | null;
   /**
+   * One-to-one navigation property to the {@link TimeTypeAus} entity.
+   */
+  countryExtensionAus?: TimeTypeAus<T> | null;
+  /**
+   * One-to-one navigation property to the {@link TimeTypeCan} entity.
+   */
+  countryExtensionCan?: TimeTypeCan<T> | null;
+  /**
+   * One-to-one navigation property to the {@link TimeTypeDeu} entity.
+   */
+  countryExtensionDeu?: TimeTypeDeu<T> | null;
+  /**
+   * One-to-one navigation property to the {@link TimeTypeNld} entity.
+   */
+  countryExtensionNld?: TimeTypeNld<T> | null;
+  /**
+   * One-to-one navigation property to the {@link TimeTypeUsa} entity.
+   */
+  countryExtensionUsa?: TimeTypeUsa<T> | null;
+  /**
    * One-to-many navigation property to the {@link TimeAccountPostingRule} entity.
    */
   timeAccountPostingRules!: TimeAccountPostingRule<T>[];
+
+  constructor(readonly _entityApi: TimeTypeApi<T>) {
+    super(_entityApi);
+  }
 }
 
 export interface TimeTypeType<T extends DeSerializers = DefaultDeSerializers> {
   absenceClass?: DeserializedType<T, 'Edm.String'> | null;
+  absenceCountingConfiguration?: DeserializedType<T, 'Edm.String'> | null;
+  absenceRequestingWithinFlextimeBandwidthAllowed?: DeserializedType<
+    T,
+    'Edm.Boolean'
+  > | null;
   absenceRetentionGroup?: DeserializedType<T, 'Edm.String'> | null;
   accrualRecalculationRelevance?: DeserializedType<T, 'Edm.String'> | null;
   activateCancellationWorkflow?: DeserializedType<T, 'Edm.Boolean'> | null;
@@ -366,22 +508,35 @@ export interface TimeTypeType<T extends DeSerializers = DefaultDeSerializers> {
   createdBy?: DeserializedType<T, 'Edm.String'> | null;
   createdDate?: DeserializedType<T, 'Edm.DateTime'> | null;
   createdDateTime?: DeserializedType<T, 'Edm.DateTimeOffset'> | null;
+  enableEmployeeTimeCalendarCreation?: DeserializedType<
+    T,
+    'Edm.Boolean'
+  > | null;
+  entityUuid?: DeserializedType<T, 'Edm.String'> | null;
   externalCode: DeserializedType<T, 'Edm.String'>;
+  externalNameArSa?: DeserializedType<T, 'Edm.String'> | null;
+  externalNameCyGb?: DeserializedType<T, 'Edm.String'> | null;
   externalNameDeDe?: DeserializedType<T, 'Edm.String'> | null;
   externalNameDefaultValue?: DeserializedType<T, 'Edm.String'> | null;
+  externalNameEnDebug?: DeserializedType<T, 'Edm.String'> | null;
+  externalNameEnDebugApos?: DeserializedType<T, 'Edm.String'> | null;
+  externalNameEnDebugAposRtl?: DeserializedType<T, 'Edm.String'> | null;
   externalNameEnGb?: DeserializedType<T, 'Edm.String'> | null;
+  externalNameEnRtl?: DeserializedType<T, 'Edm.String'> | null;
   externalNameEnUs?: DeserializedType<T, 'Edm.String'> | null;
   externalNameEsEs?: DeserializedType<T, 'Edm.String'> | null;
+  externalNameEsMx?: DeserializedType<T, 'Edm.String'> | null;
+  externalNameFrCa?: DeserializedType<T, 'Edm.String'> | null;
   externalNameFrFr?: DeserializedType<T, 'Edm.String'> | null;
+  externalNameHiIn?: DeserializedType<T, 'Edm.String'> | null;
+  externalNameIwIl?: DeserializedType<T, 'Edm.String'> | null;
   externalNameJaJp?: DeserializedType<T, 'Edm.String'> | null;
   externalNameKoKr?: DeserializedType<T, 'Edm.String'> | null;
   externalNameLocalized?: DeserializedType<T, 'Edm.String'> | null;
   externalNameNlNl?: DeserializedType<T, 'Edm.String'> | null;
   externalNamePtBr?: DeserializedType<T, 'Edm.String'> | null;
-  externalNamePtPt?: DeserializedType<T, 'Edm.String'> | null;
-  externalNameRuRu?: DeserializedType<T, 'Edm.String'> | null;
+  externalNameThTh?: DeserializedType<T, 'Edm.String'> | null;
   externalNameZhCn?: DeserializedType<T, 'Edm.String'> | null;
-  externalNameZhTw?: DeserializedType<T, 'Edm.String'> | null;
   flexibleRequestingAllowed?: DeserializedType<T, 'Edm.Boolean'> | null;
   lastModifiedBy?: DeserializedType<T, 'Edm.String'> | null;
   lastModifiedDate?: DeserializedType<T, 'Edm.DateTime'> | null;
@@ -399,10 +554,18 @@ export interface TimeTypeType<T extends DeSerializers = DefaultDeSerializers> {
   mdfSystemStatus?: DeserializedType<T, 'Edm.String'> | null;
   mdfSystemTransactionSequence?: DeserializedType<T, 'Edm.Int64'> | null;
   mdfSystemVersionId?: DeserializedType<T, 'Edm.Int64'> | null;
+  notToCountAsTimeInService?: DeserializedType<T, 'Edm.Boolean'> | null;
+  postingOrder?: DeserializedType<T, 'Edm.String'> | null;
+  postingPriority?: DeserializedType<T, 'Edm.String'> | null;
   requestingOnNonWorkingDaysAllowed?: DeserializedType<T, 'Edm.Boolean'> | null;
   undeterminedEndDateAllowed?: DeserializedType<T, 'Edm.Boolean'> | null;
   unit?: DeserializedType<T, 'Edm.String'> | null;
   workflowConfiguration?: DeserializedType<T, 'Edm.String'> | null;
   countingMethodNav?: AbsenceCountingMethodType<T> | null;
+  countryExtensionAus?: TimeTypeAusType<T> | null;
+  countryExtensionCan?: TimeTypeCanType<T> | null;
+  countryExtensionDeu?: TimeTypeDeuType<T> | null;
+  countryExtensionNld?: TimeTypeNldType<T> | null;
+  countryExtensionUsa?: TimeTypeUsaType<T> | null;
   timeAccountPostingRules: TimeAccountPostingRuleType<T>[];
 }

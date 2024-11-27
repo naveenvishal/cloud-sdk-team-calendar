@@ -1,15 +1,26 @@
 /*
- * Copyright (c) 2022 SAP SE or an SAP affiliate company. All rights reserved.
+ * Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
-import { Entity, DefaultDeSerializers, DeSerializers, DeserializedType } from '@sap-cloud-sdk/odata-v2';
+import {
+  Entity,
+  DefaultDeSerializers,
+  DeSerializers,
+  DeserializedType
+} from '@sap-cloud-sdk/odata-v2';
+import type { EmployeeTimeGroupItemApi } from './EmployeeTimeGroupItemApi';
 import { EmployeeTime, EmployeeTimeType } from './EmployeeTime';
 
 /**
  * This class represents the entity "EmployeeTimeGroupItem" of service "ECTimeOff".
  */
-export class EmployeeTimeGroupItem<T extends DeSerializers = DefaultDeSerializers> extends Entity implements EmployeeTimeGroupItemType<T> {
+export class EmployeeTimeGroupItem<
+    T extends DeSerializers = DefaultDeSerializers
+  >
+  extends Entity
+  implements EmployeeTimeGroupItemType<T>
+{
   /**
    * Technical entity name for EmployeeTimeGroupItem.
    */
@@ -56,6 +67,12 @@ export class EmployeeTimeGroupItem<T extends DeSerializers = DefaultDeSerializer
    */
   employeeTime?: DeserializedType<T, 'Edm.String'> | null;
   /**
+   * Entity UUID.
+   * Maximum length: 255.
+   * @nullable
+   */
+  entityUuid?: DeserializedType<T, 'Edm.String'> | null;
+  /**
    * mdfSystemExternalCode.
    * Maximum length: 128.
    */
@@ -82,52 +99,52 @@ export class EmployeeTimeGroupItem<T extends DeSerializers = DefaultDeSerializer
    */
   lastModifiedDateWithTz?: DeserializedType<T, 'Edm.DateTimeOffset'> | null;
   /**
-   * mdfSystemEffectiveEndDate.
+   * Effective End Date.
    * @nullable
    */
   mdfSystemEffectiveEndDate?: DeserializedType<T, 'Edm.DateTime'> | null;
   /**
-   * mdfSystemEffectiveStartDate.
+   * Effective Start Date.
    * @nullable
    */
   mdfSystemEffectiveStartDate?: DeserializedType<T, 'Edm.DateTime'> | null;
   /**
-   * mdfSystemEntityId.
+   * Entity ID.
    * Maximum length: 255.
    * @nullable
    */
   mdfSystemEntityId?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * mdfSystemObjectType.
+   * Object Type.
    * Maximum length: 255.
    * @nullable
    */
   mdfSystemObjectType?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * mdfSystemRecordId.
+   * Record ID.
    * Maximum length: 255.
    * @nullable
    */
   mdfSystemRecordId?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * mdfSystemRecordStatus.
+   * Record Status.
    * Maximum length: 255.
    * @nullable
    */
   mdfSystemRecordStatus?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * mdfSystemStatus.
+   * Status.
    * Maximum length: 255.
    * @nullable
    */
   mdfSystemStatus?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * mdfSystemTransactionSequence.
+   * Transaction Sequence Number.
    * @nullable
    */
   mdfSystemTransactionSequence?: DeserializedType<T, 'Edm.Int64'> | null;
   /**
-   * mdfSystemVersionId.
+   * Version ID.
    * @nullable
    */
   mdfSystemVersionId?: DeserializedType<T, 'Edm.Int64'> | null;
@@ -135,15 +152,22 @@ export class EmployeeTimeGroupItem<T extends DeSerializers = DefaultDeSerializer
    * One-to-one navigation property to the {@link EmployeeTime} entity.
    */
   employeeTimeNav?: EmployeeTime<T> | null;
+
+  constructor(readonly _entityApi: EmployeeTimeGroupItemApi<T>) {
+    super(_entityApi);
+  }
 }
 
-export interface EmployeeTimeGroupItemType<T extends DeSerializers = DefaultDeSerializers> {
+export interface EmployeeTimeGroupItemType<
+  T extends DeSerializers = DefaultDeSerializers
+> {
   employeeTimeGroupExternalCode: DeserializedType<T, 'Edm.String'>;
   comment?: DeserializedType<T, 'Edm.String'> | null;
   createdBy?: DeserializedType<T, 'Edm.String'> | null;
   createdDate?: DeserializedType<T, 'Edm.DateTime'> | null;
   createdDateTime?: DeserializedType<T, 'Edm.DateTimeOffset'> | null;
   employeeTime?: DeserializedType<T, 'Edm.String'> | null;
+  entityUuid?: DeserializedType<T, 'Edm.String'> | null;
   externalCode: DeserializedType<T, 'Edm.String'>;
   lastModifiedBy?: DeserializedType<T, 'Edm.String'> | null;
   lastModifiedDate?: DeserializedType<T, 'Edm.DateTime'> | null;

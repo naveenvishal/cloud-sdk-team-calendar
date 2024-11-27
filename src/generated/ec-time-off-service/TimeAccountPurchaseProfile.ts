@@ -1,15 +1,29 @@
 /*
- * Copyright (c) 2022 SAP SE or an SAP affiliate company. All rights reserved.
+ * Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
-import { Entity, DefaultDeSerializers, DeSerializers, DeserializedType } from '@sap-cloud-sdk/odata-v2';
-import { TimeAccountPurchaseProfilePayComponentAssignment, TimeAccountPurchaseProfilePayComponentAssignmentType } from './TimeAccountPurchaseProfilePayComponentAssignment';
+import {
+  Entity,
+  DefaultDeSerializers,
+  DeSerializers,
+  DeserializedType
+} from '@sap-cloud-sdk/odata-v2';
+import type { TimeAccountPurchaseProfileApi } from './TimeAccountPurchaseProfileApi';
+import {
+  TimeAccountPurchaseProfilePayComponentAssignment,
+  TimeAccountPurchaseProfilePayComponentAssignmentType
+} from './TimeAccountPurchaseProfilePayComponentAssignment';
 
 /**
  * This class represents the entity "TimeAccountPurchaseProfile" of service "ECTimeOff".
  */
-export class TimeAccountPurchaseProfile<T extends DeSerializers = DefaultDeSerializers> extends Entity implements TimeAccountPurchaseProfileType<T> {
+export class TimeAccountPurchaseProfile<
+    T extends DeSerializers = DefaultDeSerializers
+  >
+  extends Entity
+  implements TimeAccountPurchaseProfileType<T>
+{
   /**
    * Technical entity name for TimeAccountPurchaseProfile.
    */
@@ -57,6 +71,12 @@ export class TimeAccountPurchaseProfile<T extends DeSerializers = DefaultDeSeria
    */
   deductionType?: DeserializedType<T, 'Edm.String'> | null;
   /**
+   * Entity UUID.
+   * Maximum length: 255.
+   * @nullable
+   */
+  entityUuid?: DeserializedType<T, 'Edm.String'> | null;
+  /**
    * Equivalent Units.
    * Maximum length: 128.
    * @nullable
@@ -67,6 +87,18 @@ export class TimeAccountPurchaseProfile<T extends DeSerializers = DefaultDeSeria
    * Maximum length: 128.
    */
   externalCode!: DeserializedType<T, 'Edm.String'>;
+  /**
+   * External Name.
+   * Maximum length: 255.
+   * @nullable
+   */
+  externalNameArSa?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * External Name.
+   * Maximum length: 255.
+   * @nullable
+   */
+  externalNameCyGb?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * External Name.
    * Maximum length: 255.
@@ -90,7 +122,25 @@ export class TimeAccountPurchaseProfile<T extends DeSerializers = DefaultDeSeria
    * Maximum length: 255.
    * @nullable
    */
+  externalNameEnDebugApos?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * External Name.
+   * Maximum length: 255.
+   * @nullable
+   */
+  externalNameEnDebugAposRtl?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * External Name.
+   * Maximum length: 255.
+   * @nullable
+   */
   externalNameEnGb?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * External Name.
+   * Maximum length: 255.
+   * @nullable
+   */
+  externalNameEnRtl?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * External Name.
    * Maximum length: 255.
@@ -108,7 +158,31 @@ export class TimeAccountPurchaseProfile<T extends DeSerializers = DefaultDeSeria
    * Maximum length: 255.
    * @nullable
    */
+  externalNameEsMx?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * External Name.
+   * Maximum length: 255.
+   * @nullable
+   */
+  externalNameFrCa?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * External Name.
+   * Maximum length: 255.
+   * @nullable
+   */
   externalNameFrFr?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * External Name.
+   * Maximum length: 255.
+   * @nullable
+   */
+  externalNameHiIn?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * External Name.
+   * Maximum length: 255.
+   * @nullable
+   */
+  externalNameIwIl?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * External Name.
    * Maximum length: 255.
@@ -144,13 +218,7 @@ export class TimeAccountPurchaseProfile<T extends DeSerializers = DefaultDeSeria
    * Maximum length: 255.
    * @nullable
    */
-  externalNamePtPt?: DeserializedType<T, 'Edm.String'> | null;
-  /**
-   * External Name.
-   * Maximum length: 255.
-   * @nullable
-   */
-  externalNameRuRu?: DeserializedType<T, 'Edm.String'> | null;
+  externalNameThTh?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * External Name.
    * Maximum length: 255.
@@ -158,11 +226,17 @@ export class TimeAccountPurchaseProfile<T extends DeSerializers = DefaultDeSeria
    */
   externalNameZhCn?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * External Name.
-   * Maximum length: 255.
+   * Instructional Text.
+   * Maximum length: 1000.
    * @nullable
    */
-  externalNameZhTw?: DeserializedType<T, 'Edm.String'> | null;
+  helpTextArSa?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * Instructional Text.
+   * Maximum length: 1000.
+   * @nullable
+   */
+  helpTextCyGb?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * Instructional Text.
    * Maximum length: 1000.
@@ -186,7 +260,25 @@ export class TimeAccountPurchaseProfile<T extends DeSerializers = DefaultDeSeria
    * Maximum length: 1000.
    * @nullable
    */
+  helpTextEnDebugApos?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * Instructional Text.
+   * Maximum length: 1000.
+   * @nullable
+   */
+  helpTextEnDebugAposRtl?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * Instructional Text.
+   * Maximum length: 1000.
+   * @nullable
+   */
   helpTextEnGb?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * Instructional Text.
+   * Maximum length: 1000.
+   * @nullable
+   */
+  helpTextEnRtl?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * Instructional Text.
    * Maximum length: 1000.
@@ -204,7 +296,31 @@ export class TimeAccountPurchaseProfile<T extends DeSerializers = DefaultDeSeria
    * Maximum length: 1000.
    * @nullable
    */
+  helpTextEsMx?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * Instructional Text.
+   * Maximum length: 1000.
+   * @nullable
+   */
+  helpTextFrCa?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * Instructional Text.
+   * Maximum length: 1000.
+   * @nullable
+   */
   helpTextFrFr?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * Instructional Text.
+   * Maximum length: 1000.
+   * @nullable
+   */
+  helpTextHiIn?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * Instructional Text.
+   * Maximum length: 1000.
+   * @nullable
+   */
+  helpTextIwIl?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * Instructional Text.
    * Maximum length: 1000.
@@ -240,25 +356,13 @@ export class TimeAccountPurchaseProfile<T extends DeSerializers = DefaultDeSeria
    * Maximum length: 1000.
    * @nullable
    */
-  helpTextPtPt?: DeserializedType<T, 'Edm.String'> | null;
-  /**
-   * Instructional Text.
-   * Maximum length: 1000.
-   * @nullable
-   */
-  helpTextRuRu?: DeserializedType<T, 'Edm.String'> | null;
+  helpTextThTh?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * Instructional Text.
    * Maximum length: 1000.
    * @nullable
    */
   helpTextZhCn?: DeserializedType<T, 'Edm.String'> | null;
-  /**
-   * Instructional Text.
-   * Maximum length: 1000.
-   * @nullable
-   */
-  helpTextZhTw?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * Last Modified By.
    * Maximum length: 255.
@@ -286,49 +390,70 @@ export class TimeAccountPurchaseProfile<T extends DeSerializers = DefaultDeSeria
    * One-to-many navigation property to the {@link TimeAccountPurchaseProfilePayComponentAssignment} entity.
    */
   deductionPayComponents!: TimeAccountPurchaseProfilePayComponentAssignment<T>[];
+
+  constructor(readonly _entityApi: TimeAccountPurchaseProfileApi<T>) {
+    super(_entityApi);
+  }
 }
 
-export interface TimeAccountPurchaseProfileType<T extends DeSerializers = DefaultDeSerializers> {
+export interface TimeAccountPurchaseProfileType<
+  T extends DeSerializers = DefaultDeSerializers
+> {
   allowDeductionStartDateSelection?: DeserializedType<T, 'Edm.Boolean'> | null;
   country?: DeserializedType<T, 'Edm.String'> | null;
   createdBy?: DeserializedType<T, 'Edm.String'> | null;
   createdDateTime?: DeserializedType<T, 'Edm.DateTimeOffset'> | null;
   deductionSchedule?: DeserializedType<T, 'Edm.String'> | null;
   deductionType?: DeserializedType<T, 'Edm.String'> | null;
+  entityUuid?: DeserializedType<T, 'Edm.String'> | null;
   equivalentUnits?: DeserializedType<T, 'Edm.String'> | null;
   externalCode: DeserializedType<T, 'Edm.String'>;
+  externalNameArSa?: DeserializedType<T, 'Edm.String'> | null;
+  externalNameCyGb?: DeserializedType<T, 'Edm.String'> | null;
   externalNameDeDe?: DeserializedType<T, 'Edm.String'> | null;
   externalNameDefaultValue?: DeserializedType<T, 'Edm.String'> | null;
   externalNameEnDebug?: DeserializedType<T, 'Edm.String'> | null;
+  externalNameEnDebugApos?: DeserializedType<T, 'Edm.String'> | null;
+  externalNameEnDebugAposRtl?: DeserializedType<T, 'Edm.String'> | null;
   externalNameEnGb?: DeserializedType<T, 'Edm.String'> | null;
+  externalNameEnRtl?: DeserializedType<T, 'Edm.String'> | null;
   externalNameEnUs?: DeserializedType<T, 'Edm.String'> | null;
   externalNameEsEs?: DeserializedType<T, 'Edm.String'> | null;
+  externalNameEsMx?: DeserializedType<T, 'Edm.String'> | null;
+  externalNameFrCa?: DeserializedType<T, 'Edm.String'> | null;
   externalNameFrFr?: DeserializedType<T, 'Edm.String'> | null;
+  externalNameHiIn?: DeserializedType<T, 'Edm.String'> | null;
+  externalNameIwIl?: DeserializedType<T, 'Edm.String'> | null;
   externalNameJaJp?: DeserializedType<T, 'Edm.String'> | null;
   externalNameKoKr?: DeserializedType<T, 'Edm.String'> | null;
   externalNameLocalized?: DeserializedType<T, 'Edm.String'> | null;
   externalNameNlNl?: DeserializedType<T, 'Edm.String'> | null;
   externalNamePtBr?: DeserializedType<T, 'Edm.String'> | null;
-  externalNamePtPt?: DeserializedType<T, 'Edm.String'> | null;
-  externalNameRuRu?: DeserializedType<T, 'Edm.String'> | null;
+  externalNameThTh?: DeserializedType<T, 'Edm.String'> | null;
   externalNameZhCn?: DeserializedType<T, 'Edm.String'> | null;
-  externalNameZhTw?: DeserializedType<T, 'Edm.String'> | null;
+  helpTextArSa?: DeserializedType<T, 'Edm.String'> | null;
+  helpTextCyGb?: DeserializedType<T, 'Edm.String'> | null;
   helpTextDeDe?: DeserializedType<T, 'Edm.String'> | null;
   helpTextDefaultValue?: DeserializedType<T, 'Edm.String'> | null;
   helpTextEnDebug?: DeserializedType<T, 'Edm.String'> | null;
+  helpTextEnDebugApos?: DeserializedType<T, 'Edm.String'> | null;
+  helpTextEnDebugAposRtl?: DeserializedType<T, 'Edm.String'> | null;
   helpTextEnGb?: DeserializedType<T, 'Edm.String'> | null;
+  helpTextEnRtl?: DeserializedType<T, 'Edm.String'> | null;
   helpTextEnUs?: DeserializedType<T, 'Edm.String'> | null;
   helpTextEsEs?: DeserializedType<T, 'Edm.String'> | null;
+  helpTextEsMx?: DeserializedType<T, 'Edm.String'> | null;
+  helpTextFrCa?: DeserializedType<T, 'Edm.String'> | null;
   helpTextFrFr?: DeserializedType<T, 'Edm.String'> | null;
+  helpTextHiIn?: DeserializedType<T, 'Edm.String'> | null;
+  helpTextIwIl?: DeserializedType<T, 'Edm.String'> | null;
   helpTextJaJp?: DeserializedType<T, 'Edm.String'> | null;
   helpTextKoKr?: DeserializedType<T, 'Edm.String'> | null;
   helpTextLocalized?: DeserializedType<T, 'Edm.String'> | null;
   helpTextNlNl?: DeserializedType<T, 'Edm.String'> | null;
   helpTextPtBr?: DeserializedType<T, 'Edm.String'> | null;
-  helpTextPtPt?: DeserializedType<T, 'Edm.String'> | null;
-  helpTextRuRu?: DeserializedType<T, 'Edm.String'> | null;
+  helpTextThTh?: DeserializedType<T, 'Edm.String'> | null;
   helpTextZhCn?: DeserializedType<T, 'Edm.String'> | null;
-  helpTextZhTw?: DeserializedType<T, 'Edm.String'> | null;
   lastModifiedBy?: DeserializedType<T, 'Edm.String'> | null;
   lastModifiedDateTime?: DeserializedType<T, 'Edm.DateTimeOffset'> | null;
   mdfSystemRecordStatus?: DeserializedType<T, 'Edm.String'> | null;

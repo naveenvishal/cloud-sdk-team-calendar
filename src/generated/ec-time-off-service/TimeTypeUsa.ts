@@ -1,14 +1,23 @@
 /*
- * Copyright (c) 2022 SAP SE or an SAP affiliate company. All rights reserved.
+ * Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
-import { Entity, DefaultDeSerializers, DeSerializers, DeserializedType } from '@sap-cloud-sdk/odata-v2';
+import {
+  Entity,
+  DefaultDeSerializers,
+  DeSerializers,
+  DeserializedType
+} from '@sap-cloud-sdk/odata-v2';
+import type { TimeTypeUsaApi } from './TimeTypeUsaApi';
 
 /**
  * This class represents the entity "TimeTypeUSA" of service "ECTimeOff".
  */
-export class TimeTypeUsa<T extends DeSerializers = DefaultDeSerializers> extends Entity implements TimeTypeUsaType<T> {
+export class TimeTypeUsa<T extends DeSerializers = DefaultDeSerializers>
+  extends Entity
+  implements TimeTypeUsaType<T>
+{
   /**
    * Technical entity name for TimeTypeUsa.
    */
@@ -38,9 +47,31 @@ export class TimeTypeUsa<T extends DeSerializers = DefaultDeSerializers> extends
    */
   createdDateTime?: DeserializedType<T, 'Edm.DateTimeOffset'> | null;
   /**
-   * externalCode.
+   * Duration of Disability Period One (in days).
+   * @nullable
    */
-  externalCode!: DeserializedType<T, 'Edm.Int64'>;
+  durationOfDisabilityPeriodOne?: DeserializedType<T, 'Edm.Int64'> | null;
+  /**
+   * Duration of Disability Period Three (in days).
+   * @nullable
+   */
+  durationOfDisabilityPeriodThree?: DeserializedType<T, 'Edm.Int64'> | null;
+  /**
+   * Duration of Disability Period Two (in days).
+   * @nullable
+   */
+  durationOfDisabilityPeriodTwo?: DeserializedType<T, 'Edm.Int64'> | null;
+  /**
+   * Entity UUID.
+   * Maximum length: 255.
+   * @nullable
+   */
+  entityUuid?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * externalCode.
+   * Maximum length: 38.
+   */
+  externalCode!: DeserializedType<T, 'Edm.String'>;
   /**
    * lastModifiedBy.
    * Maximum length: 255.
@@ -64,13 +95,23 @@ export class TimeTypeUsa<T extends DeSerializers = DefaultDeSerializers> extends
    * @nullable
    */
   sicknessVariant?: DeserializedType<T, 'Edm.String'> | null;
+
+  constructor(readonly _entityApi: TimeTypeUsaApi<T>) {
+    super(_entityApi);
+  }
 }
 
-export interface TimeTypeUsaType<T extends DeSerializers = DefaultDeSerializers> {
+export interface TimeTypeUsaType<
+  T extends DeSerializers = DefaultDeSerializers
+> {
   timeTypeExternalCode: DeserializedType<T, 'Edm.String'>;
   createdBy?: DeserializedType<T, 'Edm.String'> | null;
   createdDateTime?: DeserializedType<T, 'Edm.DateTimeOffset'> | null;
-  externalCode: DeserializedType<T, 'Edm.Int64'>;
+  durationOfDisabilityPeriodOne?: DeserializedType<T, 'Edm.Int64'> | null;
+  durationOfDisabilityPeriodThree?: DeserializedType<T, 'Edm.Int64'> | null;
+  durationOfDisabilityPeriodTwo?: DeserializedType<T, 'Edm.Int64'> | null;
+  entityUuid?: DeserializedType<T, 'Edm.String'> | null;
+  externalCode: DeserializedType<T, 'Edm.String'>;
   lastModifiedBy?: DeserializedType<T, 'Edm.String'> | null;
   lastModifiedDateTime?: DeserializedType<T, 'Edm.DateTimeOffset'> | null;
   mdfSystemRecordStatus?: DeserializedType<T, 'Edm.String'> | null;

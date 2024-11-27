@@ -1,14 +1,23 @@
 /*
- * Copyright (c) 2022 SAP SE or an SAP affiliate company. All rights reserved.
+ * Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
-import { Entity, DefaultDeSerializers, DeSerializers, DeserializedType } from '@sap-cloud-sdk/odata-v2';
+import {
+  Entity,
+  DefaultDeSerializers,
+  DeSerializers,
+  DeserializedType
+} from '@sap-cloud-sdk/odata-v2';
+import type { EmployeeTimeAusApi } from './EmployeeTimeAusApi';
 
 /**
  * This class represents the entity "EmployeeTimeAUS" of service "ECTimeOff".
  */
-export class EmployeeTimeAus<T extends DeSerializers = DefaultDeSerializers> extends Entity implements EmployeeTimeAusType<T> {
+export class EmployeeTimeAus<T extends DeSerializers = DefaultDeSerializers>
+  extends Entity
+  implements EmployeeTimeAusType<T>
+{
   /**
    * Technical entity name for EmployeeTimeAus.
    */
@@ -37,6 +46,24 @@ export class EmployeeTimeAus<T extends DeSerializers = DefaultDeSerializers> ext
    * @nullable
    */
   createdDateTime?: DeserializedType<T, 'Edm.DateTimeOffset'> | null;
+  /**
+   * WorkflowField1.
+   * Maximum length: 255.
+   * @nullable
+   */
+  custWorkflowField1?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * WorkflowField2.
+   * Maximum length: 255.
+   * @nullable
+   */
+  custWorkflowField2?: DeserializedType<T, 'Edm.String'> | null;
+  /**
+   * Entity UUID.
+   * Maximum length: 255.
+   * @nullable
+   */
+  entityUuid?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * externalCode.
    */
@@ -68,12 +95,21 @@ export class EmployeeTimeAus<T extends DeSerializers = DefaultDeSerializers> ext
    * @nullable
    */
   splitPaymentAcrossFinancialYear?: DeserializedType<T, 'Edm.Boolean'> | null;
+
+  constructor(readonly _entityApi: EmployeeTimeAusApi<T>) {
+    super(_entityApi);
+  }
 }
 
-export interface EmployeeTimeAusType<T extends DeSerializers = DefaultDeSerializers> {
+export interface EmployeeTimeAusType<
+  T extends DeSerializers = DefaultDeSerializers
+> {
   employeeTimeExternalCode: DeserializedType<T, 'Edm.String'>;
   createdBy?: DeserializedType<T, 'Edm.String'> | null;
   createdDateTime?: DeserializedType<T, 'Edm.DateTimeOffset'> | null;
+  custWorkflowField1?: DeserializedType<T, 'Edm.String'> | null;
+  custWorkflowField2?: DeserializedType<T, 'Edm.String'> | null;
+  entityUuid?: DeserializedType<T, 'Edm.String'> | null;
   externalCode: DeserializedType<T, 'Edm.Int64'>;
   lastModifiedBy?: DeserializedType<T, 'Edm.String'> | null;
   lastModifiedDateTime?: DeserializedType<T, 'Edm.DateTimeOffset'> | null;

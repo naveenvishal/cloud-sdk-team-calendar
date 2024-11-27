@@ -1,15 +1,24 @@
 /*
- * Copyright (c) 2022 SAP SE or an SAP affiliate company. All rights reserved.
+ * Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
-import { Entity, DefaultDeSerializers, DeSerializers, DeserializedType } from '@sap-cloud-sdk/odata-v2';
+import {
+  Entity,
+  DefaultDeSerializers,
+  DeSerializers,
+  DeserializedType
+} from '@sap-cloud-sdk/odata-v2';
+import type { EmployeeTimeColApi } from './EmployeeTimeColApi';
 import { EmployeeTimeGroup, EmployeeTimeGroupType } from './EmployeeTimeGroup';
 
 /**
  * This class represents the entity "EmployeeTimeCOL" of service "ECTimeOff".
  */
-export class EmployeeTimeCol<T extends DeSerializers = DefaultDeSerializers> extends Entity implements EmployeeTimeColType<T> {
+export class EmployeeTimeCol<T extends DeSerializers = DefaultDeSerializers>
+  extends Entity
+  implements EmployeeTimeColType<T>
+{
   /**
    * Technical entity name for EmployeeTimeCol.
    */
@@ -38,6 +47,12 @@ export class EmployeeTimeCol<T extends DeSerializers = DefaultDeSerializers> ext
    * @nullable
    */
   createdDateTime?: DeserializedType<T, 'Edm.DateTimeOffset'> | null;
+  /**
+   * Entity UUID.
+   * Maximum length: 255.
+   * @nullable
+   */
+  entityUuid?: DeserializedType<T, 'Edm.String'> | null;
   /**
    * externalCode.
    */
@@ -69,12 +84,19 @@ export class EmployeeTimeCol<T extends DeSerializers = DefaultDeSerializers> ext
    * One-to-one navigation property to the {@link EmployeeTimeGroup} entity.
    */
   identicalSicknessGroupNav?: EmployeeTimeGroup<T> | null;
+
+  constructor(readonly _entityApi: EmployeeTimeColApi<T>) {
+    super(_entityApi);
+  }
 }
 
-export interface EmployeeTimeColType<T extends DeSerializers = DefaultDeSerializers> {
+export interface EmployeeTimeColType<
+  T extends DeSerializers = DefaultDeSerializers
+> {
   employeeTimeExternalCode: DeserializedType<T, 'Edm.String'>;
   createdBy?: DeserializedType<T, 'Edm.String'> | null;
   createdDateTime?: DeserializedType<T, 'Edm.DateTimeOffset'> | null;
+  entityUuid?: DeserializedType<T, 'Edm.String'> | null;
   externalCode: DeserializedType<T, 'Edm.Int64'>;
   identicalSicknessGroup?: DeserializedType<T, 'Edm.String'> | null;
   lastModifiedBy?: DeserializedType<T, 'Edm.String'> | null;

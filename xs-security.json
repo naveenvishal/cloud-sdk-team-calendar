@@ -1,4 +1,32 @@
 {
   "xsappname": "my-xsuaa",
-  "tenant-mode": "shared"
+  "tenant-mode": "shared",
+  "scopes": [
+    {
+      "name": "$XSAPPNAME.User",
+      "description": "Default user scope",
+      "grant-as-authority-to-apps": ["$XSAPPNAME"]
+    }
+  ],
+  "attributes": [
+    {
+      "name": "email",
+      "description": "User Email Address"
+    },
+    {
+      "name": "given_name",
+      "description": "User First Name"
+    },
+    {
+      "name": "family_name",
+      "description": "User Last Name"
+    }
+  ],
+  "role-templates": [
+    {
+      "name": "User",
+      "description": "Default User Role",
+      "scope-references": ["$XSAPPNAME.User"]
+    }
+  ]
 }

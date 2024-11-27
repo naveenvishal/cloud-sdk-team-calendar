@@ -1,16 +1,28 @@
 /*
- * Copyright (c) 2022 SAP SE or an SAP affiliate company. All rights reserved.
+ * Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
-import { Entity, DefaultDeSerializers, DeSerializers, DeserializedType } from '@sap-cloud-sdk/odata-v2';
-import { EmployeeTimeCalendar, EmployeeTimeCalendarType } from './EmployeeTimeCalendar';
+import {
+  Entity,
+  DefaultDeSerializers,
+  DeSerializers,
+  DeserializedType
+} from '@sap-cloud-sdk/odata-v2';
+import type { TimeAccountDetailApi } from './TimeAccountDetailApi';
+import {
+  EmployeeTimeCalendar,
+  EmployeeTimeCalendarType
+} from './EmployeeTimeCalendar';
 import { EmployeeTime, EmployeeTimeType } from './EmployeeTime';
 
 /**
  * This class represents the entity "TimeAccountDetail" of service "ECTimeOff".
  */
-export class TimeAccountDetail<T extends DeSerializers = DefaultDeSerializers> extends Entity implements TimeAccountDetailType<T> {
+export class TimeAccountDetail<T extends DeSerializers = DefaultDeSerializers>
+  extends Entity
+  implements TimeAccountDetailType<T>
+{
   /**
    * Technical entity name for TimeAccountDetail.
    */
@@ -24,13 +36,13 @@ export class TimeAccountDetail<T extends DeSerializers = DefaultDeSerializers> e
    */
   static _keys = ['TimeAccount_externalCode', 'externalCode'];
   /**
-   * Time Account_External Code.
+   * TimeAccount_externalCode.
    * Maximum length: 128.
    */
   timeAccountExternalCode!: DeserializedType<T, 'Edm.String'>;
   /**
    * Accrual Period ID.
-   * Maximum length: 255.
+   * Maximum length: 16.
    * @nullable
    */
   accrualPeriodId?: DeserializedType<T, 'Edm.String'> | null;
@@ -102,6 +114,12 @@ export class TimeAccountDetail<T extends DeSerializers = DefaultDeSerializers> e
    */
   employeeTime?: DeserializedType<T, 'Edm.String'> | null;
   /**
+   * Entity UUID.
+   * Maximum length: 255.
+   * @nullable
+   */
+  entityUuid?: DeserializedType<T, 'Edm.String'> | null;
+  /**
    * External Code.
    * Maximum length: 128.
    */
@@ -138,31 +156,31 @@ export class TimeAccountDetail<T extends DeSerializers = DefaultDeSerializers> e
    */
   mdfSystemEffectiveStartDate?: DeserializedType<T, 'Edm.DateTime'> | null;
   /**
-   * mdfSystemEntityId.
+   * Entity ID.
    * Maximum length: 255.
    * @nullable
    */
   mdfSystemEntityId?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * mdfSystemObjectType.
+   * Object Type.
    * Maximum length: 255.
    * @nullable
    */
   mdfSystemObjectType?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * mdfSystemRecordId.
+   * Record ID.
    * Maximum length: 255.
    * @nullable
    */
   mdfSystemRecordId?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * mdfSystemRecordStatus.
+   * Record Status.
    * Maximum length: 255.
    * @nullable
    */
   mdfSystemRecordStatus?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * mdfSystemStatus.
+   * Status.
    * Maximum length: 255.
    * @nullable
    */
@@ -173,7 +191,7 @@ export class TimeAccountDetail<T extends DeSerializers = DefaultDeSerializers> e
    */
   mdfSystemTransactionSequence?: DeserializedType<T, 'Edm.Int64'> | null;
   /**
-   * mdfSystemVersionId.
+   * Version ID.
    * @nullable
    */
   mdfSystemVersionId?: DeserializedType<T, 'Edm.Int64'> | null;
@@ -183,8 +201,14 @@ export class TimeAccountDetail<T extends DeSerializers = DefaultDeSerializers> e
    */
   payoutAccrualSeparated?: DeserializedType<T, 'Edm.Boolean'> | null;
   /**
+   * Periodic Update Period ID.
+   * Maximum length: 16.
+   * @nullable
+   */
+  periodicUpdatePeriodId?: DeserializedType<T, 'Edm.String'> | null;
+  /**
    * Reference Object.
-   * Maximum length: 255.
+   * Maximum length: 128.
    * @nullable
    */
   referenceObject?: DeserializedType<T, 'Edm.String'> | null;
@@ -196,9 +220,15 @@ export class TimeAccountDetail<T extends DeSerializers = DefaultDeSerializers> e
    * One-to-one navigation property to the {@link EmployeeTime} entity.
    */
   employeeTimeNav?: EmployeeTime<T> | null;
+
+  constructor(readonly _entityApi: TimeAccountDetailApi<T>) {
+    super(_entityApi);
+  }
 }
 
-export interface TimeAccountDetailType<T extends DeSerializers = DefaultDeSerializers> {
+export interface TimeAccountDetailType<
+  T extends DeSerializers = DefaultDeSerializers
+> {
   timeAccountExternalCode: DeserializedType<T, 'Edm.String'>;
   accrualPeriodId?: DeserializedType<T, 'Edm.String'> | null;
   advanced?: DeserializedType<T, 'Edm.Boolean'> | null;
@@ -213,6 +243,7 @@ export interface TimeAccountDetailType<T extends DeSerializers = DefaultDeSerial
   createdDate?: DeserializedType<T, 'Edm.DateTime'> | null;
   createdDateTime?: DeserializedType<T, 'Edm.DateTimeOffset'> | null;
   employeeTime?: DeserializedType<T, 'Edm.String'> | null;
+  entityUuid?: DeserializedType<T, 'Edm.String'> | null;
   externalCode: DeserializedType<T, 'Edm.String'>;
   lastModifiedBy?: DeserializedType<T, 'Edm.String'> | null;
   lastModifiedDate?: DeserializedType<T, 'Edm.DateTime'> | null;
@@ -228,6 +259,7 @@ export interface TimeAccountDetailType<T extends DeSerializers = DefaultDeSerial
   mdfSystemTransactionSequence?: DeserializedType<T, 'Edm.Int64'> | null;
   mdfSystemVersionId?: DeserializedType<T, 'Edm.Int64'> | null;
   payoutAccrualSeparated?: DeserializedType<T, 'Edm.Boolean'> | null;
+  periodicUpdatePeriodId?: DeserializedType<T, 'Edm.String'> | null;
   referenceObject?: DeserializedType<T, 'Edm.String'> | null;
   calendarEntryNav?: EmployeeTimeCalendarType<T> | null;
   employeeTimeNav?: EmployeeTimeType<T> | null;

@@ -1,14 +1,25 @@
 /*
- * Copyright (c) 2022 SAP SE or an SAP affiliate company. All rights reserved.
+ * Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved.
  *
  * This is a generated file powered by the SAP Cloud SDK for JavaScript.
  */
-import { Entity, DefaultDeSerializers, DeSerializers, DeserializedType } from '@sap-cloud-sdk/odata-v2';
+import {
+  Entity,
+  DefaultDeSerializers,
+  DeSerializers,
+  DeserializedType
+} from '@sap-cloud-sdk/odata-v2';
+import type { WorkScheduleDayModelSegmentApi } from './WorkScheduleDayModelSegmentApi';
 
 /**
  * This class represents the entity "WorkScheduleDayModelSegment" of service "ECTimeOff".
  */
-export class WorkScheduleDayModelSegment<T extends DeSerializers = DefaultDeSerializers> extends Entity implements WorkScheduleDayModelSegmentType<T> {
+export class WorkScheduleDayModelSegment<
+    T extends DeSerializers = DefaultDeSerializers
+  >
+  extends Entity
+  implements WorkScheduleDayModelSegmentType<T>
+{
   /**
    * Technical entity name for WorkScheduleDayModelSegment.
    */
@@ -59,6 +70,12 @@ export class WorkScheduleDayModelSegment<T extends DeSerializers = DefaultDeSeri
    */
   endTime?: DeserializedType<T, 'Edm.Time'> | null;
   /**
+   * Entity UUID.
+   * Maximum length: 255.
+   * @nullable
+   */
+  entityUuid?: DeserializedType<T, 'Edm.String'> | null;
+  /**
    * External Code.
    * Maximum length: 128.
    */
@@ -85,52 +102,52 @@ export class WorkScheduleDayModelSegment<T extends DeSerializers = DefaultDeSeri
    */
   lastModifiedDateWithTz?: DeserializedType<T, 'Edm.DateTimeOffset'> | null;
   /**
-   * mdfSystemEffectiveEndDate.
+   * Effective End Date.
    * @nullable
    */
   mdfSystemEffectiveEndDate?: DeserializedType<T, 'Edm.DateTime'> | null;
   /**
-   * mdfSystemEffectiveStartDate.
+   * Effective Start Date.
    * @nullable
    */
   mdfSystemEffectiveStartDate?: DeserializedType<T, 'Edm.DateTime'> | null;
   /**
-   * mdfSystemEntityId.
+   * Entity ID.
    * Maximum length: 255.
    * @nullable
    */
   mdfSystemEntityId?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * mdfSystemObjectType.
+   * Object Type.
    * Maximum length: 255.
    * @nullable
    */
   mdfSystemObjectType?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * mdfSystemRecordId.
+   * Record ID.
    * Maximum length: 255.
    * @nullable
    */
   mdfSystemRecordId?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * mdfSystemRecordStatus.
+   * Record Status.
    * Maximum length: 255.
    * @nullable
    */
   mdfSystemRecordStatus?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * mdfSystemStatus.
+   * Status.
    * Maximum length: 255.
    * @nullable
    */
   mdfSystemStatus?: DeserializedType<T, 'Edm.String'> | null;
   /**
-   * mdfSystemTransactionSequence.
+   * Transaction Sequence Number.
    * @nullable
    */
   mdfSystemTransactionSequence?: DeserializedType<T, 'Edm.Int64'> | null;
   /**
-   * mdfSystemVersionId.
+   * Version ID.
    * @nullable
    */
   mdfSystemVersionId?: DeserializedType<T, 'Edm.Int64'> | null;
@@ -139,9 +156,15 @@ export class WorkScheduleDayModelSegment<T extends DeSerializers = DefaultDeSeri
    * @nullable
    */
   startTime?: DeserializedType<T, 'Edm.Time'> | null;
+
+  constructor(readonly _entityApi: WorkScheduleDayModelSegmentApi<T>) {
+    super(_entityApi);
+  }
 }
 
-export interface WorkScheduleDayModelSegmentType<T extends DeSerializers = DefaultDeSerializers> {
+export interface WorkScheduleDayModelSegmentType<
+  T extends DeSerializers = DefaultDeSerializers
+> {
   workScheduleDayModelExternalCode: DeserializedType<T, 'Edm.String'>;
   category?: DeserializedType<T, 'Edm.String'> | null;
   createdBy?: DeserializedType<T, 'Edm.String'> | null;
@@ -149,6 +172,7 @@ export interface WorkScheduleDayModelSegmentType<T extends DeSerializers = Defau
   createdDateTime?: DeserializedType<T, 'Edm.DateTimeOffset'> | null;
   duration?: DeserializedType<T, 'Edm.Int64'> | null;
   endTime?: DeserializedType<T, 'Edm.Time'> | null;
+  entityUuid?: DeserializedType<T, 'Edm.String'> | null;
   externalCode: DeserializedType<T, 'Edm.String'>;
   lastModifiedBy?: DeserializedType<T, 'Edm.String'> | null;
   lastModifiedDate?: DeserializedType<T, 'Edm.DateTime'> | null;
