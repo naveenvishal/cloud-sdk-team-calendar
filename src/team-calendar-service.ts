@@ -11,7 +11,7 @@ import cds from '@sap/cds';
 const { SELECT } = cds.ql;
 
 export function serviceHandler(srv: any): void {
-  srv.on('READ', 'TeamCalendar', req => {
+  srv.on('READ', 'TeamCalendar', async req => {
     // enfore presence of key (for now)
     const year: number = req.data.year;
 
@@ -22,35 +22,37 @@ export function serviceHandler(srv: any): void {
       );
     }
 
-    return readAppointments(year, srv)
-      .then(data => req.reply(data))
-      .catch(error => {
-        req.reject(
-          500,
-          'An error occured while trying to read appointments: ' + error.message
-        );
-      });
+    try {
+      const data = await readAppointments(year, srv);
+      return req.reply(data);
+    } catch (error) {
+      req.reject(
+        500,
+        'An error occured while trying to read appointments: ' + error.message
+      );
+    }
   });
 
-  srv.on('READ', 'Photo', req => {
-    return readPhotos(srv)
-      .then((data) => req.reply(data))
-      .catch((error) => {
-        req.reject(
-          500,
-          'An error occurred while trying to read images: ' + error.message
-        );
-      });
-  })
+  srv.on('READ', 'Photo', async req => {
+    try {
+      const data = await readPhotos(srv);
+      return req.reply(data);
+    } catch (error) {
+      req.reject(
+        500,
+        'An error occurred while trying to read images: ' + error.message
+      );
+    }
+  });
 
   srv.on("READ", "LoggedUser", req => {
     const user = req.user; // Extract logged-in user from the request
     return {
-        id: "900002",//user.id||
-        name: user.name,
-        email: user.email,
+        id: '',
+        name: '',
+        email: '',
         role: '' //user.roles.join(", "), // Combine roles into a string if needed
-    };
+    }
 });
 
 /* // Event handler for READ requests on the 'Person' entity

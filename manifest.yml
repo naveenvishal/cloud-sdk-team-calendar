@@ -1,12 +1,12 @@
 applications:
-  - name: team-calendar
+  - name: sv-demo
     path: deployment/
     buildpacks:
       - nodejs_buildpack
     memory: 256M
     command: node dist/index.js
-    random-route: true
+    routes:
+      - route: sv-demo.cfapps.us10-001.hana.ondemand.com
     services:
       - my-xsuaa
       - my-destination
-      - jobschedulerinstance
