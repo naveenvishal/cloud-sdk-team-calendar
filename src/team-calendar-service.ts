@@ -2,8 +2,8 @@
 /* eslint-disable import/order */
 import { Appointment } from './model/appointment';
 import { readAppointments } from './read-appointments';
-import { readPhotos } from './read-photos';
-import { getDirectReports, getIndirectReports } from './read-reports';
+//import { readPhotos } from './read-photos';
+//import { getDirectReports, getIndirectReports } from './read-reports';
 import { splitAppointmentIntoDays } from './util/time-util';
 import { buildTimeSheetEntry, writeTimeSheetEntry } from './write-appointments';
 //useful for the backend unit test
@@ -33,7 +33,7 @@ export function serviceHandler(srv: any): void {
     }
   });
 
-  srv.on('READ', 'Photo', async req => {
+/*   srv.on('READ', 'Photo', async req => {
     try {
       const data = await readPhotos(srv);
       return req.reply(data);
@@ -43,16 +43,16 @@ export function serviceHandler(srv: any): void {
         'An error occurred while trying to read images: ' + error.message
       );
     }
-  });
+  }); */
 
-  srv.on("READ", "LoggedUser", req => {
+  srv.on('READ', 'LoggedUser', req => {
     const user = req.user; // Extract logged-in user from the request
     return {
         id: '',
-        name: '',
-        email: '',
+        name: user.name,
+        email: user.email,
         role: '' //user.roles.join(", "), // Combine roles into a string if needed
-    }
+    };
 });
 
 /* // Event handler for READ requests on the 'Person' entity

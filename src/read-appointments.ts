@@ -68,7 +68,6 @@ export async function readSfsfAppointmentsByPerson(
       employeeTimeApi.schema.END_DATE.lessOrEqual(to)
     )
     .execute({ destinationName: 'SFSF' });
-
 }
 
 export async function readLocalAppointments(srv: any): Promise<Appointment[]> {

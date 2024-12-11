@@ -1,0 +1,36 @@
+{
+  "requires": {
+    "[hybrid]": {
+      "auth": {
+        "binding": {
+          "type": "cf",
+          "apiEndpoint": "https://api.cf.us10-001.hana.ondemand.com",
+          "org": "HR Crowd Pty Ltd_demo-5ld47ydi",
+          "space": "dev",
+          "instance": "my-xsuaa",
+          "key": "default",
+          "resolved": false
+        },
+        "kind": "xsuaa-auth",
+        "vcap": {
+          "name": "auth"
+        }
+      },
+      "destinations": {
+        "binding": {
+          "type": "cf",
+          "apiEndpoint": "https://api.cf.us10-001.hana.ondemand.com",
+          "org": "HR Crowd Pty Ltd_demo-5ld47ydi",
+          "space": "dev",
+          "instance": "my-destination",
+          "key": "destination",
+          "resolved": false
+        },
+        "kind": "destinations",
+        "vcap": {
+          "name": "destinations"
+        }
+      }
+    }
+  }
+}

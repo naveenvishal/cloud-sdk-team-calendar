@@ -1,22 +1,22 @@
 sap.ui.define(["jquery.sap.global"], function (jQuery) {
   "use strict";
 
-  // function setCSRFPrefilter(baseUrl) {
-  //   return jQuery.ajax({
-  //     url: baseUrl + "/csrf",
-  //     method: "GET",
-  //     headers: { "X-CSRF-Token": "Fetch" }
-  //   }).then(function (data, sStatus, jqXHR) {
-  //     var csrfToken = jqXHR.getResponseHeader("X-CSRF-Token");
-  //     jQuery.ajaxPrefilter(function (options, originalOptions, _jqXHR) {
-  //       if (typeof csrfToken === "string") {
-  //         if (["POST", "PUT", "DELETE", "PATCH"].indexOf(options.type) !== -1) {
-  //           _jqXHR.setRequestHeader("X-CSRF-Token", csrfToken);
-  //         }
-  //       }
-  //     });
-  //   });
-  // }
+  function setCSRFPrefilter(baseUrl) {
+    return jQuery.ajax({
+      url: baseUrl + "/csrf",
+      method: "GET",
+      headers: { "X-CSRF-Token": "Fetch" }
+    }).then(function (data, sStatus, jqXHR) {
+      var csrfToken = jqXHR.getResponseHeader("X-CSRF-Token");
+      jQuery.ajaxPrefilter(function (options, originalOptions, _jqXHR) {
+        if (typeof csrfToken === "string") {
+          if (["POST", "PUT", "DELETE", "PATCH"].indexOf(options.type) !== -1) {
+            _jqXHR.setRequestHeader("X-CSRF-Token", csrfToken);
+          }
+        }
+      });
+    });
+  }
 
   return {
     get: function (url, data) {

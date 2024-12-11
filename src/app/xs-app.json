@@ -1,0 +1,16 @@
+{
+    "authenticationMethod": "route",
+    "routes": [
+      {
+        "source": "^/timesheet/(.*)",
+        "destination": "srv-api",
+        "csrfProtection": true,
+        "authenticationType": "xsuaa"
+      },
+      {
+        "source": "/(.*)",
+        "localDir": "src",
+        "authenticationType": "xsuaa"
+      }
+    ]
+  }

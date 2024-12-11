@@ -139,7 +139,7 @@ sap.ui.define([
 
       return jQuery.when(
         this.initPersons(model),
-        this.onFetchImages(model),
+        //this.onFetchImages(model),
         this.initAppointments(model)
 /*         this.initphotos(model) */
       );
@@ -178,7 +178,7 @@ sap.ui.define([
       });
     },
 
-    onFetchImages: function (model) {    
+/*     onFetchImages: function (model) {    
       timeSheetService.getImages().then(
         (images) => {
           // Bind images to a model or directly to a control
@@ -190,7 +190,7 @@ sap.ui.define([
         }
       );
     },
-
+ */
     initAppointments: function (model) {
       return timeSheetService.getAppointments().then(function (appointments) {
 //1. group for person        

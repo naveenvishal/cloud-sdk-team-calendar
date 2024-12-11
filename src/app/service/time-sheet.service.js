@@ -6,9 +6,7 @@ sap.ui.define([
 
   var host = "";
   var servicePath = "/odata/v2/TimesheetService";
-  var servicePath2 = "/odata/v2";
   var baseUrl = host + servicePath;
-  var baseUrl2 = host + servicePath2;
 
   // http.setCSRFPrefilter(baseUrl);
 
@@ -21,13 +19,13 @@ sap.ui.define([
       });
     },
 
-    getImages: function () {
+/*     getImages: function () {
       return http.get(baseUrl + "/Photo").then(function (response) {
         return response.hasOwnProperty("d")
           ? converter.getResults(converter.getD(response))
           : response.images;
         });
-      },
+      }, */
 
     getAppointments: function () {
       return http

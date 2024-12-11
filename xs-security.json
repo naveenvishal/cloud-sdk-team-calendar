@@ -4,29 +4,31 @@
   "scopes": [
     {
       "name": "$XSAPPNAME.User",
-      "description": "Default user scope",
-      "grant-as-authority-to-apps": ["$XSAPPNAME"]
-    }
-  ],
-  "attributes": [
-    {
-      "name": "email",
-      "description": "User Email Address"
+      "description": "Default user scope"
     },
     {
-      "name": "given_name",
-      "description": "User First Name"
+      "name": "uaa.user",
+      "description": "UAA"
     },
     {
-      "name": "family_name",
-      "description": "User Last Name"
+      "name": "$XSAPPNAME.TC_Admin",
+      "description": "TC_Admin"
     }
   ],
+  "attributes": [],
   "role-templates": [
     {
       "name": "User",
       "description": "Default User Role",
-      "scope-references": ["$XSAPPNAME.User"]
+      "scope-references": ["$XSAPPNAME.User", "uaa.user"]
+    },
+    {
+      "name": "TC_Admin",
+      "description": "generated",
+      "scope-references": [
+        "$XSAPPNAME.TC_Admin"
+      ],
+      "attribute-references": []
     }
   ]
 }

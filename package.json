@@ -24,7 +24,7 @@
     "ci-backend-unit-test": "nyc --extension .ts --report-dir ./s4hana_pipeline/reports/coverage-reports/backend-unit/ --reporter cobertura mocha -r ts-node/register -r dotenv/config test/unit-tests/**/*.spec.ts test/unit-tests/*.spec.ts --reporter mocha-junit-reporter --reporter-options mochaFile=./s4hana_pipeline/reports/backend-unit/results.xml",
     "ci-it-backend": "npm run cds-deploy && nyc --extension .ts --report-dir ./s4hana_pipeline/reports/coverage-reports/backend-integration/ --reporter cobertura mocha -r ts-node/register -r dotenv/config test/integration-tests/**/*.spec.ts --reporter mocha-junit-reporter --reporter-options mochaFile=./s4hana_pipeline/reports/backend-integration/results.xml",
     "ci-lint": "npm run lint",
-    "start": "cds-serve"
+    "start": "node node_modules/@sap/approuter/approuter.js && node dist/index.js"
   },
   "author": "",
   "license": "Apache-2.0",
@@ -60,8 +60,10 @@
     "sinon-chai": "^3.7.0"
   },
   "dependencies": {
+    "@sap-cloud-sdk/http-client": "^3.24.0",
     "@sap-cloud-sdk/odata-v2": "^2.9.0",
     "@sap-cloud-sdk/util": "^2.9.0",
+    "@sap/approuter": "^18.0.0",
     "@sap/cds": "^6.2.1",
     "@sap/cds-dk": "^6.2.1",
     "@sap/cds-services": "^1.27.2",
@@ -114,7 +116,7 @@
         }
       },
       "auth": {
-        "kind": "dummy-auth"
+        "kind": "xsuaa"
       }
     }
   }

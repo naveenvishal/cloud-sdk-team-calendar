@@ -1,0 +1,47 @@
+_schema-version: '3.1'
+ID: sv-demo
+version: 1.0.0
+description: "Team Calender app using the SAP Cloud SDK and CAP"
+parameters:
+  enable-parallel-deployments: true
+build-parameters:
+  before-all:
+    - builder: custom
+      commands:
+        - node dist/index.js
+modules:
+  - name: sv-demo
+    type: nodejs
+    path: deployment/
+    parameters:
+      memory: 256M
+      start-command: node dist/index.js
+      buildpack: nodejs_buildpack
+      routes:
+        -route: sv-demo.cfapps.us10-001.hana.ondemand.com
+    build-parameters:
+      builder: npm-ci
+    provides:
+      - name: sv-demo_api # required by consumers of CAP services (e.g. approuter)
+        properties:
+          srv-url: ${default-url}
+    requires:
+      - name: my-xsuaa
+      - name: my-destination
+
+resources:
+  - name: my-xsuaa
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: xsuaa
+      service-plan: application
+      path: ./xs-security.json
+      config:
+        xsappname: my-xsuaa
+        tenant-mode: dedicated
+  - name: my-destination
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: destination
+      service-plan: lite
+      service-name: my-destination
