@@ -47,7 +47,7 @@ export function transformSfsfAppointment(
     info: 'Retrieved from SAP SuccessFactors',
     person_ID: person.ID,
     calendar_year: year,
-    //type: 'Project',
+    // type: 'Project',
     type: eymployeeTime.timeType
   };
 }

@@ -41,19 +41,6 @@ const setupApp = async () => {
     .at('odata/v2/TimesheetService')
     .with(serviceHandler)
     .in(_app);
-
-  // use this (together with an explicit dependency on @sap/cds-services) to enable debug mode
-
-  // cds
-  //   .load("./srv/gen/csn.json")
-  //   .then(csn => {
-  //     cdsServices.inject(cds);
-  //     app["_csn"] = cds.linked(cds.compile.for.odata(csn));
-  //     const service = cdsServices.service(csn, { debug: true });
-  //     app.use("/odata/v2", cdsServices.to.odata_v4(service));
-  //     return app;
-  //   })
-
   return _app;
 };
 

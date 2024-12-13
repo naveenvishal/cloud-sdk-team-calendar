@@ -1,4 +1,5 @@
 applications:
+  #Application
   - name: sv-demo
     path: deployment/
     buildpacks:
@@ -10,3 +11,22 @@ applications:
     services:
       - my-xsuaa
       - my-destination
+  #Approuter      
+  - name: approuter-sv-demo
+    path: approuter
+    routes:
+      - route: approuter-sv-demo.cfapps.us10-001.hana.ondemand.com
+    memory: 128M
+    buildpacks:
+      - nodejs_buildpack
+    services:
+      - my-xsuaa
+    env:
+      destinations: >
+        [
+          {
+            "name":"svdemo-dest",
+            "url":"https://sv-demo.cfapps.us10-001.hana.ondemand.com",
+            "forwardAuthToken": true
+          }
+        ]

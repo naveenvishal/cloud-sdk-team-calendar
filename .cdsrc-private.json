@@ -11,7 +11,7 @@
           "key": "default",
           "resolved": false
         },
-        "kind": "xsuaa-auth",
+        "kind": "xsuaa",
         "vcap": {
           "name": "auth"
         }

@@ -42,7 +42,7 @@ sap.ui.define([
           that.getView().setModel(oUserModel, "userModel");
 
           // Optional: Show a welcome message
-          sap.m.MessageToast.show("Welcome, " + userData.value[0].email);
+          //sap.m.MessageToast.show("Welcome, " + userData.value[0].email);
           //return userData.value[0].email;
           
       }).catch(function (error) {

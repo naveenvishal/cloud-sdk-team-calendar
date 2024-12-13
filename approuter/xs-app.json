@@ -1,0 +1,23 @@
+{
+  "authenticationMethod": "route",
+  "routes": [
+    {
+      "source": "^/odata/v2/TimesheetService/(.*)$",
+      "destination": "svdemo-dest",
+      "authenticationType": "xsuaa",
+      "csrfProtection": false
+    },
+    {
+      "source": "^/api/(.*)$",
+      "destination": "svdemo-dest",
+      "authenticationType": "xsuaa",
+      "csrfProtection": false
+    },
+    {
+      "source": "^/ui/(.*)$",
+      "localDir": "/",
+      "authenticationType": "none",
+      "csrfProtection": false
+    }
+  ]
+}
